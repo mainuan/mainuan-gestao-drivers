@@ -1,0 +1,122 @@
+name: Build Mainuan Debian package
+
+on:
+  push:
+    branches: [port/kubuntu-26.04]
+  pull_request:
+    branches: [port/kubuntu-26.04]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 45
+    container:
+      # Official linux/amd64 manifest audited by Mainuan Welcome and this project.
+      image: ubuntu:26.04@sha256:42527649dbc4f9197a6073f426f488cbff0e9cc9f2afce32d91c383e4875634a
+      options: --platform linux/amd64
+    defaults:
+      run:
+        shell: bash
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONDONTWRITEBYTECODE: '1'
+      DEB_BUILD_OPTIONS: parallel=2
+      MAINUAN_BASE_IMAGE: ubuntu:26.04@sha256:42527649dbc4f9197a6073f426f488cbff0e9cc9f2afce32d91c383e4875634a
+      EXPECTED_COMMIT: ${{ github.sha }}
+    steps:
+      - name: Prepare an isolated baseline environment
+        run: |
+          set -euo pipefail
+          # This must precede EVERY apt update/install, not repair a v3 runner.
+          cat > /etc/apt/apt.conf.d/99mainuan-baseline <<'APT'
+          #clear APT::Architecture-Variants;
+          APT::Architecture-Variants "";
+          APT::Architecture "amd64";
+          #clear APT::Architectures;
+          APT::Architectures { "amd64"; };
+          APT
+          # No package services start during dependency preparation.
+          printf '#!/bin/sh\nexit 101\n' > /usr/sbin/policy-rc.d
+          chmod 755 /usr/sbin/policy-rc.d
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends \
+            dpkg-dev fakeroot lintian git ca-certificates python3 binutils
+          useradd --create-home --uid 1001 --shell /bin/bash mainuan-build
+
+      - name: Check out the exact source commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Prepare build, runtime and validation dependencies
+        run: |
+          set -euo pipefail
+          apt-get build-dep --yes --no-install-recommends ./
+          # Reviewed runtime dependencies/Recommends; tests check this list for drift.
+          DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends \
+            python3-pyqt6 python3-apt ubuntu-drivers-common packagekit mokutil openssl kmod \
+            dbus polkitd desktop-file-utils qemu-user python3-yaml fonts-dejavu-core
+          dpkg-checkbuilddeps
+          # Private container system bus, never a socket mounted from the host.
+          mkdir -p /run/dbus
+          dbus-uuidgen --ensure
+          dbus-daemon --system --fork --nopidfile
+          chown -R mainuan-build:mainuan-build "$GITHUB_WORKSPACE"
+          chown mainuan-build:mainuan-build "$(dirname "$GITHUB_WORKSPACE")"
+
+      - name: Validate baseline inputs and source identity
+        run: |
+          runuser -u mainuan-build -- bash -euo pipefail -c '
+            test "$(git rev-parse HEAD)" = "$EXPECTED_COMMIT"
+            test "$(dpkg-parsechangelog -SVersion)" = "1.0~rc1"
+            git diff --check
+            mkdir -p dist
+            python3 .github/scripts/check_cpu.py environment --output dist/cpu-environment.json
+          '
+
+      - name: Run all tests without driver mutations
+        run: |
+          runuser -u mainuan-build -- bash -euo pipefail -c '
+            python3 -m unittest discover -s tests -v 2>&1 | tee dist/unit-tests.log
+            python3 -m compileall -q usr tests
+            python3 tests/probe_packagekit_readonly.py 2>&1 | tee dist/packagekit-readonly.log
+          '
+
+      - name: Build and audit the architecture-independent package
+        run: |
+          runuser -u mainuan-build -- bash -euo pipefail -c '
+            dpkg-buildpackage -us -uc -b 2>&1 | tee dist/build.log
+            package="../mainuan-gestao-drivers_1.0~rc1_all.deb"
+            python3 tests/inspect_deb.py "$package"
+            dpkg-deb -I "$package" > dist/package-info.log
+            dpkg-deb -c "$package" > dist/package-files.log
+            desktop-file-validate usr/share/applications/org.mainuan.GestaoDrivers.desktop
+            lintian --fail-on error,warning "$package" 2>&1 | tee dist/lintian.log
+            python3 .github/scripts/cpu_smoke.py "$package" --output dist/cpu-startup.json 2>&1 | tee dist/cpu-smoke.log
+            python3 .github/scripts/check_cpu.py dependencies dist/cpu-startup.json --output dist/cpu-dependencies.json
+            cp -- "$package" dist/
+            cd dist
+            sha256sum "mainuan-gestao-drivers_1.0~rc1_all.deb" > SHA256SUMS
+            sha256sum --check SHA256SUMS
+          '
+
+      - name: Upload the validated package, checksum and provenance
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mainuan-gestao-drivers-1.0~rc1-${{ github.sha }}
+          path: |
+            dist/mainuan-gestao-drivers_1.0~rc1_all.deb
+            dist/SHA256SUMS
+            dist/cpu-*.json
+            dist/*.log
+          if-no-files-found: error
+          retention-days: 30

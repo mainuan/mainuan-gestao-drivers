@@ -3,6 +3,7 @@ import argparse
 from email.parser import Parser
 import io
 from pathlib import PurePosixPath
+import posixpath
 import re
 import shlex
 import subprocess
@@ -20,8 +21,37 @@ class PackageAuditError(ValueError):
     pass
 
 
+def audit_independent_file(name, prefix):
+    """Architecture all cannot acquire a native payload, even under a data name."""
+    native_magic = (b"\x7fELF", b"MZ", b"!<arch>\n", b"!<thin>\n", b"BC\xc0\xde",
+                    b"\xce\xfa\xed\xfe", b"\xcf\xfa\xed\xfe", b"\xfe\xed\xfa\xce",
+                    b"\xfe\xed\xfa\xcf", b"\xca\xfe\xba\xbe")
+    if prefix.startswith(native_magic) or re.search(r"\.(?:so(?:\.\d+)*|o|a|dll|dylib|exe|whl|egg|bc)$", name):
+        raise PackageAuditError("Architecture all cannot contain a native/compiled payload: " + name)
+
+
 def dependency_names(value):
     return {item.strip().split()[0] for item in re.split(r"[,|]", value) if item.strip()}
+
+
+def audit_links(members):
+    entries = {str(PurePosixPath(member.name)): member for member in members}
+    for name, member in entries.items():
+        if member.islnk() or not (member.isdir() or member.isfile() or member.issym()):
+            raise PackageAuditError("Unexpected hardlink/special file: " + name)
+        if not member.issym():
+            continue
+        seen = {name}
+        while member.issym():
+            if PurePosixPath(member.linkname).is_absolute():
+                raise PackageAuditError("External symlink: " + name)
+            target = posixpath.normpath(str(PurePosixPath(name).parent / member.linkname))
+            if target.startswith("../") or target in seen or target not in entries:
+                raise PackageAuditError("Escaping, cyclic or dangling symlink: " + name)
+            seen.add(target)
+            name, member = target, entries[target]
+        if not member.isfile():
+            raise PackageAuditError("Symlink must resolve to packaged regular data: " + name)
 
 
 def audit_package(control, members, scripts, conffiles=""):
@@ -41,6 +71,8 @@ def audit_package(control, members, scripts, conffiles=""):
         lower = name.lower()
         if member.mode & 0o6000:
             raise PackageAuditError("setuid/setgid payload: " + name)
+        if not member.issym() and member.mode & 0o022:
+            raise PackageAuditError("Group/world-writable payload: " + name)
         if (path.is_absolute() or ".." in path.parts or any(part.startswith("sudoers") for part in path.parts)
                 or "gtk" in lower or "xapp" in lower
                 or "load-broadcom" in lower or "mintdrivers" in lower
@@ -84,6 +116,10 @@ def inspect_deb(path):
     control = subprocess.run(["dpkg-deb", "--ctrl-tarfile", str(path)], check=True, capture_output=True).stdout
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:") as archive:
         members = archive.getmembers()
+        audit_links(members)
+        for member in members:
+            if member.isfile():
+                audit_independent_file(member.name, archive.extractfile(member).read(8))
     files = {}
     with tarfile.open(fileobj=io.BytesIO(control), mode="r:") as archive:
         for member in archive.getmembers():

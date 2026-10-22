@@ -35,6 +35,13 @@ pessoal nesse relatório. Sobre identifica versão e créditos.
 
 ## Desenvolvimento
 
+O workflow Mainuan gera o RC1 em Ubuntu 26.04 AMD64 básico, sem variantes APT,
+e verifica o pacote `all`, dependências nativas e startup offscreen em QEMU.
+`Architecture: all` não garante que as bibliotecas da ISO sejam compatíveis
+com CPUs antigas. Consulte [compatibilidade de CPU e CI](docs/cpu-compatibility.md)
+para evidências, limites e validação da imagem. O comando público do Welcome
+continua sendo `mainuan-gestao-drivers`, sem argumentos adicionais.
+
 O código fica em `usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/`.
 O frontend GTK, seu helper Broadcom e o sudoers legado foram removidos no beta
 0.5. Não há fallback GTK, action PolicyKit própria nem helper privilegiado.

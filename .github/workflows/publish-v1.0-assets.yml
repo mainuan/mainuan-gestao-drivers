@@ -1,0 +1,83 @@
+name: Publish Mainuan 1.0 release assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/publish-v1.0-assets.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: v1.0
+      SOURCE_RUN_ID: "39855676115"
+      SOURCE_ARTIFACT: mainuan-gestao-drivers-1.0-d84fdd9c75acca7c69e3e07912f4f0f064b4d1e7
+      DEB_FILE: mainuan-gestao-drivers_1.0_all.deb
+    steps:
+      - name: Check out release source for notes
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: v1.0
+          persist-credentials: false
+          path: source
+
+      - name: Download validated 1.0 artifact
+        run: |
+          set -euo pipefail
+          mkdir -p release-assets
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$SOURCE_ARTIFACT" \
+            --dir release-assets
+
+      - name: Validate Debian package and checksum
+        run: |
+          set -euo pipefail
+          cd release-assets
+          test -f "$DEB_FILE"
+          test -f SHA256SUMS
+          sha256sum --check SHA256SUMS
+          test "$(dpkg-deb -f "$DEB_FILE" Package)" = "mainuan-gestao-drivers"
+          test "$(dpkg-deb -f "$DEB_FILE" Version)" = "1.0"
+          test "$(dpkg-deb -f "$DEB_FILE" Architecture)" = "all"
+          sha256sum "$DEB_FILE"
+
+      - name: Prepare release notes
+        run: |
+          set -euo pipefail
+          cp source/docs/1.0-release-notes.md release-notes.md
+          {
+            printf '\n## Downloads\n\n'
+            printf 'Pacote Debian: `%s`\n\n' "$DEB_FILE"
+            printf 'SHA-256:\n\n```text\n'
+            awk -v file="$DEB_FILE" '$2 == file {print $1}' release-assets/SHA256SUMS
+            printf '```\n'
+          } >> release-notes.md
+
+      - name: Attach package to GitHub Release
+        run: |
+          set -euo pipefail
+          gh release upload "$RELEASE_TAG" \
+            "release-assets/$DEB_FILE" \
+            "release-assets/SHA256SUMS" \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber
+
+          gh release edit "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Mainuan Gestão de Drivers 1.0" \
+            --notes-file release-notes.md
+
+      - name: Verify published assets
+        run: |
+          set -euo pipefail
+          gh release view "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --json tagName,name,assets,url

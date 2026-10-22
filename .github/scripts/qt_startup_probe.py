@@ -60,6 +60,8 @@ def main():
                 return
             try:
                 assert app.platformName() == "offscreen"
+                assert not app.windowIcon().isNull()
+                assert not app.windowIcon().pixmap(48, 48).isNull()
                 window = windows[0]
                 assert window._snapshot is not None and window._snapshot.planner.devices
                 assert window.findChildren(QRadioButton)
@@ -82,7 +84,7 @@ def main():
                 for expected in ("libQt6Widgets.so", "libQt6DBus.so", "apt_pkg."):
                     assert any(expected in path for path in paths), expected
                 result.update(success=True, mode="normal-entry-fixture-io" if args.normal_entry else "test-entry",
-                              version=app.applicationVersion(), platform=app.platformName(),
+                              version=app.applicationVersion(), platform=app.platformName(), icon_valid=True,
                               qt=QT_VERSION_STR, pyqt=PYQT_VERSION_STR, python=sys.version,
                               packaged_module=str(Path(mainuan_drivers.__file__).relative_to(args.payload)),
                               loaded_elf=sorted(paths), devices=len(window._snapshot.planner.devices))

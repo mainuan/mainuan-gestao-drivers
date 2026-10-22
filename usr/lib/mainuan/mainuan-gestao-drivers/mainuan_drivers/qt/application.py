@@ -9,7 +9,7 @@ from PyQt6.QtGui import QGuiApplication, QIcon
 from PyQt6.QtWidgets import QApplication
 
 from .main_window import MainWindow
-from .. import APP_NAME, APP_ID, DISPLAY_NAME, ORGANIZATION, VERSION, ICON_PATH, LOCALE_DIR
+from .. import APP_NAME, APP_ID, DISPLAY_NAME, ORGANIZATION, VERSION, ICON_PATH, ICON_PNG_PATH, LOCALE_DIR
 
 
 APP = APP_NAME
@@ -19,6 +19,18 @@ locale.bindtextdomain(APP, LOCALE_DIR)
 gettext.bindtextdomain(APP, LOCALE_DIR)
 gettext.textdomain(APP)
 _ = gettext.gettext
+
+
+def application_icon():
+    """Prefer the user's theme, with bundled artwork even without SVG support."""
+    icon = QIcon.fromTheme(APP_NAME)
+    if not icon.isNull() and not icon.pixmap(48, 48).isNull():
+        return icon
+    for path in (ICON_PATH, ICON_PNG_PATH):
+        icon = QIcon(str(path))
+        if not icon.isNull() and not icon.pixmap(48, 48).isNull():
+            return icon
+    return QIcon()
 
 
 def run(argv=None):
@@ -40,7 +52,7 @@ def run(argv=None):
     QGuiApplication.setDesktopFileName(APP_ID)
     app = QApplication([argv[0] if argv else APP_NAME])
     app.setApplicationDisplayName(DISPLAY_NAME)
-    app.setWindowIcon(QIcon.fromTheme(APP_NAME, QIcon(str(ICON_PATH))))
+    app.setWindowIcon(application_icon())
 
     window = MainWindow(test_mode=test_mode)
     window.show()

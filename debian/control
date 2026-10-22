@@ -13,6 +13,7 @@ Package: mainuan-gestao-drivers
 Architecture: all
 Depends: python3 (>= 3.7),
          python3-pyqt6,
+         qt6-svg-plugins,
          python3-apt,
          ubuntu-drivers-common,
          packagekit,

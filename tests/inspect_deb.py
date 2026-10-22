@@ -59,7 +59,7 @@ def audit_package(control, members, scripts, conffiles=""):
     if (metadata["Package"], metadata["Version"], metadata["Architecture"]) != (PACKAGE, "1.0~rc1", "all"):
         raise PackageAuditError("Unexpected package identity/version/architecture")
     depends = dependency_names(metadata["Depends"] or "")
-    required = {"python3", "python3-pyqt6", "python3-apt", "ubuntu-drivers-common", "packagekit"}
+    required = {"python3", "python3-pyqt6", "qt6-svg-plugins", "python3-apt", "ubuntu-drivers-common", "packagekit"}
     if not required <= depends or depends & FORBIDDEN_DEPENDENCIES:
         raise PackageAuditError("Missing Qt/backend dependency or remaining legacy dependency")
     if dependency_names(metadata["Recommends"] or "") != {"mokutil", "openssl", "kmod"}:

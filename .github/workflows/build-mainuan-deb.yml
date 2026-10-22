@@ -63,7 +63,7 @@ jobs:
           apt-get build-dep --yes --no-install-recommends ./
           # Reviewed runtime dependencies/Recommends; tests check this list for drift.
           DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends \
-            python3-pyqt6 python3-apt ubuntu-drivers-common packagekit mokutil openssl kmod \
+            python3-pyqt6 qt6-svg-plugins python3-apt ubuntu-drivers-common packagekit mokutil openssl kmod \
             dbus polkitd desktop-file-utils qemu-user python3-yaml fonts-dejavu-core
           dpkg-checkbuilddeps
           # Private container system bus, never a socket mounted from the host.

@@ -13,3 +13,4 @@ SHARE_DIR = Path(__file__).resolve().parents[4] / "share"
 DATA_DIR = SHARE_DIR / "mainuan" / APP_NAME
 LOCALE_DIR = SHARE_DIR / "locale"
 ICON_PATH = SHARE_DIR / "icons/hicolor/scalable/apps" / (APP_NAME + ".svg")
+ICON_PNG_PATH = SHARE_DIR / "icons/hicolor/48x48/apps" / (APP_NAME + ".png")

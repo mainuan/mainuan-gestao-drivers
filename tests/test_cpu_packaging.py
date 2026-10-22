@@ -124,8 +124,9 @@ class MainuanWorkflowTests(unittest.TestCase):
         import yaml
         workflow = yaml.load((ROOT / ".github/workflows/build-mainuan-deb.yml").read_text(), Loader=yaml.BaseLoader)
         self.assertEqual(set(workflow["on"]), {"push", "pull_request", "workflow_dispatch"})
-        for event in ("push", "pull_request"):
-            self.assertEqual(workflow["on"][event]["branches"], ["port/kubuntu-26.04"])
+        self.assertEqual(workflow["on"]["push"]["branches"], ["master"])
+        self.assertEqual(workflow["on"]["push"]["tags"], ["v*"])
+        self.assertEqual(workflow["on"]["pull_request"]["branches"], ["master"])
         self.assertEqual(workflow["permissions"], {"contents": "read"})
         self.assertEqual(set(workflow["jobs"]), {"build"})
         job = workflow["jobs"]["build"]

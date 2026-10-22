@@ -1,4 +1,4 @@
-"""RC metadata and negative boundaries. Never use a real mutating transport."""
+"""Release metadata and negative boundaries. Never use a mutating transport."""
 import ast
 from dataclasses import replace
 import json
@@ -8,7 +8,7 @@ import subprocess
 import unittest
 from unittest.mock import patch
 
-from mainuan_drivers import APP_NAME, VERSION, __version__
+from mainuan_drivers import APP_NAME, DISPLAY_NAME, VERSION, __version__
 from mainuan_drivers.backend.diagnostics import diagnostic_text
 from mainuan_drivers.backend.models import AptOrigin
 from mainuan_drivers.backend.transactions.execution import DriverExecutionController, SnapshotSource
@@ -29,16 +29,17 @@ MODULES = ROOT / "usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers"
 
 class ReleaseCandidateTests(unittest.TestCase):
     def test_version_alias_changelog_and_manpage(self):
-        self.assertEqual(__version__, "1.0~rc1")
+        self.assertEqual(__version__, "1.0")
         self.assertEqual(VERSION, __version__)
         version = subprocess.run(["dpkg-parsechangelog", "-SVersion"], cwd=ROOT,
                                  check=True, text=True, capture_output=True).stdout.strip()
         self.assertEqual(version, __version__)
-        self.assertIn("Mainuan 1.0 RC1", (ROOT / "usr/share/man/man1/mainuan-gestao-drivers.1").read_text())
+        self.assertIn('"Mainuan 1.0"', (ROOT / "usr/share/man/man1/mainuan-gestao-drivers.1").read_text())
 
     def test_debian_ordering_preserves_upgrade_and_final_release(self):
-        for previous, operator, following in (("0.6", "lt", __version__), (__version__, "lt", "1.0")):
-            self.assertEqual(subprocess.run(["dpkg", "--compare-versions", previous, operator, following]).returncode, 0)
+        for previous in ("0.4", "0.5", "0.6", "1.0~rc1"):
+            with self.subTest(previous=previous):
+                self.assertEqual(subprocess.run(["dpkg", "--compare-versions", previous, "lt", __version__]).returncode, 0)
 
     def test_about_and_diagnostics_share_release_version(self):
         app()
@@ -47,7 +48,7 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.addCleanup(window.close)
         with patch("mainuan_drivers.qt.main_window.QMessageBox.about") as about:
             window.show_about()
-        self.assertIn(__version__, about.call_args.args[2])
+        self.assertEqual(about.call_args.args[2].splitlines()[0], DISPLAY_NAME + " " + __version__)
         self.assertEqual(json.loads(diagnostic_text(None, False, ViewState.LOADING))["version"], __version__)
 
     def test_version_and_help_exit_without_detection(self):
@@ -59,7 +60,7 @@ class ReleaseCandidateTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertNotIn("Traceback", result.stderr)
                 if flag == "--version":
-                    self.assertIn(__version__, result.stdout)
+                    self.assertEqual(result.stdout.strip(), DISPLAY_NAME + " " + __version__)
                 else:
                     for option in ("--debug", "--version", "test"):
                         self.assertIn(option, result.stdout)
@@ -69,6 +70,25 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertIn(" 0.5~ " + APP_NAME, text)
         self.assertEqual(subprocess.run(["dpkg", "--compare-versions", "0.4", "le", "0.5~"]).returncode, 0)
         self.assertEqual(subprocess.run(["dpkg", "--compare-versions", "0.5", "gt", "0.5~"]).returncode, 0)
+
+    def test_stable_workflow_and_gettext_version_match(self):
+        workflow = (ROOT / ".github/workflows/build-mainuan-deb.yml").read_text()
+        self.assertIn('test "$(dpkg-parsechangelog -SVersion)" = "1.0"', workflow)
+        self.assertIn("mainuan-gestao-drivers_1.0_all.deb", workflow)
+        self.assertIn("mainuan-gestao-drivers-1.0-${{ github.sha }}", workflow)
+        self.assertNotIn("1.0~rc1", workflow)
+        self.assertIn("--package-version='1.0'", (ROOT / "makepot").read_text())
+        self.assertIn('Gestão de Drivers 1.0\\n', (ROOT / "mainuan-gestao-drivers.pot").read_text())
+        self.assertIn('mainuan-gestao-drivers 1.0\\n', (ROOT / "po/mainuan-gestao-drivers-pt_BR.po").read_text())
+
+    def test_stable_runtime_has_no_current_prerelease_labels(self):
+        for path in MODULES.rglob("*.py"):
+            with self.subTest(path=path.relative_to(MODULES)):
+                text = path.read_text()
+                self.assertNotIn("1.0~rc1", text)
+                self.assertNotIn("Release candidate", text)
+                self.assertNotIn("this beta", text)
+                self.assertNotIn("This beta", text)
 
 
 class PlanBoundaryTests(unittest.TestCase):

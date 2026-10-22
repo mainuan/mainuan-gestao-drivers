@@ -56,7 +56,7 @@ def audit_links(members):
 
 def audit_package(control, members, scripts, conffiles=""):
     metadata = Parser().parsestr(control)
-    if (metadata["Package"], metadata["Version"], metadata["Architecture"]) != (PACKAGE, "1.0~rc1", "all"):
+    if (metadata["Package"], metadata["Version"], metadata["Architecture"]) != (PACKAGE, "1.0", "all"):
         raise PackageAuditError("Unexpected package identity/version/architecture")
     depends = dependency_names(metadata["Depends"] or "")
     required = {"python3", "python3-pyqt6", "qt6-svg-plugins", "python3-apt", "ubuntu-drivers-common", "packagekit"}

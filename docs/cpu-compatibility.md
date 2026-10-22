@@ -1,7 +1,7 @@
-# Compatibilidade x86-64 basico - Gestao de Drivers 1.0 RC1
+# Compatibilidade x86-64 basico - Gestao de Drivers 1.0
 
-Alvo: x86-64 v1/SSE2, sem AVX/AVX2/AVX-512 obrigatorios. Versao mantida
-**1.0~rc1**, Architecture **all**. Isto NAO declara toda ISO universalmente
+Alvo: x86-64 v1/SSE2, sem AVX/AVX2/AVX-512 obrigatorios. Versao
+**1.0**, Architecture **all**. Isto NAO declara toda ISO universalmente
 compativel: cliente, dependencias Ubuntu e sistema instalado sao tres camadas.
 
 ## Referencia e diferenca arquitetural
@@ -78,7 +78,7 @@ oficiais conferidas), token contents:read e persist-credentials:false. Upload
 somente apos todos os gates; .deb, SHA256SUMS verificado, logs e JSONs CPU,
 identificados por github.sha. PRs usam o commit de merge de teste do GitHub.
 Pacotes APT podem receber atualizacoes; a imagem e fixa, mas nao se promete
-identidade binaria eterna de todas as dependencias. Mesma versao RC1 exige
+identidade binaria eterna de todas as dependencias. Rebuild da mesma versao exige
 comparar commit/checksum; APT nao interpreta recompilacao como nova versao.
 
 ## Startup e bibliotecas reais
@@ -119,9 +119,9 @@ python3 -m unittest discover -s tests -v
 python3 -m compileall -q usr tests
 python3 tests/probe_packagekit_readonly.py
 dpkg-buildpackage -us -uc -b
-python3 tests/inspect_deb.py '../mainuan-gestao-drivers_1.0~rc1_all.deb'
+python3 tests/inspect_deb.py '../mainuan-gestao-drivers_1.0_all.deb'
 python3 .github/scripts/check_cpu.py environment --output /tmp/cpu-environment.json
-python3 .github/scripts/cpu_smoke.py '../mainuan-gestao-drivers_1.0~rc1_all.deb' --output /tmp/cpu-startup.json
+python3 .github/scripts/cpu_smoke.py '../mainuan-gestao-drivers_1.0_all.deb' --output /tmp/cpu-startup.json
 python3 .github/scripts/check_cpu.py dependencies /tmp/cpu-startup.json --output /tmp/cpu-dependencies.json
 ```
 

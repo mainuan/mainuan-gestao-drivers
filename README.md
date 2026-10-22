@@ -1,8 +1,7 @@
-# Gestão de Drivers
+# Mainuan Gestão de Drivers 1.0
 
 **Mainuan Gestão de Drivers** é uma ferramenta de hardware do projeto Mainuan,
-baseado no Kubuntu 26.04 LTS. A versão **1.0 RC1** é candidata à versão final,
-com arquitetura e funcionalidades congeladas para validação; ainda não é 1.0 final.
+baseado no Kubuntu 26.04 LTS. A versão **1.0** é a primeira versão estável.
 
 A aplicação é integralmente Qt6 Widgets/PyQt6, sem frontend GTK ou XApp. A detecção usa
 `ubuntu-drivers-common` e consultas APT, com backend Python independente da GUI.
@@ -10,6 +9,11 @@ O planejamento de alterações usa PackageKit via `PyQt6.QtDBus`.
 Nesta versão, alterações válidas podem ser aplicadas após confirmação explícita.
 PackageKit e o agente PolicyKit do Plasma cuidam da autorização, sem senha
 solicitada pelo aplicativo nem execução direta de APT/dpkg.
+
+```text
+hardware → APT + repositórios configurados/PPAs → ubuntu-drivers-common
+         → backend Mainuan → preflight → Qt6 → PackageKit → PolicyKit
+```
 
 ```bash
 mainuan-gestao-drivers
@@ -35,7 +39,7 @@ pessoal nesse relatório. Sobre identifica versão e créditos.
 
 ## Desenvolvimento
 
-O workflow Mainuan gera o RC1 em Ubuntu 26.04 AMD64 básico, sem variantes APT,
+O workflow Mainuan gera o pacote 1.0 em Ubuntu 26.04 AMD64 básico, sem variantes APT,
 e verifica o pacote `all`, dependências nativas e startup offscreen em QEMU.
 `Architecture: all` não garante que as bibliotecas da ISO sejam compatíveis
 com CPUs antigas. Consulte [compatibilidade de CPU e CI](docs/cpu-compatibility.md)
@@ -54,20 +58,24 @@ python3 tests/probe_packagekit_readonly.py
 dpkg-buildpackage -us -uc -b
 ```
 
-Instale o candidato em uma VM para validação:
+Instale o aplicativo em uma VM para validação:
 
 ```bash
-sudo apt install './mainuan-gestao-drivers_1.0~rc1_all.deb'
+sudo apt install './mainuan-gestao-drivers_1.0_all.deb'
 sudo apt remove mainuan-gestao-drivers
 ```
 
 Não há scripts para remover dependências, alterar repositórios, módulos ou
 Secure Boot durante instalação/remoção do aplicativo.
 Consulte [a arquitetura de transações](docs/qt-transactions.md) e o
-[roteiro de instalação, upgrades 0.4/0.5/0.6 e purge na VM](docs/1.0-rc1-testing.md).
-Consulte também a [matriz de testes](docs/rc1-test-matrix.md) e os
-[critérios para 1.0 final](docs/1.0-release-criteria.md).
-Hardware real adicional ainda possui cobertura limitada; cenários fictícios
+[roteiro de instalação, upgrades e purge na VM](docs/1.0-testing.md).
+Consulte também o [relatório final](docs/1.0-release-report.md), as
+[notas da versão](docs/1.0-release-notes.md) e os
+[critérios para 1.0](docs/1.0-release-criteria.md).
+A cobertura automatizada é ampla e PackageKit/PolicyKit possuem testes
+separados. Hardware real adicional ainda possui cobertura limitada devido à
+disponibilidade de equipamentos. A detecção/recomendação é delegada ao
+`ubuntu-drivers-common`; cenários fictícios
 não substituem validação com hardware compatível e não devem ser confundidos
 com instalações reais. Não force um driver incompatível na VM.
 O upgrade retira o conffile sudoers obsoleto pelo mecanismo Debian apropriado;
@@ -83,7 +91,7 @@ pendente continuam bloqueados; não há geração de chave nem enrollment própr
 pré-compilados compatíveis não recebem o bloqueio DKMS. A Qt não descarrega nem
 carrega módulos Broadcom: orienta reiniciar. Pacote instalado não significa driver
 ativo; o resultado é reavaliado após a transação. Consulte a
-[auditoria upstream](docs/upstream-audit-1.0-rc1.md) e a
+[auditoria upstream final](docs/upstream-audit-1.0.md) e a
 [política de acompanhamento](docs/upstream-sync-policy.md).
 
 ## Origem e Licença

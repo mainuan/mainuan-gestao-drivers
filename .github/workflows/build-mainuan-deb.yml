@@ -77,7 +77,7 @@ jobs:
         run: |
           runuser -u mainuan-build -- bash -euo pipefail -c '
             test "$(git rev-parse HEAD)" = "$EXPECTED_COMMIT"
-            test "$(dpkg-parsechangelog -SVersion)" = "1.0~rc1"
+            test "$(dpkg-parsechangelog -SVersion)" = "1.0"
             git diff --check
             mkdir -p dist
             python3 .github/scripts/check_cpu.py environment --output dist/cpu-environment.json
@@ -95,7 +95,7 @@ jobs:
         run: |
           runuser -u mainuan-build -- bash -euo pipefail -c '
             dpkg-buildpackage -us -uc -b 2>&1 | tee dist/build.log
-            package="../mainuan-gestao-drivers_1.0~rc1_all.deb"
+            package="../mainuan-gestao-drivers_1.0_all.deb"
             python3 tests/inspect_deb.py "$package"
             dpkg-deb -I "$package" > dist/package-info.log
             dpkg-deb -c "$package" > dist/package-files.log
@@ -105,16 +105,16 @@ jobs:
             python3 .github/scripts/check_cpu.py dependencies dist/cpu-startup.json --output dist/cpu-dependencies.json
             cp -- "$package" dist/
             cd dist
-            sha256sum "mainuan-gestao-drivers_1.0~rc1_all.deb" > SHA256SUMS
+            sha256sum "mainuan-gestao-drivers_1.0_all.deb" > SHA256SUMS
             sha256sum --check SHA256SUMS
           '
 
       - name: Upload the validated package, checksum and provenance
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: mainuan-gestao-drivers-1.0~rc1-${{ github.sha }}
+          name: mainuan-gestao-drivers-1.0-${{ github.sha }}
           path: |
-            dist/mainuan-gestao-drivers_1.0~rc1_all.deb
+            dist/mainuan-gestao-drivers_1.0_all.deb
             dist/SHA256SUMS
             dist/cpu-*.json
             dist/*.log

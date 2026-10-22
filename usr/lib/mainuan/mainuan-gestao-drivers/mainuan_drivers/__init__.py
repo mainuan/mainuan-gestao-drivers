@@ -6,7 +6,7 @@ APP_NAME = "mainuan-gestao-drivers"
 APP_ID = "org.mainuan.GestaoDrivers"
 DISPLAY_NAME = "Gestão de Drivers"
 ORGANIZATION = "Mainuan"
-__version__ = "1.0~rc1"
+__version__ = "1.0"
 VERSION = __version__
 
 SHARE_DIR = Path(__file__).resolve().parents[4] / "share"

@@ -73,7 +73,7 @@ class IndependentPayloadTests(unittest.TestCase):
 class CpuEvidenceTests(unittest.TestCase):
     def setUp(self):
         self.config = 'APT::Architecture-Variants "";\nAPT::Architectures:: "amd64";\n'
-        self.packages = 'python3\tinstalled\tamd64\t\t3.14\napp\tinstalled\tall\t\t1.0~rc1\n'
+        self.packages = 'python3\tinstalled\tamd64\t\t3.14\napp\tinstalled\tall\t\t1.0\n'
         self.release = {"ID": "ubuntu", "VERSION_ID": "26.04"}
 
     def test_baseline_inputs_pass_without_assuming_runner_cpu(self):

@@ -528,7 +528,7 @@ class DriverExecutionController(QObject):
 
     def _verify_effects(self, result, action, after_removal=False):
         if any(info in {20, 30} for info, ref in result.effects):
-            raise PlanningError(_("PackageKit proposed a package downgrade. This beta cannot apply this plan safely."))
+            raise PlanningError(_("PackageKit proposed a package downgrade. This version cannot apply this plan safely."))
         if any(info == 23 for info, ref in result.effects):
             raise PlanningError(_("PackageKit reported an untrusted package. No further transaction was started."))
         installs = [ref for info, ref in result.effects if info in INSTALL_INFO]
@@ -547,7 +547,7 @@ class DriverExecutionController(QObject):
             raise PlanningError(_("A target package changed version or architecture. Review the detected plan again."))
         if self._context is None and not self.test_mode and self._secure_boot not in (SecureBootState.DISABLED, SecureBootState.UNSUPPORTED) and any(
                 ref.name == "dkms" or ref.name.endswith("-dkms") or "-dkms-" in ref.name for ref in installs):
-            raise PlanningError(_("This driver requires a Secure Boot flow that is not supported by this beta."))
+            raise PlanningError(_("This driver requires a Secure Boot flow that is not supported by this version."))
         if not {ref.name for ref in expected} <= {ref.name for ref in effects}:
             raise PlanningError(_("PackageKit could not safely simulate all planned changes."))
         if action == TransactionAction.REMOVE and installs:

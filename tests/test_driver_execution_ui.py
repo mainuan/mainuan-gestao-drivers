@@ -62,13 +62,15 @@ class DriverExecutionUITests(unittest.TestCase):
         window._update_controls()
         self.assertFalse(window.apply_button.isEnabled())
 
-    def test_confirmation_has_concrete_packages_beta_and_explicit_actions(self):
+    def test_confirmation_has_concrete_packages_and_explicit_actions(self):
         window, device, planner, factory = self.window()
         plan = planner.build({device.device_id: target(device, "new-driver")})
         prepared = PreparedPlan(plan, plan.installs, plan.removals)
         dialog = PlanDialog(prepared, confirmation=True, changed=True)
         labels = [label.text() for label in dialog.findChildren(QLabel)]
-        self.assertIn("Release candidate", labels)
+        self.assertIn("Changes that will be applied", labels)
+        self.assertNotIn("Release candidate", labels)
+        self.assertNotIn("Beta version", labels)
         self.assertIn("new-driver", labels)
         self.assertIn("old-driver", labels)
         self.assertTrue(any("Review the updated" in label for label in labels))

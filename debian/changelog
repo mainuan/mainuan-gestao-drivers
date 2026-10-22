@@ -1,3 +1,14 @@
+mainuan-gestao-drivers (1.0) resolute; urgency=medium
+
+  * Release the first stable Mainuan/Kubuntu 26.04 driver manager with Qt6.
+  * Use ubuntu-drivers-common recommendations and PackageKit/PolicyKit changes.
+  * Preserve distro/third-party APT candidates and NVIDIA driver variants.
+  * Retain DKMS/Secure Boot/MOK preflight, Broadcom and activation checks.
+  * Preserve Live Session protection, accessibility and RC input hardening.
+  * Consolidate baseline CPU/CI validation, SVG icons and release documentation.
+
+ -- Mainuan Packaging <openwebosbr@gmail.com>  Thu, 22 Oct 2026 17:55:29 -0300
+
 mainuan-gestao-drivers (1.0~rc1) UNRELEASED; urgency=medium
 
   * Freeze the Mainuan/Kubuntu port with pure Qt6, without GTK/XApp.

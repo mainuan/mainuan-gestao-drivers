@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-"""Read-only firmware checks and guards for the beta's unsupported MOK flow."""
+"""Read-only firmware checks and guards for unsupported MOK flows."""
 import gettext
 from pathlib import Path
 
@@ -28,5 +28,5 @@ def read_secure_boot(efi_root="/sys/firmware/efi"):
 
 def check_secure_boot(plan, state):
     if state not in (SecureBootState.DISABLED, SecureBootState.UNSUPPORTED) and any(ref.requires_dkms is not False for ref in plan.installs):
-        raise PlanningError(_("This driver requires a Secure Boot flow that is not supported by this beta. "
+        raise PlanningError(_("This driver requires a Secure Boot flow that is not supported by this version. "
                               "No firmware or MOK settings will be changed."))

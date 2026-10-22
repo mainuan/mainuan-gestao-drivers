@@ -2,9 +2,11 @@ name: Build Mainuan Debian package
 
 on:
   push:
-    branches: [port/kubuntu-26.04]
+    branches: [master]
+    tags:
+      - 'v*'
   pull_request:
-    branches: [port/kubuntu-26.04]
+    branches: [master]
   workflow_dispatch:
 
 permissions:

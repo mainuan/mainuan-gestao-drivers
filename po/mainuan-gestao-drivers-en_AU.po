@@ -6,12 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mainuan-gestao-drivers 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-14 09:37-0300\n"
+"Report-Msgid-Bugs-To: https://github.com/mainuan/mainuan-gestao-drivers/"
+"issues\n"
+"POT-Creation-Date: 2026-11-16 11:17-0300\n"
 "PO-Revision-Date: 2021-08-12 14:10+0000\n"
 "Last-Translator: Edward <Unknown>\n"
 "Language-Team: English (Australia) <en_AU@li.org>\n"
-"Language: \n"
+"Language: en_AU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,358 +20,1006 @@ msgstr ""
 "X-Launchpad-Export-Date: 2026-01-08 15:38+0000\n"
 "X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:85
+#. Translators: application name shown in the window title and menus.
+#: data/org.mainuan.GestaoDrivers.desktop.in:3
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/__init__.py:25
+msgid "Driver Manager"
+msgstr "Driver Manager"
+
+#: data/org.mainuan.GestaoDrivers.desktop.in:4
+msgid "Manage the system's hardware drivers"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:328
+msgid ""
+"The prebuilt module's package trust or running-kernel compatibility could "
+"not be verified."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:330
+msgid ""
+"The prebuilt module's Secure Boot signature trust could not be verified. "
+"Repository trust alone does not establish module trust."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:332
+msgid ""
+"The running kernel is outside the standard prebuilt module update path. "
+"Verify module compatibility."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:334
+msgid ""
+"A kernel update is pending. Review system updates before changing drivers."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:336
+msgid "The kernel update state could not be verified."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:338
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:670
+#, fuzzy
+#| msgid "You need to restart the computer to complete the driver changes."
+msgid "Restart the computer and complete key enrollment in MokManager."
+msgstr "You need to restart the computer to complete the driver changes."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:342
+msgid ""
+"PackageKit must resolve the prebuilt/DKMS module alternatives before "
+"confirmation."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:347
+msgid ""
+"This driver may need a DKMS module with Secure Boot active or unknown. The "
+"actual DKMS signing certificate must be identified and enrolled before "
+"changes can be applied."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:351
+msgid ""
+"Headers for the running kernel are missing or unverified. Install matching "
+"headers through system updates before retrying."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:353
+msgid "The module build requirements could not be fully verified."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:19
+msgid ""
+"Driver changes are unavailable in the Live Session. Install Mainuan to "
+"manage this computer's drivers."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:21
+msgid ""
+"The system session could not be verified. Driver changes are blocked; "
+"viewing remains available."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:13
+msgid "General devices"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:14
+msgid "Secure Boot + prebuilt module"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:15
+msgid "Secure Boot + DKMS + enrolled MOK"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:16
+msgid "Secure Boot + DKMS + missing MOK"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:17
+msgid "Secure Boot disabled + DKMS"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:18
+msgid "Secure Boot unknown + DKMS"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:19
+msgid "Broadcom DKMS"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:20
+msgid "NVIDIA custom closed pin"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:21
+#, fuzzy
+#| msgid "recommended"
+msgid "NVIDIA open recommended"
+msgstr "recommended"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:22
+#, fuzzy
+#| msgid "recommended"
+msgid "NVIDIA closed recommended"
+msgstr "recommended"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:23
+#, fuzzy
+#| msgid "recommended"
+msgid "NVIDIA server recommended"
+msgstr "recommended"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:24
+msgid "Kernel update pending"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:25
+msgid "Kernel headers missing"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:26
+msgid "MOK enrollment pending"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:27
+msgid "Secure Boot + DKMS + unrelated MOK"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:28
+msgid "Secure Boot + DKMS + matching enrollment pending"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:29
+msgid "Secure Boot + DKMS + signing unknown"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:30
+msgid "Installed + driver active"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:31
+msgid "Installed + restart required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:32
+msgid "Installed + MOK enrollment required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:33
+msgid "Installed + activation unverified"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:34
+msgid "Installed + previous driver bound"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:35
+#, fuzzy
+#| msgid "This device is using the recommended driver."
+msgid "Third-party recommended driver"
+msgstr "This device is using the recommended driver."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:36
+msgid "Third-party DKMS driver"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:37
+msgid "Live Session; changes blocked"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:38
+msgid "PackageKit unavailable"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:39
+msgid "Driver detection error"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:40
+#, fuzzy
+msgid "No additional drivers"
+msgstr "No proprietary drivers are in use."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:214
+msgid "Driver detection failed. No new transaction was started."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:240
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:393
+msgid "PackageKit is unavailable. Driver detection is still available."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:249
+msgid "This PackageKit version is not supported for applying driver changes."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:251
+msgid "PackageKit is busy. Wait for the other package operation to finish."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:273
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:433
+msgid "The PackageKit service disconnected."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:414
+msgid "Preparing driver changes..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:531
+msgid ""
+"PackageKit proposed a package downgrade. This version cannot apply this plan "
+"safely."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:533
+msgid ""
+"PackageKit reported an untrusted package. No further transaction was started."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:539
+msgid ""
+"PackageKit proposed additional removals outside the confirmed driver plan."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:541
+msgid "A package selected for removal changed version. Review the plan again."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:547
+msgid ""
+"A target package changed version or architecture. Review the detected plan "
+"again."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:550
+msgid ""
+"This driver requires a Secure Boot flow that is not supported by this "
+"version."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:552
+msgid "PackageKit could not safely simulate all planned changes."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:554
+msgid "The removal simulation requires unexpected package installations."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:562
+msgid ""
+"Installation dependencies changed after removal. No further change was "
+"applied."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:617
+msgid "The package operation was interrupted after changes started."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:624
+msgid ""
+"PackageKit reported an unexpected removal. No further transaction was "
+"started."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:646
+msgid "The operation was cancelled."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:58
+msgid "Waiting..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:59
+msgid "Preparing..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:60
+msgid "Resolving dependencies..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:61
+msgid "Downloading..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:62
+msgid "Installing..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:63
+msgid "Removing..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:64
+msgid "Finalizing..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:65
+msgid "Cancelling..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:66
+msgid "Finished."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:67
+msgid "Transaction failed."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:68
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:249
+msgid "Transaction cancelled."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:69
+msgid "The driver change was not completed."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:87
+msgid "The system bus is unavailable."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:213
+msgid "Driver changes are not enabled in this interface."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:286
+msgid "PackageKit returned an invalid transaction path"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:289
+msgid "Cannot subscribe to PackageKit signals"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:322
+msgid "Waiting for the PackageKit result. The operation may still be running."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:367
+msgid "The planned package version is no longer available."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:370
+msgid "A package selected for removal is no longer installed."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:375
+msgid "PackageKit did not complete the transaction."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:379
+msgid "PackageKit destroyed the transaction before Finished"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:160
+msgid "A driver transaction plan is required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:164
+msgid "Invalid driver selections"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:167
+msgid "Plan does not match the backend snapshot"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:170
+msgid "Preview or unavailable packages cannot be executed"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:179
+msgid "The selected device is no longer available"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:184
+msgid "The selected driver is no longer available"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/safety.py:31
+msgid ""
+"This driver requires a Secure Boot flow that is not supported by this "
+"version. No firmware or MOK settings will be changed."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/application.py:42
+msgid "Show detailed diagnostic logs"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:82
+msgid ""
+"The driver detection backend is unavailable. Check the application "
+"dependencies and try again."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:83
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:478
+msgid "Driver detection failed. Consult the application log for details."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:114
 #, python-format
 msgid "%s - Qt test mode"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:89
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:118
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:247
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:248
 msgid "Refresh"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:92
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:121
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
 msgid "Close"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:95
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:124
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
 msgid "Preview changes"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:139
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:141
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:128
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
+#, fuzzy
+#| msgid "_Apply Changes"
+msgid "Apply changes"
+msgstr "_Apply Changes"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:156
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:552
+msgid "Test mode - no changes will be applied to the system"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:162
+msgid "Test scenario"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:190
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:633
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:634
+#, fuzzy
+#| msgid "_Cancel"
+msgid "Cancel"
+msgstr "_Cancel"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
+msgid "Review and confirm the selected driver changes"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
+msgid "Detect drivers again"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
+msgid "View planned packages without changing the system"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
+#, fuzzy
+#| msgid "Driver Manager"
+msgid "Close the driver manager"
+msgstr "Driver Manager"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
+msgid "Request cancellation when PackageKit permits it"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
+msgid "Driver operation progress"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
+msgid "Progress reported by PackageKit"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
+msgid "Current detection result"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
+msgid "Driver detection status"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
+msgid "Driver operation result"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
+msgid "Result and activation information"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:213
+msgid "System availability"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:214
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:568
+msgid "System verification"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:218
+msgid "Help"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:219
+msgid "Copy diagnostic information"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:220
+msgid "Copy local diagnostics to the clipboard; nothing is uploaded"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:223
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
+msgid "About"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:256
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:258
 msgid "Searching for available drivers..."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:165
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:289
 #, fuzzy
 msgid "No additional drivers are necessary."
 msgstr "No proprietary drivers are in use."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:167
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:291
 msgid ""
-"No additional drivers are necessary.\n"
+"Your system is using the appropriate drivers.\n"
 "\n"
-"Your computer is already using the available/recommended drivers."
+"No additional drivers are available or necessary."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:179
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:303
 #, python-format
 msgid "%(count)d device was found."
 msgid_plural "%(count)d devices were found."
 msgstr[0] ""
 msgstr[1] ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:199
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
+#, python-format
+msgid ""
+"%(name)s %(version)s\n"
+"Mainuan\n"
+"\n"
+"Originally derived from Linux Mint Driver Manager.\n"
+"GPL-2.0-or-later; Clement Lefebvre and contributors."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:337
 msgid "Cannot plan this change"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:200
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:338
 msgid ""
 "The driver selection is inconsistent or cannot be changed automatically."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:213
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:214
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:374
+msgid ""
+"Changes cannot be applied because PackageKit is unavailable. Driver "
+"detection remains available."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:468
+msgid "Package operations finished. Checking driver activation..."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:487
 msgid "Driver detection failed."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:247
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:490
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:491
+msgid "Try again"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:512
+msgid "Driver changes are in progress"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:513
+msgid "Wait for the operation to finish before closing this window."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:514
+msgid "Choose Cancel to request transaction cancellation."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:539
 msgid "Planned changes"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:250
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:544
+msgid "Changes that will be applied"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:548
+msgid ""
+"The system or package plan changed. Review the updated changes before "
+"applying."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:556
 msgid "Preview only. These changes will not be executed."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:253
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:563
+#, python-format
+msgid "Third-party repository: %s"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:573
+msgid "Secure Boot: enabled"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:574
+msgid "Secure Boot: disabled"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:575
+msgid "Secure Boot: unsupported"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:576
+msgid "Secure Boot: unknown"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:577
+msgid "Module: no DKMS required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:578
+msgid "Module: DKMS required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:579
+msgid "Module: prebuilt/DKMS alternatives"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:580
+msgid "Module requirements: unknown"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:584
+msgid "MOK: signing certificate enrolled"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:585
+msgid "MOK: not enrolled"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:586
+msgid "MOK: enrollment pending"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:587
+#, fuzzy
+#| msgid "Unknown"
+msgid "MOK: unknown"
+msgstr "Unknown"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:589
+msgid "DKMS signing: configured"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:590
+msgid "Kernel headers: present"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:591
+msgid "Kernel headers: missing"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:592
+msgid "Kernel headers: unknown"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:593
+msgid "Kernel headers: not required"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:597
+msgid "Restart: required to complete activation"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
+msgid "Blocked: "
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
+msgid "Warning: "
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Install:"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:253
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Remove:"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:259
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:612
 msgid "None"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:266
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:619
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:678
 msgid "A restart may be required."
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:45
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:411
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:515
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:628
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:629
+msgid "Apply"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:630
+msgid "Apply only the changes listed in this confirmation"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:644
+msgid ""
+"The driver change was not completed. Some changes may already have been "
+"applied. The actual system state is being detected again. No automatic "
+"restoration was attempted."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:647
+#, python-format
+msgid "Completed stages: %s"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
+msgid "Installation"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
+msgid "Removal"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:650
+msgid ""
+"The changes were not applied because authorization was cancelled or denied."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:652
+msgid ""
+"The operation was cancelled. The actual system state is being detected again."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:654
+msgid "Simulation completed. No system changes were made."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:655
+msgid "The changes were applied successfully."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:656
+#, fuzzy
+msgid "No driver changes were necessary."
+msgstr "No proprietary drivers are in use."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:658
+msgid "Package changes completed. Driver activation checked separately."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:660
+msgid ""
+"The package download failed. Check the connection and review the detected "
+"driver state."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:662
+msgid ""
+"Package dependencies prevented this change. No more aggressive removal was "
+"attempted."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:664
+msgid ""
+"The driver operation failed. The actual system state is being detected again."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:672
+#, fuzzy
+#| msgid "You need to restart the computer to complete the driver changes."
+msgid "A system restart is required to complete driver activation."
+msgstr "You need to restart the computer to complete the driver changes."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:674
+#, fuzzy
+#| msgid "You need to restart the computer to complete the driver changes."
+msgid "Restart your session to complete the changes."
+msgstr "You need to restart the computer to complete the driver changes."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:676
+#, fuzzy
+#| msgid "You need to restart the computer to complete the driver changes."
+msgid "Restart the affected applications to complete the changes."
+msgstr "You need to restart the computer to complete the driver changes."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
 msgid "Processor microcode"
 msgstr "Processor microcode"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:405
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:503
-msgid "This device is using the recommended driver."
-msgstr "This device is using the recommended driver."
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:48
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:406
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:504
-msgid "This device is using an alternative driver."
-msgstr "This device is using an alternative driver."
-
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:49
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:407
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:505
-msgid "This device is using a manually-installed driver."
-msgstr "This device is using a manually-installed driver."
+msgid "The recommended driver package is selected."
+msgstr ""
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:50
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:408
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:506
-msgid "This device is not working."
-msgstr "This device is not working."
+msgid "An alternative driver package is selected."
+msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:57
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:51
+#, fuzzy
+#| msgid "Continue using a manually installed driver"
+msgid "A manually installed driver was detected."
+msgstr "Continue using a manually installed driver"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:52
+#, fuzzy
+msgid "No additional driver is selected."
+msgstr "No proprietary drivers are in use."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:59
 msgid "Current"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:59
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:61
 #, fuzzy
 msgid "Recommended"
 msgstr "recommended"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:61
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
 msgid "Integrated into the system"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
 #, fuzzy
 msgid "Open-source"
 msgstr "open-source"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
 msgid "Proprietary"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:67
 msgid "Installed"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:67
-msgid "Requires an Internet connection"
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:69
+msgid "Source: third-party repository"
 msgstr ""
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:71
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:364
+msgid "Requires an Internet connection"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:75
 msgid "Continue using a manually installed driver"
 msgstr "Continue using a manually installed driver"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:78
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:366
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:82
 msgid "Do not use the device"
 msgstr "Do not use the device"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:86
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:90
 #, fuzzy, python-format
 msgid "Version: %s"
 msgstr "Version"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:90
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:94
 #, fuzzy
 msgid "Driver package"
 msgstr "Driver Manager"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:187
-msgid "Current selection"
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:122
+#, fuzzy
+msgid "Driver active"
+msgstr "Driver Manager"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:123
+msgid "Installed; restart to activate"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:187
-msgid "Available option"
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:124
+msgid "Installed; MOK enrollment required"
 msgstr ""
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:226
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:431
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:125
+msgid "Installed; activation could not be confirmed"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:126
+msgid "Installed; driver is not confirmed active"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:127
+msgid "The requested driver package is not installed."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:128
+msgid "The current driver activation state is unknown."
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:167
+#, python-format
+msgid ""
+"Bound driver: %(driver)s\n"
+"Module: %(module)s\n"
+"Signer: %(signer)s"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:168
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:169
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:262
 msgid "Unknown"
 msgstr "Unknown"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:228
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:433
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
+msgid "Available option"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
+msgid "Current selection"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
+#, python-format
+msgid "APT candidate: %s"
+msgstr ""
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:264
 msgid "Processor"
 msgstr "Processor"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:54
-msgid "Waiting..."
-msgstr ""
+#~ msgid "This device is using an alternative driver."
+#~ msgstr "This device is using an alternative driver."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:55
-msgid "Preparing..."
-msgstr ""
+#~ msgid "This device is using a manually-installed driver."
+#~ msgstr "This device is using a manually-installed driver."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:56
-msgid "Resolving dependencies..."
-msgstr ""
+#~ msgid "This device is not working."
+#~ msgstr "This device is not working."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:57
-msgid "Downloading..."
-msgstr ""
+#~ msgid "Re_vert"
+#~ msgstr "Re_vert"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:58
-msgid "Installing..."
-msgstr ""
+#~ msgid "_Restart..."
+#~ msgstr "_Restart..."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:59
-msgid "Removing..."
-msgstr ""
+#~ msgid "open-source"
+#~ msgstr "open-source"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:60
-msgid "Finalizing..."
-msgstr ""
+#~ msgid "requires a connection to the Internet"
+#~ msgstr "requires a connection to the Internet"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:61
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:192
-msgid "Cancelling..."
-msgstr ""
+#~ msgid "Version"
+#~ msgstr "Version"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:62
-msgid "Finished."
-msgstr ""
+#~ msgid "Do not update the CPU microcode"
+#~ msgstr "Do not update the CPU microcode"
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:63
-msgid "Transaction failed."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:64
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:228
-msgid "Transaction cancelled."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:82
-msgid "The system bus is unavailable."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:193
-msgid "Driver changes are not enabled in this interface."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:333
-msgid "The planned package version is no longer available."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:338
-msgid "PackageKit did not complete the transaction."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:396
-msgid "The PackageKit service disconnected."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:73
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:479
-msgid "Driver Manager"
-msgstr "Driver Manager"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:77
-msgid "Re_vert"
-msgstr "Re_vert"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:79
-msgid "_Apply Changes"
-msgstr "_Apply Changes"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:81
-msgid "_Cancel"
-msgstr "_Cancel"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:83
-msgid "_Restart..."
-msgstr "_Restart..."
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:186
-msgid "Downloading drivers..."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:188
-msgid "Installing drivers..."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:190
-msgid "Removing drivers..."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:194
-msgid "Loading cache..."
-msgstr ""
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:371
-msgid "recommended"
-msgstr "recommended"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:374
-msgid "open-source"
-msgstr "open-source"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:377
-msgid "requires a connection to the Internet"
-msgstr "requires a connection to the Internet"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:379
-msgid "Version"
-msgstr "Version"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:472
-msgid "Do not update the CPU microcode"
-msgstr "Do not update the CPU microcode"
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:523
-msgid "You need to restart the computer to complete the driver changes."
-msgstr "You need to restart the computer to complete the driver changes."
-
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:532
 #, python-format
-msgid "%(count)d proprietary driver in use."
-msgid_plural "%(count)d proprietary drivers in use."
-msgstr[0] "%(count)d proprietary driver in use."
-msgstr[1] "%(count)d proprietary drivers in use."
+#~ msgid "%(count)d proprietary driver in use."
+#~ msgid_plural "%(count)d proprietary drivers in use."
+#~ msgstr[0] "%(count)d proprietary driver in use."
+#~ msgstr[1] "%(count)d proprietary drivers in use."
 
-#: usr/lib/mainuan/mainuan-gestao-drivers/gtk_legacy.py:537
-msgid "No proprietary drivers are in use."
-msgstr "No proprietary drivers are in use."
+#~ msgid "No proprietary drivers are in use."
+#~ msgstr "No proprietary drivers are in use."
 
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:52
-msgid "Looking for drivers"
-msgstr ""
+#~ msgid "Your computer does not need any additional drivers."
+#~ msgstr "Your computer does not need any additional drivers."
 
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:75
-msgid "Please wait..."
-msgstr ""
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:210
-msgid "No drivers needed"
-msgstr ""
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:233
-msgid "Your computer does not need any additional drivers."
-msgstr "Your computer does not need any additional drivers."
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:287
-msgid "An error occurred"
-msgstr ""
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:330
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:449
-msgid "OK"
-msgstr ""
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:393
-msgid "You appear to be offline"
-msgstr ""
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:416
 #, fuzzy
-msgid "Connect to the Internet to check for additional drivers."
-msgstr "Your computer does not need any additional drivers."
-
-#: usr/share/mainuan/mainuan-gestao-drivers/gtk-legacy.ui:480
-msgid "Additional and proprietary drivers"
-msgstr ""
+#~ msgid "Connect to the Internet to check for additional drivers."
+#~ msgstr "Your computer does not need any additional drivers."
 
 #~ msgid "Manage the drivers for your devices"
 #~ msgstr "Manage the drivers for your devices"

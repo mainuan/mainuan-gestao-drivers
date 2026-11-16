@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Gestão de Drivers
-Comment=Gerencie os drivers de hardware do sistema
+Name=Driver Manager
+Comment=Manage the system's hardware drivers
 Exec=mainuan-gestao-drivers
 Icon=mainuan-gestao-drivers
 Terminal=false

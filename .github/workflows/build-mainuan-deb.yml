@@ -85,6 +85,13 @@ jobs:
             python3 .github/scripts/check_cpu.py environment --output dist/cpu-environment.json
           '
 
+      - name: Check translation catalogs
+        run: |
+          runuser -u mainuan-build -- bash -euo pipefail -c '
+            po/i18n.sh check-pot
+            po/i18n.sh validate
+          '
+
       - name: Run all tests without driver mutations
         run: |
           runuser -u mainuan-build -- bash -euo pipefail -c '

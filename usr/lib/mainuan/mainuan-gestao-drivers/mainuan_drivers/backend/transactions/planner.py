@@ -157,17 +157,17 @@ class TransactionPlanner:
 
     def validate_plan(self, plan, executable=False):
         if not isinstance(plan, TransactionPlan):
-            raise PlanningError("A driver transaction plan is required")
+            raise PlanningError(_("A driver transaction plan is required"))
         if (not isinstance(plan.selections, tuple)
                 or any(not isinstance(selection, DriverSelection) or not isinstance(selection.device_id, str)
                        for selection in plan.selections)):
-            raise PlanningError("Invalid driver selections")
+            raise PlanningError(_("Invalid driver selections"))
         desired = {selection.device_id: selection.target for selection in plan.selections}
         if len(desired) != len(plan.selections) or self.build(desired) != plan:
-            raise PlanningError("Plan does not match the backend snapshot")
+            raise PlanningError(_("Plan does not match the backend snapshot"))
         if executable and (plan.preview_only or any(
                 not package.package_id for package in plan.installs + plan.removals)):
-            raise PlanningError("Preview or unavailable packages cannot be executed")
+            raise PlanningError(_("Preview or unavailable packages cannot be executed"))
         return plan
 
     def rebuild(self, previous):

@@ -127,7 +127,7 @@ class QtOnlyPackagingTests(unittest.TestCase):
         self.assertFalse((ROOT / "usr/share/icons/hicolor/scalable/status/mainuan-gestao-drivers-offline-symbolic.svg").exists())
 
     def test_gettext_sources_are_only_active_python(self):
-        text = (ROOT / "makepot").read_text()
+        text = (ROOT / "makepot").read_text() + (ROOT / "po/POTFILES.in").read_text()
         self.assertNotIn("gtk_legacy", text)
         self.assertNotIn("Glade", text)
         self.assertNotIn("gtk-legacy", (ROOT / "mainuan-gestao-drivers.pot").read_text())

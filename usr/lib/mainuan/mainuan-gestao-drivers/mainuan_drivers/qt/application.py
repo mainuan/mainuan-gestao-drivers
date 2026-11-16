@@ -4,12 +4,12 @@ import locale
 import logging
 import sys
 
-from PyQt6.QtCore import QCoreApplication
+from PyQt6.QtCore import QCoreApplication, QLibraryInfo, QLocale, QTranslator
 from PyQt6.QtGui import QGuiApplication, QIcon
 from PyQt6.QtWidgets import QApplication
 
 from .main_window import MainWindow
-from .. import APP_NAME, APP_ID, DISPLAY_NAME, ORGANIZATION, VERSION, ICON_PATH, ICON_PNG_PATH, LOCALE_DIR
+from .. import APP_NAME, APP_ID, DISPLAY_NAME, ORGANIZATION, VERSION, ICON_PATH, ICON_PNG_PATH, LOCALE_DIR, display_name
 
 
 APP = APP_NAME
@@ -37,7 +37,7 @@ def run(argv=None):
     if argv is None:
         argv = sys.argv
 
-    parser = argparse.ArgumentParser(prog=APP_NAME, description=DISPLAY_NAME)
+    parser = argparse.ArgumentParser(prog=APP_NAME, description=display_name())
     parser.add_argument("mode", nargs="?", choices=("test",))
     parser.add_argument("--debug", action="store_true", help=_("Show detailed diagnostic logs"))
     parser.add_argument("--version", action="version", version="%s %s" % (DISPLAY_NAME, VERSION))
@@ -51,7 +51,12 @@ def run(argv=None):
     QCoreApplication.setApplicationVersion(VERSION)
     QGuiApplication.setDesktopFileName(APP_ID)
     app = QApplication([argv[0] if argv else APP_NAME])
-    app.setApplicationDisplayName(DISPLAY_NAME)
+    # Standard Qt dialog buttons follow the session language (LANGUAGE/LANG).
+    qt_translator = QTranslator(app)
+    if qt_translator.load(QLocale.system(), "qtbase", "_",
+                          QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)):
+        app.installTranslator(qt_translator)
+    app.setApplicationDisplayName(display_name())
     app.setWindowIcon(application_icon())
 
     window = MainWindow(test_mode=test_mode)

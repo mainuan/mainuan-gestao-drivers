@@ -283,10 +283,10 @@ class PackageKitTransaction(QObject):
         self._path = path.path() if isinstance(path, QtDBus.QDBusObjectPath) else path
         if (not isinstance(self._path, str) or self._path == ROOT_PATH
                 or not re.fullmatch(r"(?:/[A-Za-z0-9_]+)+", self._path)):
-            self._fail(TransactionError("invalid-path", "PackageKit returned an invalid transaction path"))
+            self._fail(TransactionError("invalid-path", _("PackageKit returned an invalid transaction path")))
             return
         if not self.transport.subscribe(self._path):
-            self._fail(TransactionError("signal-connection", "Cannot subscribe to PackageKit signals"))
+            self._fail(TransactionError("signal-connection", _("Cannot subscribe to PackageKit signals")))
             return
         self.transport.call(self._path, PROPERTIES_INTERFACE, "GetAll", [TRANSACTION_INTERFACE], self._initial_properties)
 
@@ -376,7 +376,7 @@ class PackageKitTransaction(QObject):
                     self.errorOccurred.emit(self._error)
                 self._complete(TransactionState.FAILED, exit_code, runtime)
         elif name == "Destroy":
-            self._fail(TransactionError("transaction-destroyed", "PackageKit destroyed the transaction before Finished"))
+            self._fail(TransactionError("transaction-destroyed", _("PackageKit destroyed the transaction before Finished")))
 
     def _refresh_properties(self, args, error):
         if not self._done and not error and args:

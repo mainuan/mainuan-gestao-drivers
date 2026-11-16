@@ -41,7 +41,7 @@ from mainuan_drivers.backend.transactions.models import TransactionState, Restar
 from mainuan_drivers.backend.transactions.planner import package_identity
 
 from .widgets import DeviceWidget, activation_text
-from .. import DISPLAY_NAME, VERSION
+from .. import VERSION, display_name
 from .state import DetectionFailure, ViewModel, ViewState
 
 
@@ -109,7 +109,7 @@ class MainWindow(QMainWindow):
         self._service_message = ""
         self._availability = None
 
-        title = DISPLAY_NAME
+        title = display_name()
         if self.test_mode:
             title = _("%s - Qt test mode") % title
         self.setWindowTitle(title)
@@ -323,7 +323,7 @@ class MainWindow(QMainWindow):
 
     def show_about(self):
         QMessageBox.about(self, _("About"), _("%(name)s %(version)s\nMainuan\n\nOriginally derived from Linux Mint Driver Manager.\nGPL-2.0-or-later; Clement Lefebvre and contributors.") % {
-            "name": DISPLAY_NAME, "version": VERSION})
+            "name": display_name(), "version": VERSION})
 
     @pyqtSlot(object)
     def _set_planner(self, planner):

@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:38+0000\n"
 "X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:38+0000\n"
 
 #. Translators: application name shown in the window title and menus.
 #: data/org.mainuan.GestaoDrivers.desktop.in:3
@@ -28,543 +28,564 @@ msgstr "ড্রাইভার ব্যবস্থাপক"
 
 #: data/org.mainuan.GestaoDrivers.desktop.in:4
 msgid "Manage the system's hardware drivers"
-msgstr ""
+msgstr "সিস্টেমের হার্ডওয়্যার ড্রাইভার পরিচালনা করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:328
 msgid ""
 "The prebuilt module's package trust or running-kernel compatibility could "
 "not be verified."
 msgstr ""
+"আগে থেকে তৈরি মডিউলের প্যাকেজের বিশ্বস্ততা বা চলমান কার্নেলের সাথে সামঞ্জস্যতা "
+"যাচাই করা যায়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:330
 msgid ""
 "The prebuilt module's Secure Boot signature trust could not be verified. "
 "Repository trust alone does not establish module trust."
 msgstr ""
+"আগে থেকে তৈরি মডিউলের Secure Boot স্বাক্ষরের বিশ্বস্ততা যাচাই করা যায়নি। শুধু "
+"রিপোজিটরির বিশ্বস্ততা দিয়ে মডিউলের বিশ্বস্ততা প্রতিষ্ঠিত হয় না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:332
 msgid ""
 "The running kernel is outside the standard prebuilt module update path. "
 "Verify module compatibility."
 msgstr ""
+"চলমান কার্নেলটি আগে থেকে তৈরি মডিউলের সাধারণ আপডেট পথের বাইরে। মডিউলের "
+"সামঞ্জস্যতা যাচাই করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:334
 msgid ""
 "A kernel update is pending. Review system updates before changing drivers."
 msgstr ""
+"একটি কার্নেল আপডেট অপেক্ষমাণ। ড্রাইভার পরিবর্তনের আগে সিস্টেম আপডেটগুলো দেখে নিন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:336
 msgid "The kernel update state could not be verified."
-msgstr ""
+msgstr "কার্নেল আপডেটের অবস্থা যাচাই করা যায়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:338
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:670
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart the computer and complete key enrollment in MokManager."
-msgstr ""
-"ড্রাইভারের পরিবর্তন সমূহ সম্পূর্ণ করার জন্যও আপনার কম্পিউটারটি রিস্টার্ট করা প্রয়োজন।"
+msgstr "কম্পিউটার পুনরায় চালু করে MokManager-এ কী নথিভুক্তি সম্পন্ন করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:342
 msgid ""
 "PackageKit must resolve the prebuilt/DKMS module alternatives before "
 "confirmation."
 msgstr ""
+"নিশ্চিত করার আগে PackageKit-কে আগে থেকে তৈরি/DKMS মডিউলের বিকল্পগুলো নির্ধারণ "
+"করতে হবে।"
 
+# reviewed: "থাকায়" criava relação causal inexistente; o original é condição
+# ("com Secure Boot ativo ou desconhecido")
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:347
 msgid ""
 "This driver may need a DKMS module with Secure Boot active or unknown. The "
 "actual DKMS signing certificate must be identified and enrolled before "
 "changes can be applied."
 msgstr ""
+"Secure Boot সক্রিয় বা অজ্ঞাত অবস্থায় এই ড্রাইভারের জন্য একটি DKMS মডিউল প্রয়োজন "
+"হতে পারে। পরিবর্তন প্রয়োগ করার আগে আসল DKMS স্বাক্ষর সার্টিফিকেট শনাক্ত ও নথিভুক্ত "
+"করতে হবে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:351
 msgid ""
 "Headers for the running kernel are missing or unverified. Install matching "
 "headers through system updates before retrying."
 msgstr ""
+"চলমান কার্নেলের হেডার অনুপস্থিত বা যাচাই করা হয়নি। আবার চেষ্টা করার আগে সিস্টেম "
+"আপডেটের মাধ্যমে মানানসই হেডার ইনস্টল করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:353
 msgid "The module build requirements could not be fully verified."
-msgstr ""
+msgstr "মডিউল বিল্ডের প্রয়োজনীয়তা সম্পূর্ণভাবে যাচাই করা যায়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:19
 msgid ""
 "Driver changes are unavailable in the Live Session. Install Mainuan to "
 "manage this computer's drivers."
 msgstr ""
+"লাইভ সেশনে ড্রাইভার পরিবর্তন উপলব্ধ নয়। এই কম্পিউটারের ড্রাইভার পরিচালনা করতে "
+"Mainuan ইনস্টল করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:21
 msgid ""
 "The system session could not be verified. Driver changes are blocked; "
 "viewing remains available."
 msgstr ""
+"সিস্টেম সেশন যাচাই করা যায়নি। ড্রাইভার পরিবর্তন আটকানো হয়েছে; দেখা এখনও সম্ভব।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:13
 msgid "General devices"
-msgstr ""
+msgstr "সাধারণ ডিভাইস"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:14
 msgid "Secure Boot + prebuilt module"
-msgstr ""
+msgstr "Secure Boot + আগে থেকে তৈরি মডিউল"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:15
 msgid "Secure Boot + DKMS + enrolled MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + নথিভুক্ত MOK"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:16
 msgid "Secure Boot + DKMS + missing MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + অনুপস্থিত MOK"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:17
 msgid "Secure Boot disabled + DKMS"
-msgstr ""
+msgstr "Secure Boot নিষ্ক্রিয় + DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:18
 msgid "Secure Boot unknown + DKMS"
-msgstr ""
+msgstr "Secure Boot অজ্ঞাত + DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:19
 msgid "Broadcom DKMS"
-msgstr ""
+msgstr "Broadcom DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:20
 msgid "NVIDIA custom closed pin"
-msgstr ""
+msgstr "NVIDIA কাস্টম ক্লোজড পিন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:21
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA open recommended"
-msgstr "সুপারিশকৃত"
+msgstr "NVIDIA ওপেন প্রস্তাবিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:22
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA closed recommended"
-msgstr "সুপারিশকৃত"
+msgstr "NVIDIA ক্লোজড প্রস্তাবিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:23
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA server recommended"
-msgstr "সুপারিশকৃত"
+msgstr "NVIDIA সার্ভার প্রস্তাবিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:24
 msgid "Kernel update pending"
-msgstr ""
+msgstr "কার্নেল আপডেট অপেক্ষমাণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:25
 msgid "Kernel headers missing"
-msgstr ""
+msgstr "কার্নেল হেডার অনুপস্থিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:26
 msgid "MOK enrollment pending"
-msgstr ""
+msgstr "MOK নথিভুক্তি অপেক্ষমাণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:27
 msgid "Secure Boot + DKMS + unrelated MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + সম্পর্কহীন MOK"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:28
 msgid "Secure Boot + DKMS + matching enrollment pending"
-msgstr ""
+msgstr "Secure Boot + DKMS + মানানসই নথিভুক্তি অপেক্ষমাণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:29
 msgid "Secure Boot + DKMS + signing unknown"
-msgstr ""
+msgstr "Secure Boot + DKMS + স্বাক্ষর অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:30
 msgid "Installed + driver active"
-msgstr ""
+msgstr "ইনস্টল করা + ড্রাইভার সক্রিয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:31
 msgid "Installed + restart required"
-msgstr ""
+msgstr "ইনস্টল করা + পুনরায় চালু করা প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:32
 msgid "Installed + MOK enrollment required"
-msgstr ""
+msgstr "ইনস্টল করা + MOK নথিভুক্তি প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:33
 msgid "Installed + activation unverified"
-msgstr ""
+msgstr "ইনস্টল করা + সক্রিয়করণ যাচাই করা হয়নি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:34
 msgid "Installed + previous driver bound"
-msgstr ""
+msgstr "ইনস্টল করা + আগের ড্রাইভার যুক্ত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:35
-#, fuzzy
-#| msgid "This device is using the recommended driver."
 msgid "Third-party recommended driver"
-msgstr "ডিভাইসটি নির্দেশিত ড্রাইভার ব্যবহার করছে।"
+msgstr "তৃতীয় পক্ষের প্রস্তাবিত ড্রাইভার"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:36
 msgid "Third-party DKMS driver"
-msgstr ""
+msgstr "তৃতীয় পক্ষের DKMS ড্রাইভার"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:37
 msgid "Live Session; changes blocked"
-msgstr ""
+msgstr "লাইভ সেশন; পরিবর্তন আটকানো"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:38
 msgid "PackageKit unavailable"
-msgstr ""
+msgstr "PackageKit উপলব্ধ নয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:39
 msgid "Driver detection error"
-msgstr ""
+msgstr "ড্রাইভার শনাক্তকরণে ত্রুটি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:40
-#, fuzzy
 msgid "No additional drivers"
-msgstr "কোন প্রপার্টি ড্রাইভার ব্যবহার করা হয় নি।"
+msgstr "কোনো অতিরিক্ত ড্রাইভার নেই"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:214
 msgid "Driver detection failed. No new transaction was started."
-msgstr ""
+msgstr "ড্রাইভার শনাক্তকরণ ব্যর্থ হয়েছে। কোনো নতুন ট্রানজ্যাকশন শুরু করা হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:240
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:393
 msgid "PackageKit is unavailable. Driver detection is still available."
-msgstr ""
+msgstr "PackageKit উপলব্ধ নয়। ড্রাইভার শনাক্তকরণ এখনও উপলব্ধ।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:249
 msgid "This PackageKit version is not supported for applying driver changes."
-msgstr ""
+msgstr "ড্রাইভার পরিবর্তন প্রয়োগের জন্য PackageKit-এর এই সংস্করণ সমর্থিত নয়।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:251
 msgid "PackageKit is busy. Wait for the other package operation to finish."
-msgstr ""
+msgstr "PackageKit ব্যস্ত। প্যাকেজের অন্য প্রক্রিয়াটি শেষ হওয়া পর্যন্ত অপেক্ষা করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:273
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:433
 msgid "The PackageKit service disconnected."
-msgstr ""
+msgstr "PackageKit পরিষেবার সংযোগ বিচ্ছিন্ন হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:414
 msgid "Preparing driver changes..."
-msgstr ""
+msgstr "ড্রাইভার পরিবর্তন প্রস্তুত করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:531
 msgid ""
 "PackageKit proposed a package downgrade. This version cannot apply this plan "
 "safely."
 msgstr ""
+"PackageKit একটি প্যাকেজ ডাউনগ্রেডের প্রস্তাব করেছে। এই সংস্করণ নিরাপদে এই "
+"পরিকল্পনা প্রয়োগ করতে পারে না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:533
 msgid ""
 "PackageKit reported an untrusted package. No further transaction was started."
 msgstr ""
+"PackageKit একটি অবিশ্বস্ত প্যাকেজের কথা জানিয়েছে। আর কোনো ট্রানজ্যাকশন শুরু করা "
+"হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:539
 msgid ""
 "PackageKit proposed additional removals outside the confirmed driver plan."
 msgstr ""
+"PackageKit নিশ্চিত করা ড্রাইভার পরিকল্পনার বাইরে অতিরিক্ত অপসারণের প্রস্তাব করেছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:541
 msgid "A package selected for removal changed version. Review the plan again."
 msgstr ""
+"অপসারণের জন্য নির্বাচিত একটি প্যাকেজের সংস্করণ পরিবর্তিত হয়েছে। পরিকল্পনাটি আবার "
+"পর্যালোচনা করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:547
 msgid ""
 "A target package changed version or architecture. Review the detected plan "
 "again."
 msgstr ""
+"লক্ষ্য প্যাকেজের সংস্করণ বা আর্কিটেকচার পরিবর্তিত হয়েছে। শনাক্ত করা পরিকল্পনাটি আবার "
+"পর্যালোচনা করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:550
 msgid ""
 "This driver requires a Secure Boot flow that is not supported by this "
 "version."
 msgstr ""
+"এই ড্রাইভারের জন্য এমন একটি Secure Boot প্রক্রিয়া প্রয়োজন যা এই সংস্করণ সমর্থন করে "
+"না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:552
 msgid "PackageKit could not safely simulate all planned changes."
-msgstr ""
+msgstr "PackageKit পরিকল্পিত সমস্ত পরিবর্তন নিরাপদে সিমুলেট করতে পারেনি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:554
 msgid "The removal simulation requires unexpected package installations."
-msgstr ""
+msgstr "অপসারণের সিমুলেশনে অপ্রত্যাশিত প্যাকেজ ইনস্টলেশন প্রয়োজন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:562
 msgid ""
 "Installation dependencies changed after removal. No further change was "
 "applied."
 msgstr ""
+"অপসারণের পরে ইনস্টলেশনের নির্ভরতা পরিবর্তিত হয়েছে। আর কোনো পরিবর্তন প্রয়োগ করা "
+"হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:617
 msgid "The package operation was interrupted after changes started."
-msgstr ""
+msgstr "পরিবর্তন শুরু হওয়ার পরে প্যাকেজ প্রক্রিয়াটি বাধাগ্রস্ত হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:624
 msgid ""
 "PackageKit reported an unexpected removal. No further transaction was "
 "started."
 msgstr ""
+"PackageKit একটি অপ্রত্যাশিত অপসারণের কথা জানিয়েছে। আর কোনো ট্রানজ্যাকশন শুরু করা "
+"হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:646
 msgid "The operation was cancelled."
-msgstr ""
+msgstr "প্রক্রিয়াটি বাতিল করা হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:58
 msgid "Waiting..."
-msgstr ""
+msgstr "অপেক্ষা করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:59
 msgid "Preparing..."
-msgstr ""
+msgstr "প্রস্তুত করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:60
 msgid "Resolving dependencies..."
-msgstr ""
+msgstr "নির্ভরতা নির্ধারণ করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:61
 msgid "Downloading..."
-msgstr ""
+msgstr "ডাউনলোড করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:62
 msgid "Installing..."
-msgstr ""
+msgstr "ইনস্টল করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:63
 msgid "Removing..."
-msgstr ""
+msgstr "সরানো হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:64
 msgid "Finalizing..."
-msgstr ""
+msgstr "চূড়ান্ত করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:65
 msgid "Cancelling..."
-msgstr ""
+msgstr "বাতিল করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:66
 msgid "Finished."
-msgstr ""
+msgstr "সম্পন্ন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:67
 msgid "Transaction failed."
-msgstr ""
+msgstr "ট্রানজ্যাকশন ব্যর্থ হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:68
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:249
 msgid "Transaction cancelled."
-msgstr ""
+msgstr "ট্রানজ্যাকশন বাতিল করা হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:69
 msgid "The driver change was not completed."
-msgstr ""
+msgstr "ড্রাইভার পরিবর্তন সম্পন্ন হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:87
 msgid "The system bus is unavailable."
-msgstr ""
+msgstr "সিস্টেম বাস উপলব্ধ নয়।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:213
 msgid "Driver changes are not enabled in this interface."
-msgstr ""
+msgstr "এই ইন্টারফেসে ড্রাইভার পরিবর্তন সক্রিয় নয়।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:286
 msgid "PackageKit returned an invalid transaction path"
-msgstr ""
+msgstr "PackageKit একটি অবৈধ ট্রানজ্যাকশন পাথ ফেরত দিয়েছে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:289
 msgid "Cannot subscribe to PackageKit signals"
-msgstr ""
+msgstr "PackageKit সিগন্যালে সাবস্ক্রাইব করা যাচ্ছে না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:322
 msgid "Waiting for the PackageKit result. The operation may still be running."
-msgstr ""
+msgstr "PackageKit-এর ফলাফলের জন্য অপেক্ষা করা হচ্ছে। প্রক্রিয়াটি এখনও চলতে পারে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:367
 msgid "The planned package version is no longer available."
-msgstr ""
+msgstr "প্যাকেজের পরিকল্পিত সংস্করণটি আর উপলব্ধ নেই।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:370
 msgid "A package selected for removal is no longer installed."
-msgstr ""
+msgstr "অপসারণের জন্য নির্বাচিত একটি প্যাকেজ আর ইনস্টল করা নেই।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:375
 msgid "PackageKit did not complete the transaction."
-msgstr ""
+msgstr "PackageKit ট্রানজ্যাকশনটি সম্পন্ন করেনি।"
 
+# reviewed: "নষ্ট করে দিয়েছে" (estragou) soa como dano; o sentido é encerrar
+# o objeto da transação antes do sinal Finished
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:379
 msgid "PackageKit destroyed the transaction before Finished"
-msgstr ""
+msgstr "Finished সংকেতের আগেই PackageKit ট্রানজ্যাকশনটি বন্ধ করে দিয়েছে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:160
 msgid "A driver transaction plan is required"
-msgstr ""
+msgstr "একটি ড্রাইভার ট্রানজ্যাকশন পরিকল্পনা প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:164
 msgid "Invalid driver selections"
-msgstr ""
+msgstr "অবৈধ ড্রাইভার নির্বাচন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:167
 msgid "Plan does not match the backend snapshot"
-msgstr ""
+msgstr "পরিকল্পনাটি ব্যাকএন্ডের স্ন্যাপশটের সাথে মেলে না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:170
 msgid "Preview or unavailable packages cannot be executed"
-msgstr ""
+msgstr "প্রিভিউ বা অনুপলব্ধ প্যাকেজ সম্পাদন করা যায় না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:179
 msgid "The selected device is no longer available"
-msgstr ""
+msgstr "নির্বাচিত ডিভাইসটি আর উপলব্ধ নেই"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:184
 msgid "The selected driver is no longer available"
-msgstr ""
+msgstr "নির্বাচিত ড্রাইভারটি আর উপলব্ধ নেই"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/safety.py:31
 msgid ""
 "This driver requires a Secure Boot flow that is not supported by this "
 "version. No firmware or MOK settings will be changed."
 msgstr ""
+"এই ড্রাইভারের জন্য এমন একটি Secure Boot প্রক্রিয়া প্রয়োজন যা এই সংস্করণ সমর্থন করে "
+"না। কোনো ফার্মওয়্যার বা MOK সেটিং পরিবর্তন করা হবে না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/application.py:42
 msgid "Show detailed diagnostic logs"
-msgstr ""
+msgstr "বিস্তারিত ডায়াগনস্টিক লগ দেখান"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:82
 msgid ""
 "The driver detection backend is unavailable. Check the application "
 "dependencies and try again."
 msgstr ""
+"ড্রাইভার শনাক্তকরণ ব্যাকএন্ড উপলব্ধ নয়। অ্যাপ্লিকেশনের নির্ভরতা পরীক্ষা করে আবার "
+"চেষ্টা করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:83
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:478
 msgid "Driver detection failed. Consult the application log for details."
-msgstr ""
+msgstr "ড্রাইভার শনাক্তকরণ ব্যর্থ হয়েছে। বিস্তারিত জানতে অ্যাপ্লিকেশনের লগ দেখুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:114
 #, python-format
 msgid "%s - Qt test mode"
-msgstr ""
+msgstr "%s - Qt পরীক্ষা মোড"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:118
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:247
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:248
 msgid "Refresh"
-msgstr ""
+msgstr "রিফ্রেশ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:121
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
 msgid "Close"
-msgstr ""
+msgstr "বন্ধ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:124
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
 msgid "Preview changes"
-msgstr ""
+msgstr "পরিবর্তনগুলোর প্রিভিউ দেখুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:128
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
-#, fuzzy
-#| msgid "_Apply Changes"
 msgid "Apply changes"
-msgstr "পরিবর্তন সমূহ প্রয়োগ হচ্ছে(_A)"
+msgstr "পরিবর্তনগুলো প্রয়োগ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:156
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:552
 msgid "Test mode - no changes will be applied to the system"
-msgstr ""
+msgstr "পরীক্ষা মোড - সিস্টেমে কোনো পরিবর্তন প্রয়োগ করা হবে না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:162
 msgid "Test scenario"
-msgstr ""
+msgstr "পরীক্ষার পরিস্থিতি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:190
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:633
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:634
-#, fuzzy
-#| msgid "_Cancel"
 msgid "Cancel"
-msgstr "বাতিল করুন (_C)"
+msgstr "বাতিল করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
 msgid "Review and confirm the selected driver changes"
-msgstr ""
+msgstr "নির্বাচিত ড্রাইভার পরিবর্তনগুলো পর্যালোচনা ও নিশ্চিত করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
 msgid "Detect drivers again"
-msgstr ""
+msgstr "আবার ড্রাইভার শনাক্ত করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
 msgid "View planned packages without changing the system"
-msgstr ""
+msgstr "সিস্টেম পরিবর্তন না করে পরিকল্পিত প্যাকেজগুলো দেখুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
-#, fuzzy
-#| msgid "Driver Manager"
 msgid "Close the driver manager"
-msgstr "ড্রাইভার ব্যবস্থাপক"
+msgstr "ড্রাইভার ম্যানেজার বন্ধ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
 msgid "Request cancellation when PackageKit permits it"
-msgstr ""
+msgstr "PackageKit অনুমতি দিলে বাতিলের অনুরোধ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
 msgid "Driver operation progress"
-msgstr ""
+msgstr "ড্রাইভার প্রক্রিয়ার অগ্রগতি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
 msgid "Progress reported by PackageKit"
-msgstr ""
+msgstr "PackageKit-এর জানানো অগ্রগতি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
 msgid "Current detection result"
-msgstr ""
+msgstr "বর্তমান শনাক্তকরণের ফলাফল"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
 msgid "Driver detection status"
-msgstr ""
+msgstr "ড্রাইভার শনাক্তকরণের অবস্থা"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
 msgid "Driver operation result"
-msgstr ""
+msgstr "ড্রাইভার প্রক্রিয়ার ফলাফল"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
 msgid "Result and activation information"
-msgstr ""
+msgstr "ফলাফল ও সক্রিয়করণের তথ্য"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:213
 msgid "System availability"
-msgstr ""
+msgstr "সিস্টেমের প্রাপ্যতা"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:214
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:568
 msgid "System verification"
-msgstr ""
+msgstr "সিস্টেম যাচাইকরণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:218
 msgid "Help"
-msgstr ""
+msgstr "সহায়তা"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:219
 msgid "Copy diagnostic information"
-msgstr ""
+msgstr "ডায়াগনস্টিক তথ্য কপি করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:220
 msgid "Copy local diagnostics to the clipboard; nothing is uploaded"
-msgstr ""
+msgstr "স্থানীয় ডায়াগনস্টিক তথ্য ক্লিপবোর্ডে কপি করুন; কিছুই আপলোড করা হয় না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:223
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
 msgid "About"
-msgstr ""
+msgstr "পরিচিতি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:256
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:258
 msgid "Searching for available drivers..."
-msgstr ""
+msgstr "উপলব্ধ ড্রাইভার খোঁজা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:289
-#, fuzzy
 msgid "No additional drivers are necessary."
-msgstr "কোন প্রপার্টি ড্রাইভার ব্যবহার করা হয় নি।"
+msgstr "কোনো অতিরিক্ত ড্রাইভারের প্রয়োজন নেই।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:291
 msgid ""
@@ -572,13 +593,16 @@ msgid ""
 "\n"
 "No additional drivers are available or necessary."
 msgstr ""
+"আপনার সিস্টেম উপযুক্ত ড্রাইভার ব্যবহার করছে।\n"
+"\n"
+"কোনো অতিরিক্ত ড্রাইভার উপলব্ধ নেই বা প্রয়োজন নেই।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:303
 #, python-format
 msgid "%(count)d device was found."
 msgid_plural "%(count)d devices were found."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(count)dটি ডিভাইস পাওয়া গেছে।"
+msgstr[1] "%(count)dটি ডিভাইস পাওয়া গেছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
 #, python-format
@@ -589,177 +613,186 @@ msgid ""
 "Originally derived from Linux Mint Driver Manager.\n"
 "GPL-2.0-or-later; Clement Lefebvre and contributors."
 msgstr ""
+"%(name)s %(version)s\n"
+"Mainuan\n"
+"\n"
+"মূলত Linux Mint Driver Manager থেকে উদ্ভূত।\n"
+"GPL-2.0-or-later; Clement Lefebvre ও অবদানকারীরা।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:337
 msgid "Cannot plan this change"
-msgstr ""
+msgstr "এই পরিবর্তনের পরিকল্পনা করা যাচ্ছে না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:338
 msgid ""
 "The driver selection is inconsistent or cannot be changed automatically."
-msgstr ""
+msgstr "ড্রাইভার নির্বাচনটি অসংগত অথবা স্বয়ংক্রিয়ভাবে পরিবর্তন করা যায় না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:374
 msgid ""
 "Changes cannot be applied because PackageKit is unavailable. Driver "
 "detection remains available."
 msgstr ""
+"PackageKit উপলব্ধ না থাকায় পরিবর্তন প্রয়োগ করা যাচ্ছে না। ড্রাইভার শনাক্তকরণ এখনও "
+"উপলব্ধ।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:468
 msgid "Package operations finished. Checking driver activation..."
-msgstr ""
+msgstr "প্যাকেজ প্রক্রিয়া শেষ হয়েছে। ড্রাইভার সক্রিয়করণ পরীক্ষা করা হচ্ছে..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:487
 msgid "Driver detection failed."
-msgstr ""
+msgstr "ড্রাইভার শনাক্তকরণ ব্যর্থ হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:490
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:491
 msgid "Try again"
-msgstr ""
+msgstr "আবার চেষ্টা করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:512
 msgid "Driver changes are in progress"
-msgstr ""
+msgstr "ড্রাইভার পরিবর্তন চলছে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:513
 msgid "Wait for the operation to finish before closing this window."
-msgstr ""
+msgstr "এই উইন্ডো বন্ধ করার আগে প্রক্রিয়াটি শেষ হওয়া পর্যন্ত অপেক্ষা করুন।"
 
+# reviewed: rótulo do botão citado precisa de aspas; sem elas a frase lê
+# "cancele, escolha"
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:514
 msgid "Choose Cancel to request transaction cancellation."
-msgstr ""
+msgstr "ট্রানজ্যাকশন বাতিলের অনুরোধ করতে “বাতিল করুন” বেছে নিন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:539
 msgid "Planned changes"
-msgstr ""
+msgstr "পরিকল্পিত পরিবর্তন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:544
 msgid "Changes that will be applied"
-msgstr ""
+msgstr "যে পরিবর্তনগুলো প্রয়োগ করা হবে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:548
 msgid ""
 "The system or package plan changed. Review the updated changes before "
 "applying."
 msgstr ""
+"সিস্টেম বা প্যাকেজ পরিকল্পনা পরিবর্তিত হয়েছে। প্রয়োগ করার আগে হালনাগাদ পরিবর্তনগুলো "
+"পর্যালোচনা করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:556
 msgid "Preview only. These changes will not be executed."
-msgstr ""
+msgstr "শুধুমাত্র প্রিভিউ। এই পরিবর্তনগুলো কার্যকর করা হবে না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:563
 #, python-format
 msgid "Third-party repository: %s"
-msgstr ""
+msgstr "তৃতীয় পক্ষের রিপোজিটরি: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:573
 msgid "Secure Boot: enabled"
-msgstr ""
+msgstr "Secure Boot: সক্রিয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:574
 msgid "Secure Boot: disabled"
-msgstr ""
+msgstr "Secure Boot: নিষ্ক্রিয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:575
 msgid "Secure Boot: unsupported"
-msgstr ""
+msgstr "Secure Boot: অসমর্থিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:576
 msgid "Secure Boot: unknown"
-msgstr ""
+msgstr "Secure Boot: অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:577
 msgid "Module: no DKMS required"
-msgstr ""
+msgstr "মডিউল: DKMS প্রয়োজন নেই"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:578
 msgid "Module: DKMS required"
-msgstr ""
+msgstr "মডিউল: DKMS প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:579
 msgid "Module: prebuilt/DKMS alternatives"
-msgstr ""
+msgstr "মডিউল: আগে থেকে তৈরি/DKMS বিকল্প"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:580
 msgid "Module requirements: unknown"
-msgstr ""
+msgstr "মডিউলের প্রয়োজনীয়তা: অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:584
 msgid "MOK: signing certificate enrolled"
-msgstr ""
+msgstr "MOK: স্বাক্ষর সার্টিফিকেট নথিভুক্ত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:585
 msgid "MOK: not enrolled"
-msgstr ""
+msgstr "MOK: নথিভুক্ত নয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:586
 msgid "MOK: enrollment pending"
-msgstr ""
+msgstr "MOK: নথিভুক্তি অপেক্ষমাণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:587
-#, fuzzy
-#| msgid "Unknown"
 msgid "MOK: unknown"
-msgstr "অজ্ঞাত"
+msgstr "MOK: অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:589
 msgid "DKMS signing: configured"
-msgstr ""
+msgstr "DKMS স্বাক্ষর: কনফিগার করা আছে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:590
 msgid "Kernel headers: present"
-msgstr ""
+msgstr "কার্নেল হেডার: উপস্থিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:591
 msgid "Kernel headers: missing"
-msgstr ""
+msgstr "কার্নেল হেডার: অনুপস্থিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:592
 msgid "Kernel headers: unknown"
-msgstr ""
+msgstr "কার্নেল হেডার: অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:593
 msgid "Kernel headers: not required"
-msgstr ""
+msgstr "কার্নেল হেডার: প্রয়োজন নেই"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:597
 msgid "Restart: required to complete activation"
-msgstr ""
+msgstr "পুনরায় চালু করা: সক্রিয়করণ সম্পন্ন করতে প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
 msgid "Blocked: "
-msgstr ""
+msgstr "আটকানো: "
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
 msgid "Warning: "
-msgstr ""
+msgstr "সতর্কতা: "
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Install:"
-msgstr ""
+msgstr "ইনস্টল:"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Remove:"
-msgstr ""
+msgstr "অপসারণ:"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:612
 msgid "None"
-msgstr ""
+msgstr "কিছু না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:619
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:678
 msgid "A restart may be required."
-msgstr ""
+msgstr "পুনরায় চালু করার প্রয়োজন হতে পারে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:628
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:629
 msgid "Apply"
-msgstr ""
+msgstr "প্রয়োগ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:630
 msgid "Apply only the changes listed in this confirmation"
-msgstr ""
+msgstr "শুধুমাত্র এই নিশ্চিতকরণে তালিকাভুক্ত পরিবর্তনগুলো প্রয়োগ করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:644
 msgid ""
@@ -767,84 +800,82 @@ msgid ""
 "applied. The actual system state is being detected again. No automatic "
 "restoration was attempted."
 msgstr ""
+"ড্রাইভার পরিবর্তন সম্পন্ন হয়নি। কিছু পরিবর্তন হয়তো ইতিমধ্যে প্রয়োগ করা হয়েছে। "
+"সিস্টেমের প্রকৃত অবস্থা আবার শনাক্ত করা হচ্ছে। কোনো স্বয়ংক্রিয় পুনরুদ্ধারের চেষ্টা করা "
+"হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:647
 #, python-format
 msgid "Completed stages: %s"
-msgstr ""
+msgstr "সম্পন্ন ধাপ: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
 msgid "Installation"
-msgstr ""
+msgstr "ইনস্টলেশন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
 msgid "Removal"
-msgstr ""
+msgstr "অপসারণ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:650
 msgid ""
 "The changes were not applied because authorization was cancelled or denied."
-msgstr ""
+msgstr "অনুমোদন বাতিল বা প্রত্যাখ্যান করায় পরিবর্তনগুলো প্রয়োগ করা হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:652
 msgid ""
 "The operation was cancelled. The actual system state is being detected again."
-msgstr ""
+msgstr "প্রক্রিয়াটি বাতিল করা হয়েছে। সিস্টেমের প্রকৃত অবস্থা আবার শনাক্ত করা হচ্ছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:654
 msgid "Simulation completed. No system changes were made."
-msgstr ""
+msgstr "সিমুলেশন সম্পন্ন হয়েছে। সিস্টেমে কোনো পরিবর্তন করা হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:655
 msgid "The changes were applied successfully."
-msgstr ""
+msgstr "পরিবর্তনগুলো সফলভাবে প্রয়োগ করা হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:656
-#, fuzzy
 msgid "No driver changes were necessary."
-msgstr "কোন প্রপার্টি ড্রাইভার ব্যবহার করা হয় নি।"
+msgstr "কোনো ড্রাইভার পরিবর্তনের প্রয়োজন ছিল না।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:658
 msgid "Package changes completed. Driver activation checked separately."
 msgstr ""
+"প্যাকেজ পরিবর্তন সম্পন্ন হয়েছে। ড্রাইভার সক্রিয়করণ আলাদাভাবে পরীক্ষা করা হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:660
 msgid ""
 "The package download failed. Check the connection and review the detected "
 "driver state."
 msgstr ""
+"প্যাকেজ ডাউনলোড ব্যর্থ হয়েছে। সংযোগ পরীক্ষা করুন এবং শনাক্ত করা ড্রাইভারের অবস্থা "
+"দেখে নিন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:662
 msgid ""
 "Package dependencies prevented this change. No more aggressive removal was "
 "attempted."
 msgstr ""
+"প্যাকেজের নির্ভরতার কারণে এই পরিবর্তন করা যায়নি। এর চেয়ে কঠোর কোনো অপসারণের "
+"চেষ্টা করা হয়নি।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:664
 msgid ""
 "The driver operation failed. The actual system state is being detected again."
-msgstr ""
+msgstr "ড্রাইভার প্রক্রিয়া ব্যর্থ হয়েছে। সিস্টেমের প্রকৃত অবস্থা আবার শনাক্ত করা হচ্ছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:672
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "A system restart is required to complete driver activation."
-msgstr ""
-"ড্রাইভারের পরিবর্তন সমূহ সম্পূর্ণ করার জন্যও আপনার কম্পিউটারটি রিস্টার্ট করা প্রয়োজন।"
+msgstr "ড্রাইভার সক্রিয়করণ সম্পন্ন করতে সিস্টেম পুনরায় চালু করা প্রয়োজন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:674
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart your session to complete the changes."
-msgstr ""
-"ড্রাইভারের পরিবর্তন সমূহ সম্পূর্ণ করার জন্যও আপনার কম্পিউটারটি রিস্টার্ট করা প্রয়োজন।"
+msgstr "পরিবর্তনগুলো সম্পন্ন করতে আপনার সেশন পুনরায় চালু করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:676
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart the affected applications to complete the changes."
-msgstr ""
-"ড্রাইভারের পরিবর্তন সমূহ সম্পূর্ণ করার জন্যও আপনার কম্পিউটারটি রিস্টার্ট করা প্রয়োজন।"
+msgstr "পরিবর্তনগুলো সম্পন্ন করতে প্রভাবিত অ্যাপ্লিকেশনগুলো পুনরায় চালু করুন।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
 msgid "Processor microcode"
@@ -852,56 +883,51 @@ msgstr "প্রসেসর মাইক্রোকোড"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:49
 msgid "The recommended driver package is selected."
-msgstr ""
+msgstr "প্রস্তাবিত ড্রাইভার প্যাকেজটি নির্বাচিত।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:50
 msgid "An alternative driver package is selected."
-msgstr ""
+msgstr "একটি বিকল্প ড্রাইভার প্যাকেজ নির্বাচিত।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:51
-#, fuzzy
-#| msgid "Continue using a manually installed driver"
 msgid "A manually installed driver was detected."
-msgstr "ম্যানুয়ালি-ইন্সটল করা ড্রাইভার ব্যবহার চালিয়ে যান"
+msgstr "ম্যানুয়ালি ইনস্টল করা একটি ড্রাইভার শনাক্ত হয়েছে।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:52
-#, fuzzy
 msgid "No additional driver is selected."
-msgstr "কোন প্রপার্টি ড্রাইভার ব্যবহার করা হয় নি।"
+msgstr "কোনো অতিরিক্ত ড্রাইভার নির্বাচিত নয়।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:59
 msgid "Current"
-msgstr ""
+msgstr "বর্তমান"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:61
-#, fuzzy
 msgid "Recommended"
-msgstr "সুপারিশকৃত"
+msgstr "প্রস্তাবিত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
 msgid "Integrated into the system"
-msgstr ""
+msgstr "সিস্টেমে অন্তর্ভুক্ত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
-#, fuzzy
 msgid "Open-source"
-msgstr "মুক্ত উৎস"
+msgstr "ওপেন সোর্স"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
 msgid "Proprietary"
-msgstr ""
+msgstr "মালিকানাধীন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:67
 msgid "Installed"
-msgstr ""
+msgstr "ইনস্টল করা আছে"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:69
 msgid "Source: third-party repository"
-msgstr ""
+msgstr "উৎস: তৃতীয় পক্ষের রিপোজিটরি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:71
 msgid "Requires an Internet connection"
-msgstr ""
+msgstr "ইন্টারনেট সংযোগ প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:75
 msgid "Continue using a manually installed driver"
@@ -912,43 +938,41 @@ msgid "Do not use the device"
 msgstr "ডিভাইসটি ব্যবহার করবেন না"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Version: %s"
-msgstr "সংস্করন"
+msgstr "সংস্করণ: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:94
-#, fuzzy
 msgid "Driver package"
-msgstr "ড্রাইভার ব্যবস্থাপক"
+msgstr "ড্রাইভার প্যাকেজ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:122
-#, fuzzy
 msgid "Driver active"
-msgstr "ড্রাইভার ব্যবস্থাপক"
+msgstr "ড্রাইভার সক্রিয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:123
 msgid "Installed; restart to activate"
-msgstr ""
+msgstr "ইনস্টল করা আছে; সক্রিয় করতে পুনরায় চালু করুন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:124
 msgid "Installed; MOK enrollment required"
-msgstr ""
+msgstr "ইনস্টল করা আছে; MOK নথিভুক্তি প্রয়োজন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:125
 msgid "Installed; activation could not be confirmed"
-msgstr ""
+msgstr "ইনস্টল করা আছে; সক্রিয়করণ নিশ্চিত করা যায়নি"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:126
 msgid "Installed; driver is not confirmed active"
-msgstr ""
+msgstr "ইনস্টল করা আছে; ড্রাইভার সক্রিয় কিনা নিশ্চিত নয়"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:127
 msgid "The requested driver package is not installed."
-msgstr ""
+msgstr "অনুরোধ করা ড্রাইভার প্যাকেজটি ইনস্টল করা নেই।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:128
 msgid "The current driver activation state is unknown."
-msgstr ""
+msgstr "বর্তমান ড্রাইভারের সক্রিয়করণের অবস্থা অজ্ঞাত।"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:167
 #, python-format
@@ -957,6 +981,9 @@ msgid ""
 "Module: %(module)s\n"
 "Signer: %(signer)s"
 msgstr ""
+"যুক্ত ড্রাইভার: %(driver)s\n"
+"মডিউল: %(module)s\n"
+"স্বাক্ষরকারী: %(signer)s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:168
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:169
@@ -967,16 +994,16 @@ msgstr "অজ্ঞাত"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
 msgid "Available option"
-msgstr ""
+msgstr "উপলব্ধ বিকল্প"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
 msgid "Current selection"
-msgstr ""
+msgstr "বর্তমান নির্বাচন"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
 #, python-format
 msgid "APT candidate: %s"
-msgstr ""
+msgstr "APT প্রার্থী: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:264
 msgid "Processor"

@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
 /dist/
+/usr/share/locale/
+/usr/share/applications/org.mainuan.GestaoDrivers.desktop
+/.i18n-build/

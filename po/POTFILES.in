@@ -1,0 +1,15 @@
+# Files with user-visible strings; read by po/i18n.sh extract.
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/__init__.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/application.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/__init__.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/state.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/safety.py
+usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py
+data/org.mainuan.GestaoDrivers.desktop.in

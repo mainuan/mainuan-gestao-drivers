@@ -4,7 +4,7 @@ import locale
 import logging
 import sys
 
-from PyQt6.QtCore import QCoreApplication, QLibraryInfo, QLocale, QTranslator
+from PyQt6.QtCore import QCoreApplication, QLibraryInfo, QLocale, Qt, QTranslator
 from PyQt6.QtGui import QGuiApplication, QIcon
 from PyQt6.QtWidgets import QApplication
 
@@ -56,12 +56,23 @@ def run(argv=None):
     if qt_translator.load(QLocale.system(), "qtbase", "_",
                           QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)):
         app.installTranslator(qt_translator)
+    apply_catalog_layout_direction(app)
     app.setApplicationDisplayName(display_name())
     app.setWindowIcon(application_icon())
 
     window = MainWindow(test_mode=test_mode)
     window.show()
     return app.exec()
+
+
+def apply_catalog_layout_direction(app):
+    """Qt mirrors only when qtbase_<lang> says so (no qtbase catalog for Urdu;
+    qtbase may be missing): follow the direction of the application catalog in
+    use. Without a catalog the interface is English and nothing changes."""
+    translation = gettext.translation(APP, gettext.bindtextdomain(APP), fallback=True)
+    language = translation.info().get("language")
+    if language and QLocale(language).textDirection() == Qt.LayoutDirection.RightToLeft:
+        app.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
 
 
 if __name__ == "__main__":

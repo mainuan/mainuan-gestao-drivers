@@ -31,6 +31,31 @@ print(window.refresh_button.text())
 print(planning)
 '''
 
+# Runs the real application.run() with an empty Qt translations directory
+# (no qtbase_<lang>.qm) and reports the resulting layout direction.
+DIRECTION_CHECK = r'''
+import gettext, sys, tempfile
+from unittest import mock
+sys.path.insert(0, sys.argv[1])
+from PyQt6.QtWidgets import QApplication
+from mainuan_drivers.qt import application
+from mainuan_drivers.qt.main_window import MainWindow
+from mainuan_drivers import APP_NAME
+gettext.bindtextdomain(APP_NAME, sys.argv[2])  # freshly compiled catalogs
+
+def fake_exec(app):
+    windows = [w for w in app.topLevelWidgets() if isinstance(w, MainWindow)]
+    print(app.layoutDirection().name, [w.isRightToLeft() for w in windows], windows[0].refresh_button.text())
+    return 0
+
+with tempfile.TemporaryDirectory() as empty, \
+        mock.patch.object(application.QLibraryInfo, "path", return_value=empty), \
+        mock.patch.object(QApplication, "exec", fake_exec), \
+        mock.patch.object(application, "MainWindow",
+                          lambda test_mode: MainWindow(test_mode=test_mode, auto_start=False)):
+    application.run([APP_NAME])
+'''
+
 
 class RuntimeTranslationTests(unittest.TestCase):
     @classmethod
@@ -64,6 +89,29 @@ class RuntimeTranslationTests(unittest.TestCase):
             with self.subTest(language=language):
                 self.assertEqual(self.run_ui(language), ["Driver Manager", "Driver Manager", "Refresh",
                                                         "A driver transaction plan is required"])
+
+    def run_direction(self, language):
+        env = {key: value for key, value in os.environ.items()
+               if key not in ("LANGUAGE", "LC_ALL", "LC_MESSAGES", "LANG")}
+        env.update({"QT_QPA_PLATFORM": "offscreen", "LANGUAGE": language, "LANG": "C.UTF-8"})
+        result = subprocess.run([sys.executable, "-c", DIRECTION_CHECK, str(MODULE_PATH), str(self.localedir)],
+                                env=env, capture_output=True, text=True, timeout=20)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return result.stdout.splitlines()[-1]
+
+    def test_right_to_left_catalog_mirrors_without_qtbase(self):
+        for language in ("ar", "ur"):
+            target = self.localedir / language / "LC_MESSAGES"
+            target.mkdir(parents=True, exist_ok=True)
+            subprocess.run(["msgfmt", "--check", "-o", str(target / (DOMAIN + ".mo")),
+                            str(ROOT / "po" / (DOMAIN + "-" + language + ".po"))], check=True)
+        # The application's own Arabic and Urdu catalogs are used: mirrored even
+        # without qtbase (there is no qtbase_ur at all).
+        for language in ("ar", "ur"):
+            with self.subTest(language=language):
+                self.assertTrue(self.run_direction(language).startswith("RightToLeft [True] "))
+        # Yiddish is right-to-left but has no application catalog: English, left to right.
+        self.assertEqual(self.run_direction("yi"), "LeftToRight [False] Refresh")
 
     def test_brazilian_catalog_is_complete(self):
         stats = subprocess.run(["msgfmt", "--statistics", "-o", os.devnull,

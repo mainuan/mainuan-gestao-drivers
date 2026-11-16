@@ -50,12 +50,22 @@ class MainuanIdentityTests(unittest.TestCase):
             self.assertFalse((ROOT / "usr/bin" / old).exists())
 
     def test_desktop_is_the_only_visible_launcher(self):
-        files = list((ROOT / "usr/share/applications").rglob("*.desktop"))
-        self.assertEqual([path.name for path in files], [APP_ID + ".desktop"])
-        desktop = configparser.ConfigParser(interpolation=None)
-        desktop.read(files[0], encoding="utf-8")
+        # The launcher is generated at build time from a template (msgfmt --desktop).
+        built = list((ROOT / "usr/share/applications").rglob("*")) if (ROOT / "usr/share/applications").exists() else []
+        self.assertIn([path.name for path in built], ([], [APP_ID + ".desktop"]))
+        self.assertEqual([path.name for path in (ROOT / "data").glob("*.desktop*")], [APP_ID + ".desktop.in"])
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / (APP_ID + ".desktop")
+            subprocess.run(["make", "-s", "-C", str(ROOT), "DESKTOP=" + str(output),
+                            "I18N_BUILD=" + str(Path(directory) / "build"), str(output)],
+                           check=True, capture_output=True)
+            desktop = configparser.ConfigParser(interpolation=None)
+            desktop.optionxform = str
+            desktop.read(output, encoding="utf-8")
         entry = desktop["Desktop Entry"]
-        self.assertEqual(entry["Name"], DISPLAY_NAME)
+        self.assertEqual(entry["Name"], "Driver Manager")
+        self.assertEqual(entry["Name[pt_BR]"], DISPLAY_NAME)
+        self.assertEqual(entry["Comment[pt_BR]"], "Gerencie os drivers de hardware do sistema")
         self.assertEqual(entry["Exec"], APP_NAME)
         self.assertEqual(entry["Icon"], APP_NAME)
         self.assertFalse(entry.getboolean("NoDisplay", False))
@@ -105,8 +115,9 @@ def create(argv):
 def window(test_mode=False):
     result = MainWindow(test_mode=test_mode, auto_start=False)
     assert not test_mode
-    assert result.windowTitle() == 'Gestão de Drivers'
-    assert QGuiApplication.applicationDisplayName() == 'Gestão de Drivers'
+    from mainuan_drivers import display_name
+    assert result.windowTitle() == display_name()
+    assert QGuiApplication.applicationDisplayName() == display_name()
     assert not QGuiApplication.windowIcon().isNull()
     return result
 application.QApplication = create
@@ -151,7 +162,8 @@ def create(argv):
 def window(test_mode=False):
     assert test_mode
     result = MainWindow(test_mode=test_mode, auto_start=False)
-    assert result.windowTitle().startswith('Gestão de Drivers')
+    from mainuan_drivers import display_name
+    assert result.windowTitle().startswith(display_name())
     return result
 application.QApplication = create
 application.MainWindow = window

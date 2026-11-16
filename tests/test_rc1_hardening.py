@@ -8,7 +8,7 @@ import subprocess
 import unittest
 from unittest.mock import patch
 
-from mainuan_drivers import APP_NAME, DISPLAY_NAME, VERSION, __version__
+from mainuan_drivers import APP_NAME, DISPLAY_NAME, VERSION, __version__, display_name
 from mainuan_drivers.backend.diagnostics import diagnostic_text
 from mainuan_drivers.backend.models import AptOrigin
 from mainuan_drivers.backend.transactions.execution import DriverExecutionController, SnapshotSource
@@ -48,7 +48,7 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.addCleanup(window.close)
         with patch("mainuan_drivers.qt.main_window.QMessageBox.about") as about:
             window.show_about()
-        self.assertEqual(about.call_args.args[2].splitlines()[0], DISPLAY_NAME + " " + __version__)
+        self.assertEqual(about.call_args.args[2].splitlines()[0], display_name() + " " + __version__)
         self.assertEqual(json.loads(diagnostic_text(None, False, ViewState.LOADING))["version"], __version__)
 
     def test_version_and_help_exit_without_detection(self):
@@ -77,7 +77,7 @@ class ReleaseCandidateTests(unittest.TestCase):
         self.assertIn("mainuan-gestao-drivers_1.0_all.deb", workflow)
         self.assertIn("mainuan-gestao-drivers-1.0-${{ github.sha }}", workflow)
         self.assertNotIn("1.0~rc1", workflow)
-        self.assertIn("--package-version='1.0'", (ROOT / "makepot").read_text())
+        self.assertIn("PACKAGE_VERSION=1.0", (ROOT / "po/i18n.conf").read_text())
         self.assertIn('Gestão de Drivers 1.0\\n', (ROOT / "mainuan-gestao-drivers.pot").read_text())
         self.assertIn('mainuan-gestao-drivers 1.0\\n', (ROOT / "po/mainuan-gestao-drivers-pt_BR.po").read_text())
 

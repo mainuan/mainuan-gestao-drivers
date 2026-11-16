@@ -25,7 +25,7 @@ msgstr ""
 #: data/org.mainuan.GestaoDrivers.desktop.in:3
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/__init__.py:25
 msgid "Driver Manager"
-msgstr "ドライバーマネージャー"
+msgstr "ドライバマネージャ"
 
 #: data/org.mainuan.GestaoDrivers.desktop.in:4
 msgid "Manage the system's hardware drivers"
@@ -901,7 +901,7 @@ msgstr "変更を完了するには、影響を受けるアプリケーション
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
 msgid "Processor microcode"
-msgstr "プロセッサーのマイクロコード"
+msgstr "プロセッサのマイクロコード"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:49
 msgid "The recommended driver package is selected."
@@ -953,7 +953,7 @@ msgstr "インターネット接続が必要です"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:75
 msgid "Continue using a manually installed driver"
-msgstr "手動でインストールしたドライバーを使い続けます"
+msgstr "手動でインストールしたドライバを使い続けます"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:82
 msgid "Do not use the device"
@@ -1029,7 +1029,7 @@ msgstr "APT の候補: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:264
 msgid "Processor"
-msgstr "プロセッサー"
+msgstr "プロセッサ"
 
 #~ msgid "This device is using an alternative driver."
 #~ msgstr "このデバイスは代替のドライバーを使用しています。"

@@ -24,7 +24,7 @@ msgstr ""
 #: data/org.mainuan.GestaoDrivers.desktop.in:3
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/__init__.py:25
 msgid "Driver Manager"
-msgstr "드라이버 매니저"
+msgstr "드라이버 관리자"
 
 #: data/org.mainuan.GestaoDrivers.desktop.in:4
 msgid "Manage the system's hardware drivers"

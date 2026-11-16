@@ -495,7 +495,7 @@ msgstr "查看计划的软件包，不更改系统"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
 msgid "Close the driver manager"
-msgstr "关闭驱动程序管理器"
+msgstr "关闭驱动管理器"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
 msgid "Request cancellation when PackageKit permits it"
@@ -588,7 +588,7 @@ msgstr ""
 "%(name)s %(version)s\n"
 "Mainuan\n"
 "\n"
-"最初源自 Linux Mint 驱动程序管理器。\n"
+"最初源自 Linux Mint 驱动管理器。\n"
 "GPL-2.0-or-later；Clement Lefebvre 及贡献者。"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:337

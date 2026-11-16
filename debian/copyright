@@ -21,6 +21,16 @@ License: GPL-2+
 Comment: Mainuan-created interfaces, transaction infrastructure, tests and
  documentation. This does not assign Mainuan ownership of upstream code.
 
+Files: po/mainuan-gestao-drivers-*.po
+Copyright: 2013-2026 Rosetta Contributors and Canonical Ltd
+ 2013-2026 Linux Mint translators (named in each catalog header)
+ 2026 Mainuan contributors
+License: GPL-2+
+Comment: Inherited from the Linux Mint mintdrivers catalogs, translated on
+ Launchpad (Rosetta, project "linuxmint") and imported upstream by Clement
+ Lefebvre. Catalog headers state they are distributed under the same license
+ as the linuxmint/mintdrivers package. Translator credits are preserved.
+
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

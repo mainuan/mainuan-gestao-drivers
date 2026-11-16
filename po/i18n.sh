@@ -27,8 +27,6 @@ ROOT=$(cd "$PODIR/.." && pwd)
 : "${POTFILES:=$PODIR/POTFILES.in}"
 : "${LINGUAS_FILE:=$PODIR/LINGUAS}"
 : "${COPYRIGHT_HOLDER:=Mainuan}"
-# xgettext honours only ONE --add-comments tag (the last one given).
-: "${COMMENT_TAG:=Translators:}"
 # Keywords per xgettext language; override in i18n.conf when needed.
 : "${KEYWORDS_C:=--keyword=i18n:1 --keyword=i18nc:1c,2 --keyword=i18np:1,2 --keyword=i18ncp:1c,2,3 --keyword=ki18n:1 --keyword=ki18nc:1c,2 --keyword=ki18np:1,2 --keyword=ki18ncp:1c,2,3 --keyword=kli18n:1 --keyword=kli18nc:1c,2 --keyword=tr2i18n:1 --keyword=tr2i18n:1,2c}"
 : "${KEYWORDS_PYTHON:=--keyword=_ --keyword=N_ --keyword=ngettext:1,2 --keyword=pgettext:1c,2 --keyword=npgettext:1c,2,3}"
@@ -78,10 +76,19 @@ xgettext_group() {  # $1 language, $2 output, rest: files
   esac
   local langarg=()
   case "$lang" in auto) ;; ITS) ;; *) langarg=(--language="$lang") ;; esac
-  (cd "$ROOT" && xgettext --from-code=UTF-8 --add-comments="$COMMENT_TAG" \
-      --sort-by-file --package-name="$PACKAGE_NAME" ${PACKAGE_VERSION:+--package-version="$PACKAGE_VERSION"} \
-      --msgid-bugs-address="$BUGS_ADDRESS" --copyright-holder="$COPYRIGHT_HOLDER" \
-      "${langarg[@]}" "${kw[@]}" -o "$out" "$@")
+  # xgettext honours only the last --add-comments tag, so extract once per tag
+  # (GNU "Translators:" and KDE "i18n:"); --join-existing unions the notes.
+  local tag join=()
+  rm -f "$out"
+  for tag in ${COMMENT_TAGS:-Translators: i18n:}; do
+    (cd "$ROOT" && xgettext --from-code=UTF-8 --add-comments="$tag" "${join[@]}" \
+        --sort-by-file --package-name="$PACKAGE_NAME" ${PACKAGE_VERSION:+--package-version="$PACKAGE_VERSION"} \
+        --msgid-bugs-address="$BUGS_ADDRESS" --copyright-holder="$COPYRIGHT_HOLDER" \
+        "${langarg[@]}" "${kw[@]}" -o "$out" "$@")
+    [ -f "$out" ] && join=(--join-existing)
+  done
+  [ -f "$out" ] && sed -i 's/charset=CHARSET/charset=UTF-8/' "$out"
+  return 0
 }
 
 cmd_extract() {

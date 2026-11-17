@@ -28,7 +28,7 @@ secao Verificacao do sistema antes de confirmar. A autorizacao pertence ao
 PackageKit/PolicyKit. Nunca desabilitar Secure Boot para satisfazer este beta.
 Depois de qualquer resultado, conferir a nova deteccao; pacote instalado nao e
 prova de modulo ativo. Nao ha reboot, enrollment ou rollback automatico.
-Codex nao executa esse teste real de mutacao.
+Esse teste real de mutacao nao e executado no ambiente de build/automacao; e manual.
 
 O motor PackageKit pode ser testado separadamente com o probe hello, seguindo
 `tests/manual/README.md` no checkout. Esse probe nao foi modificado para DKMS e

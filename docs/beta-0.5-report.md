@@ -154,7 +154,7 @@
     Autorizacao continua PackageKit/PolicyKit, sem solicitar senha no aplicativo.
 46. Probe hello preservado sem modificacoes, seus testes passam, nao instalado.
     Ferramenta de inspecao e testes novos tambem ficam fora do pacote.
-47. **Nenhuma mutacao real foi executada pelo Codex**: nao instalou/purgou o
+47. **Nenhuma mutacao real foi executada no ambiente de build/automacao**: nao instalou/purgou o
     aplicativo no host, nao alterou drivers/DKMS/MOK/modulos, nao reiniciou,
     nao executou hooks de upgrade. Apenas build, mocks, fixtures e read-only.
 48. [Instalacao limpa na VM](beta-0.5-testing.md#instalacao-limpa): comandos

@@ -108,7 +108,7 @@ Apos PackageKit Finished, nova deteccao e preflight devem separar pacote
 instalado de modulo ativo. Reboot/MOK pendente e incerteza precisam aparecer;
 nenhuma promessa de ativacao ou rollback atomico. BIOS e UEFI distintos.
 Testes reais de mutacao/MOK e hardware NVIDIA/Broadcom ficam para a VM/hardware
-do usuario, nao para a execucao Codex.
+do usuario, nao para o ambiente de build/automacao.
 
 ## Conclusao antes da implementacao
 

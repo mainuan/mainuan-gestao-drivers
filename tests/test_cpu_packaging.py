@@ -120,7 +120,7 @@ class CpuEvidenceTests(unittest.TestCase):
 
 
 class MainuanWorkflowTests(unittest.TestCase):
-    def test_workflow_is_pinned_branch_specific_and_not_a_release(self):
+    def test_workflow_is_pinned_branch_specific_and_releases_only_tags(self):
         import yaml
         workflow = yaml.load((ROOT / ".github/workflows/build-mainuan-deb.yml").read_text(), Loader=yaml.BaseLoader)
         self.assertEqual(set(workflow["on"]), {"push", "pull_request", "workflow_dispatch"})
@@ -128,14 +128,29 @@ class MainuanWorkflowTests(unittest.TestCase):
         self.assertEqual(workflow["on"]["push"]["tags"], ["v*"])
         self.assertEqual(workflow["on"]["pull_request"]["branches"], ["master"])
         self.assertEqual(workflow["permissions"], {"contents": "read"})
-        self.assertEqual(set(workflow["jobs"]), {"build"})
-        job = workflow["jobs"]["build"]
-        self.assertEqual(job["container"]["options"], "--platform linux/amd64")
-        self.assertRegex(job["container"]["image"], r"^ubuntu:26\.04@sha256:[a-f0-9]{64}$")
-        for step in job["steps"]:
-            if "uses" in step:
-                self.assertRegex(step["uses"], r"^actions/(checkout|upload-artifact)@[a-f0-9]{40}$")
-        self.assertFalse((ROOT / ".github/workflows/build.yml").exists())
+        self.assertEqual(set(workflow["jobs"]), {"build", "install-test", "release"})
+        for name in ("build", "install-test"):
+            job = workflow["jobs"][name]
+            self.assertEqual(job["permissions"] if "permissions" in job else {"contents": "read"}, {"contents": "read"})
+            self.assertEqual(job["container"]["options"], "--platform linux/amd64")
+            self.assertRegex(job["container"]["image"], r"^ubuntu:26\.04@sha256:[a-f0-9]{64}$")
+        for job in workflow["jobs"].values():
+            for step in job["steps"]:
+                if "uses" in step:
+                    self.assertRegex(step["uses"], r"^actions/(checkout|upload-artifact|download-artifact)@[a-f0-9]{40}$")
+        self.assertEqual(workflow["jobs"]["install-test"]["needs"], "build")
+        release = workflow["jobs"]["release"]
+        self.assertEqual(release["needs"], ["build", "install-test"])
+        self.assertEqual(release["permissions"], {"contents": "write"})
+        self.assertIn("github.ref_type == 'tag'", release["if"])
+        self.assertIn("github.event_name == 'push'", release["if"])
+        self.assertFalse(any("checkout" in step.get("uses", "") for step in release["steps"]))
+        text = (ROOT / ".github/workflows/build-mainuan-deb.yml").read_text()
+        self.assertNotIn("--clobber", text)
+        self.assertIn("--verify-tag", text)
+        self.assertIn("dpkg --purge", text)
+        # Only this workflow remains: no Mint/master or historical asset publishers.
+        self.assertEqual({p.name for p in (ROOT / ".github/workflows").iterdir()}, {"build-mainuan-deb.yml"})
 
     def test_prepare_variants_before_install_and_build_tests_unprivileged(self):
         import yaml

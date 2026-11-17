@@ -59,7 +59,7 @@ Usar `debian/mainuan-gestao-drivers.maintscript` com rm_conffile e limite
 `0.5~`. dh_installdeb gera hooks coordenados de upgrade, abort e purge.
 Arquivo modificado pelo administrador vira .dpkg-bak (inativo para sudoers,
 nome com ponto); nao apagar alteracoes locais com rm improvisado. Purge pelo
-helper remove esse backup. Nao executar upgrade/purge no host Codex.
+helper remove esse backup. Nao executar upgrade/purge no host de build/automacao.
 [dh_installdeb](https://manpages.debian.org/testing/debhelper/dh_installdeb.1.en.html),
 [dpkg-maintscript-helper](https://manpages.debian.org/testing/dpkg/dpkg-maintscript-helper.1.en.html).
 

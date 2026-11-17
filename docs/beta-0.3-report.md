@@ -1,7 +1,7 @@
 # Relatorio do beta 0.3
 
 Data de referencia: 2026-10-18. Nenhuma instalacao/remocao de driver ou pacote,
-DKMS, MOK, modprobe ou reboot foi executada pelo Codex.
+DKMS, MOK, modprobe ou reboot foi executada no ambiente de build/automacao.
 
 1. Branch: `port/kubuntu-26.04`.
 2. Base real: `d35d878faba7cfacc94d31ecb921c894d312412d`.
@@ -96,7 +96,7 @@ DKMS, MOK, modprobe ou reboot foi executada pelo Codex.
     sudo/modprobe executaveis existem apenas no GTK/helper legado. No probe ha
     mensagem proibindo root/sudo; sudo apt remove hello e apenas contingencia
     documentada, nunca executada. Testes mokutil usam mocks; nao ha novo helper.
-42. Nenhuma mutacao real pelo Codex. Teste nativo Wayland real sem drivers e todos
+42. Nenhuma mutacao real no ambiente de build/automacao. Teste nativo Wayland real sem drivers e todos
     os perfis ficticios passou, inclusive pt_BR, redimensionamento, scroll e botoes.
     Sem GTK/Gdk/GdkPixbuf/XApp/GLib/Gio/PackageKitGlib no processo oficial. Capturas
     e logs em /tmp/mainuan-0.3-visual e /tmp/mainuan-0.3-*.log.

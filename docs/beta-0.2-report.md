@@ -89,7 +89,7 @@
     PropertiesChanged/Package/Finished; resultado FINISHED, exit 1, com ID real
     de intel-microcode. Nenhum import proibido. O probe proíbe InstallPackages e
     RemovePackages, inclusive com SIMULATE.
-28. **Nenhuma mutação real pelo Codex:** nenhum driver instalado/removido,
+28. **Nenhuma mutação real no ambiente de build/automação:** nenhum driver instalado/removido,
     nenhum módulo alterado, nenhuma alteração de Secure Boot/MOK ou reinício.
     A Qt oficial não executa sudo/pkexec/APT/dpkg diretamente, nem helper root próprio.
 29. **Build:** `dpkg-buildpackage -us -uc -b` passou e produziu o nome esperado.

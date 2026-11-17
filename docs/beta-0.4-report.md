@@ -140,7 +140,7 @@
     A mensagem do probe proibe sudo/root. Nenhuma ocorrencia nova executavel de
     enrollment, update-secureboot-policy, apt-get ou live-media no frontend Qt.
     Referencias a update-secureboot-policy nesta auditoria sao documentais.
-41. **Codex nao executou nenhuma instalacao/remocao real de driver/pacote,
+41. **O ambiente de build/automacao nao executou nenhuma instalacao/remocao real de driver/pacote,
     DKMS, geracao/enrollment MOK, manipulacao de modulo ou reinicializacao.**
     Apenas mocks, fixtures, simulacoes e probes read-only. Pacote nao instalado
     no host. Nenhuma chave privada lida.

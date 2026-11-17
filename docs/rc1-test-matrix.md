@@ -11,7 +11,7 @@ Nao confundir evidencias fake e read-only com instalacao real de driver.
 | Planos e inputs adulterados | Automatizado | Fakes, inclusive Install/Remove | Rejeitados antes de qualquer chamada D-Bus | Sim |
 | PackageKit read-only | Probe real automatizado | System bus do host | Introspect/CreateTransaction/Resolve/Package/Finished OK, nenhuma mutacao | Sim |
 | Install/Remove/Cancel/AllowCancel/RequireRestart | Automatizado | Transporte e workflow fakes | OK, inclusive perda do daemon, erro e falha parcial | Sim |
-| PackageKit mutation probe hello | Manual | VM, usuario normal e agente PolicyKit | NAO EXECUTADO pelo Codex; roteiro preservado, testes fake OK | Sim, precisa validar motor real na VM |
+| PackageKit mutation probe hello | Manual | VM, usuario normal e agente PolicyKit | NAO EXECUTADO no ambiente de build/automacao; teste manual pendente; roteiro preservado, testes fake OK | Sim, precisa validar motor real na VM |
 | Instalacao limpa do aplicativo | Manual | Snapshot VM limpo | PENDENTE; metadados/payload inspecionados apenas | Sim |
 | Upgrade 0.4 -> RC1 | Manual + gate automatizado | Snapshot VM com conffile historico | PENDENTE VM; limite 0.5~ e hooks verificados | Sim |
 | Upgrade 0.5 -> RC1 | Manual + gate automatizado | Snapshot VM 0.5 | PENDENTE VM; migracao preservada | Sim |

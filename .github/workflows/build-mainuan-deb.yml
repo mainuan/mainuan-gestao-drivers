@@ -14,7 +14,8 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # Never cancel a tag run: it may be publishing a release.
+  cancel-in-progress: ${{ github.ref_type != 'tag' }}
 
 jobs:
   build:
@@ -33,6 +34,9 @@ jobs:
       DEB_BUILD_OPTIONS: parallel=2
       MAINUAN_BASE_IMAGE: ubuntu:26.04@sha256:42527649dbc4f9197a6073f426f488cbff0e9cc9f2afce32d91c383e4875634a
       EXPECTED_COMMIT: ${{ github.sha }}
+    outputs:
+      version: ${{ steps.metadata.outputs.version }}
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
     steps:
       - name: Prepare an isolated baseline environment
         run: |
@@ -76,10 +80,20 @@ jobs:
           chown mainuan-build:mainuan-build "$(dirname "$GITHUB_WORKSPACE")"
 
       - name: Validate baseline inputs and source identity
+        id: metadata
+        env:
+          RELEASE_TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
         run: |
+          chown mainuan-build:mainuan-build "$GITHUB_OUTPUT"
           runuser -u mainuan-build -- bash -euo pipefail -c '
             test "$(git rev-parse HEAD)" = "$EXPECTED_COMMIT"
             test "$(dpkg-parsechangelog -SVersion)" = "1.0"
+            # A release tag must name exactly this version and a released entry.
+            if [ -n "$RELEASE_TAG" ]; then
+              test "$RELEASE_TAG" = "v$(dpkg-parsechangelog -SVersion)"
+              test "$(dpkg-parsechangelog -SDistribution)" != UNRELEASED
+            fi
+            echo "version=$(dpkg-parsechangelog -SVersion)" >> "$GITHUB_OUTPUT"
             git diff --check
             mkdir -p dist
             python3 .github/scripts/check_cpu.py environment --output dist/cpu-environment.json
@@ -113,12 +127,22 @@ jobs:
             python3 .github/scripts/cpu_smoke.py "$package" --output dist/cpu-startup.json 2>&1 | tee dist/cpu-smoke.log
             python3 .github/scripts/check_cpu.py dependencies dist/cpu-startup.json --output dist/cpu-dependencies.json
             cp -- "$package" dist/
+            {
+              echo "Pacote Debian do Mainuan Gestão de Drivers para Mainuan Linux (Kubuntu 26.04 LTS, KDE Plasma 6)."
+              echo
+              echo "### Alterações"
+              echo
+              dpkg-parsechangelog -SChanges | sed "1,2d; s/^ \.\$//; s/^ //"
+              echo
+              echo "Confira o SHA256SUMS antes de instalar. GitHub Releases não é um repositório APT."
+            } > dist/release-notes.md
             cd dist
             sha256sum "mainuan-gestao-drivers_1.0_all.deb" > SHA256SUMS
             sha256sum --check SHA256SUMS
           '
 
       - name: Upload the validated package, checksum and provenance
+        id: upload
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: mainuan-gestao-drivers-1.0-${{ github.sha }}
@@ -127,5 +151,131 @@ jobs:
             dist/SHA256SUMS
             dist/cpu-*.json
             dist/*.log
+            dist/release-notes.md
           if-no-files-found: error
           retention-days: 30
+
+  install-test:
+    needs: build
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    container:
+      # Same audited manifest as the build, without build tools: a clean system.
+      image: ubuntu:26.04@sha256:42527649dbc4f9197a6073f426f488cbff0e9cc9f2afce32d91c383e4875634a
+      options: --platform linux/amd64
+    defaults:
+      run:
+        shell: bash
+    permissions:
+      contents: read
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen
+      PACKAGE: mainuan-gestao-drivers
+      PACKAGE_VERSION: ${{ needs.build.outputs.version }}
+    steps:
+      - name: Download the artifact from the successful build job
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+          path: dist
+
+      - name: Install in a clean Ubuntu 26.04
+        run: |
+          set -euo pipefail
+          # The container image is minimized and drops translations, manual
+          # pages and docs; a Kubuntu desktop keeps them, so does this test.
+          rm -f /etc/dpkg/dpkg.cfg.d/excludes
+          # No package services start inside the container.
+          printf '#!/bin/sh\nexit 101\n' > /usr/sbin/policy-rc.d
+          chmod 755 /usr/sbin/policy-rc.d
+          cd dist
+          sha256sum --check SHA256SUMS
+          apt-get update
+          apt-get install --yes ./"${PACKAGE}_${PACKAGE_VERSION}_all.deb"
+          dpkg -s "$PACKAGE" | grep -q '^Status: install ok installed'
+          test "$(dpkg-query -W -f='${Version}' "$PACKAGE")" = "$PACKAGE_VERSION"
+          dpkg -L "$PACKAGE" > ../installed-files.txt
+          # Every path listed by dpkg must exist on disk.
+          while IFS= read -r f; do
+            [ -d "$f" ] || [ -e "$f" ] || { echo "::error::missing installed file $f"; exit 1; }
+          done < ../installed-files.txt
+          test -s /usr/share/applications/org.mainuan.GestaoDrivers.desktop
+          apt-get check
+
+      - name: Run the installed command as a regular user
+        run: |
+          set -euo pipefail
+          useradd --create-home --shell /bin/bash smoke
+          # --version and --help exit before any hardware detection or D-Bus use.
+          runuser -u smoke -- bash -euo pipefail -c '
+            out=$(mainuan-gestao-drivers --version)
+            echo "$out"
+            case "$out" in *" $PACKAGE_VERSION") ;; *) echo "::error::unexpected version: $out"; exit 1 ;; esac
+            mainuan-gestao-drivers --help
+          '
+
+      - name: Reinstall, remove and purge
+        run: |
+          set -euo pipefail
+          apt-get install --yes --reinstall ./dist/"${PACKAGE}_${PACKAGE_VERSION}_all.deb"
+          apt-get remove --yes "$PACKAGE"
+          # APT 3 no longer resolves a removed local package: purge with dpkg.
+          dpkg --purge "$PACKAGE"
+          if dpkg -s "$PACKAGE" >/dev/null 2>&1; then
+            echo "::error::$PACKAGE still known to dpkg after purge"; exit 1
+          fi
+          leftovers=0
+          while IFS= read -r f; do
+            [ -d "$f" ] && continue
+            if [ -e "$f" ] || [ -L "$f" ]; then
+              # Paths may legitimately belong to another installed package.
+              if ! dpkg -S "$f" >/dev/null 2>&1; then
+                echo "::warning::left behind after purge: $f"; leftovers=$((leftovers + 1))
+              fi
+            fi
+          done < installed-files.txt
+          [ "$leftovers" -eq 0 ] || { echo "::error::$leftovers files left after purge"; exit 1; }
+
+  release:
+    needs: [build, install-test]
+    if: github.event_name == 'push' && github.ref_type == 'tag' && github.repository == 'mainuan/mainuan-gestao-drivers'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      # No checkout or execution of repository scripts in the job with write access.
+      - name: Download the artifact from the successful build job
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+          path: dist
+
+      - name: Publish only an existing matching tag, without replacing a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          PACKAGE_VERSION: ${{ needs.build.outputs.version }}
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$RELEASE_TAG" = "v$PACKAGE_VERSION"
+          test "$(gh api "repos/$GH_REPO/commits/$RELEASE_TAG" --jq .sha)" = "$SOURCE_COMMIT"
+          cd dist
+          sha256sum --check SHA256SUMS
+          package="mainuan-gestao-drivers_${PACKAGE_VERSION}_all.deb"
+          test "$(dpkg-deb -f "$package" Package)" = mainuan-gestao-drivers
+          test "$(dpkg-deb -f "$package" Version)" = "$PACKAGE_VERSION"
+          test "$(dpkg-deb -f "$package" Architecture)" = all
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::release $RELEASE_TAG already exists; publish a new version instead of replacing files"
+            exit 1
+          fi
+          # gh release create also fails on an existing release; assets are never overwritten.
+          # --verify-tag prevents the CLI from creating a missing tag.
+          gh release create "$RELEASE_TAG" "$package" SHA256SUMS \
+            --verify-tag --title "Mainuan Gestão de Drivers $PACKAGE_VERSION" --notes-file release-notes.md

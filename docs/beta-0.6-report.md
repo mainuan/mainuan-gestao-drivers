@@ -131,7 +131,7 @@
     Sem novos sudo/pkexec/modprobe/rmmod/insmod/enrollment ou helper root.
     `git diff --check` limpo; sem push, merge, tag, release ou commit desta fase.
 47. **Nenhuma mutacao real de pacote, driver, modulo, MOK, firmware, repositorio
-    ou reboot executada pelo Codex.** Apenas leitura, fixtures, build e testes.
+    ou reboot executada no ambiente de build/automacao.** Apenas leitura, fixtures, build e testes.
 48. Limitacoes: upgrades/purge/ISO Live reais ainda precisam da VM; host BIOS
     sem hardware adicional nao valida GPU/SB/MOK reais. Leitor de tela e temas
     alternativos precisam de revisao humana. Se UDC capturar internamente uma

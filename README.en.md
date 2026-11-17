@@ -16,6 +16,9 @@ Detects additional hardware drivers and installs or switches them safely through
 
 ---
 
+<p align="center"><img src="docs/screenshots/gestao-drivers.png" width="760" alt="Driver management on an installed Mainuan"></p>
+
+
 ## About
 
 The Mainuan hardware tool ("Driver Manager" in English). A Qt 6 Widgets/PyQt6 derivative of the **Linux Mint** Driver Manager (mintdrivers), with no GTK or XApp frontend. Detection uses `ubuntu-drivers-common` and APT; changes go through PackageKit and are authorised by the session PolicyKit agent. The app never asks for a password, never runs APT or dpkg directly and ships no privileged helper.

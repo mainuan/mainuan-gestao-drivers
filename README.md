@@ -16,6 +16,9 @@ Detecta os drivers adicionais do computador e instala ou troca drivers com segur
 
 ---
 
+<p align="center"><img src="docs/screenshots/gestao-drivers.png" width="760" alt="Gestão de Drivers no Mainuan instalado"></p>
+
+
 ## O que é
 
 O Mainuan Gestão de Drivers é a ferramenta de hardware do Mainuan Linux. Ela lista os drivers adicionais recomendados para placas de vídeo NVIDIA, Wi-Fi Broadcom e outros dispositivos, mostra uma prévia das mudanças de pacotes e só aplica o que o usuário confirmar.

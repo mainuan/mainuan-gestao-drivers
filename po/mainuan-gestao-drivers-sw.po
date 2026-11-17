@@ -1,0 +1,1019 @@
+# Swahili translations for Mainuan Gestão de Drivers package.
+# Copyright (C) 2026 Mainuan
+# This file is distributed under the same license as the Mainuan Gestão de Drivers package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mainuan-gestao-drivers 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/mainuan/mainuan-gestao-drivers/"
+"issues\n"
+"POT-Creation-Date: 2026-11-16 11:17-0300\n"
+"PO-Revision-Date: 2026-11-16 11:17-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: sw <https://github.com/mainuan>\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Translators: application name shown in the window title and menus.
+#: data/org.mainuan.GestaoDrivers.desktop.in:3
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/__init__.py:25
+msgid "Driver Manager"
+msgstr "Kidhibiti cha Viendeshi"
+
+#: data/org.mainuan.GestaoDrivers.desktop.in:4
+msgid "Manage the system's hardware drivers"
+msgstr "Dhibiti viendeshi vya maunzi ya mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:328
+msgid ""
+"The prebuilt module's package trust or running-kernel compatibility could "
+"not be verified."
+msgstr ""
+"Haikuweza kuthibitisha uaminifu wa kifurushi cha moduli iliyojengwa awali au "
+"uoanifu wake na kerneli inayoendeshwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:330
+msgid ""
+"The prebuilt module's Secure Boot signature trust could not be verified. "
+"Repository trust alone does not establish module trust."
+msgstr ""
+"Haikuweza kuthibitisha uaminifu wa sahihi ya Secure Boot ya moduli "
+"iliyojengwa awali. Uaminifu wa hazina pekee hauthibitishi uaminifu wa moduli."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:332
+msgid ""
+"The running kernel is outside the standard prebuilt module update path. "
+"Verify module compatibility."
+msgstr ""
+"Kerneli inayoendeshwa iko nje ya njia ya kawaida ya masasisho ya moduli "
+"zilizojengwa awali. Thibitisha uoanifu wa moduli."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:334
+msgid ""
+"A kernel update is pending. Review system updates before changing drivers."
+msgstr ""
+"Sasisho la kerneli linasubiri. Kagua masasisho ya mfumo kabla ya kubadilisha "
+"viendeshi."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:336
+msgid "The kernel update state could not be verified."
+msgstr "Haikuweza kuthibitisha hali ya sasisho la kerneli."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:338
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:670
+msgid "Restart the computer and complete key enrollment in MokManager."
+msgstr ""
+"Anzisha upya kompyuta na ukamilishe usajili wa ufunguo katika MokManager."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:342
+msgid ""
+"PackageKit must resolve the prebuilt/DKMS module alternatives before "
+"confirmation."
+msgstr ""
+"PackageKit lazima itatue chaguo mbadala za moduli iliyojengwa awali/DKMS "
+"kabla ya uthibitisho."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:347
+msgid ""
+"This driver may need a DKMS module with Secure Boot active or unknown. The "
+"actual DKMS signing certificate must be identified and enrolled before "
+"changes can be applied."
+msgstr ""
+"Kiendeshi hiki kinaweza kuhitaji moduli ya DKMS wakati Secure Boot imewashwa "
+"au hali yake haijulikani. Cheti halisi cha kutia sahihi cha DKMS lazima "
+"kitambuliwe na kusajiliwa kabla ya mabadiliko kutumika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:351
+msgid ""
+"Headers for the running kernel are missing or unverified. Install matching "
+"headers through system updates before retrying."
+msgstr ""
+"Vichwa (headers) vya kerneli inayoendeshwa havipo au havijathibitishwa. "
+"Sakinisha vichwa vinavyolingana kupitia masasisho ya mfumo kabla ya kujaribu "
+"tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:353
+msgid "The module build requirements could not be fully verified."
+msgstr "Haikuweza kuthibitisha kikamilifu mahitaji ya kujenga moduli."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:19
+msgid ""
+"Driver changes are unavailable in the Live Session. Install Mainuan to "
+"manage this computer's drivers."
+msgstr ""
+"Mabadiliko ya viendeshi hayapatikani katika Kipindi cha Live. Sakinisha "
+"Mainuan ili kudhibiti viendeshi vya kompyuta hii."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:21
+msgid ""
+"The system session could not be verified. Driver changes are blocked; "
+"viewing remains available."
+msgstr ""
+"Haikuweza kuthibitisha kipindi cha mfumo. Mabadiliko ya viendeshi yamezuiwa; "
+"kutazama bado kunapatikana."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:13
+msgid "General devices"
+msgstr "Vifaa vya jumla"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:14
+msgid "Secure Boot + prebuilt module"
+msgstr "Secure Boot + moduli iliyojengwa awali"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:15
+msgid "Secure Boot + DKMS + enrolled MOK"
+msgstr "Secure Boot + DKMS + MOK iliyosajiliwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:16
+msgid "Secure Boot + DKMS + missing MOK"
+msgstr "Secure Boot + DKMS + MOK haipo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:17
+msgid "Secure Boot disabled + DKMS"
+msgstr "Secure Boot imezimwa + DKMS"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:18
+msgid "Secure Boot unknown + DKMS"
+msgstr "Secure Boot haijulikani + DKMS"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:19
+msgid "Broadcom DKMS"
+msgstr "Broadcom DKMS"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:20
+msgid "NVIDIA custom closed pin"
+msgstr "NVIDIA funge iliyobanwa maalum"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:21
+msgid "NVIDIA open recommended"
+msgstr "NVIDIA huria inapendekezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:22
+msgid "NVIDIA closed recommended"
+msgstr "NVIDIA funge inapendekezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:23
+msgid "NVIDIA server recommended"
+msgstr "NVIDIA ya seva inapendekezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:24
+msgid "Kernel update pending"
+msgstr "Sasisho la kerneli linasubiri"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:25
+msgid "Kernel headers missing"
+msgstr "Vichwa vya kerneli havipo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:26
+msgid "MOK enrollment pending"
+msgstr "Usajili wa MOK unasubiri"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:27
+msgid "Secure Boot + DKMS + unrelated MOK"
+msgstr "Secure Boot + DKMS + MOK isiyohusiana"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:28
+msgid "Secure Boot + DKMS + matching enrollment pending"
+msgstr "Secure Boot + DKMS + usajili unaolingana unasubiri"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:29
+msgid "Secure Boot + DKMS + signing unknown"
+msgstr "Secure Boot + DKMS + utiaji sahihi haujulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:30
+msgid "Installed + driver active"
+msgstr "Imesakinishwa + kiendeshi kinafanya kazi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:31
+msgid "Installed + restart required"
+msgstr "Imesakinishwa + kuanzisha upya kunahitajika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:32
+msgid "Installed + MOK enrollment required"
+msgstr "Imesakinishwa + usajili wa MOK unahitajika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:33
+msgid "Installed + activation unverified"
+msgstr "Imesakinishwa + uwashaji haujathibitishwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:34
+msgid "Installed + previous driver bound"
+msgstr "Imesakinishwa + kiendeshi cha awali kimefungamanishwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:35
+msgid "Third-party recommended driver"
+msgstr "Kiendeshi cha mhusika mwingine kinachopendekezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:36
+msgid "Third-party DKMS driver"
+msgstr "Kiendeshi cha DKMS cha mhusika mwingine"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:37
+msgid "Live Session; changes blocked"
+msgstr "Kipindi cha Live; mabadiliko yamezuiwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:38
+msgid "PackageKit unavailable"
+msgstr "PackageKit haipatikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:39
+msgid "Driver detection error"
+msgstr "Hitilafu ya kutambua viendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:40
+msgid "No additional drivers"
+msgstr "Hakuna viendeshi vya ziada"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:214
+msgid "Driver detection failed. No new transaction was started."
+msgstr "Utambuzi wa viendeshi umeshindwa. Hakuna muamala mpya ulioanzishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:240
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:393
+msgid "PackageKit is unavailable. Driver detection is still available."
+msgstr "PackageKit haipatikani. Utambuzi wa viendeshi bado unapatikana."
+
+# reviewed: 'halitumiki kwa kutumia' was a confusing tumika/tumia repetition
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:249
+msgid "This PackageKit version is not supported for applying driver changes."
+msgstr ""
+"Toleo hili la PackageKit haliwezi kutumika kutekeleza mabadiliko ya "
+"viendeshi."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:251
+msgid "PackageKit is busy. Wait for the other package operation to finish."
+msgstr ""
+"PackageKit ina shughuli. Subiri operesheni nyingine ya vifurushi ikamilike."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:273
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:433
+msgid "The PackageKit service disconnected."
+msgstr "Huduma ya PackageKit ilitenganishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:414
+msgid "Preparing driver changes..."
+msgstr "Inaandaa mabadiliko ya viendeshi..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:531
+msgid ""
+"PackageKit proposed a package downgrade. This version cannot apply this plan "
+"safely."
+msgstr ""
+"PackageKit ilipendekeza kushusha toleo la kifurushi. Toleo hili haliwezi "
+"kutekeleza mpango huu kwa usalama."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:533
+msgid ""
+"PackageKit reported an untrusted package. No further transaction was started."
+msgstr ""
+"PackageKit iliripoti kifurushi kisichoaminika. Hakuna muamala zaidi "
+"ulioanzishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:539
+msgid ""
+"PackageKit proposed additional removals outside the confirmed driver plan."
+msgstr ""
+"PackageKit ilipendekeza uondoaji wa ziada nje ya mpango wa viendeshi "
+"uliothibitishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:541
+msgid "A package selected for removal changed version. Review the plan again."
+msgstr ""
+"Kifurushi kilichochaguliwa kuondolewa kimebadilisha toleo. Kagua mpango tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:547
+msgid ""
+"A target package changed version or architecture. Review the detected plan "
+"again."
+msgstr ""
+"Kifurushi lengwa kimebadilisha toleo au usanifu. Kagua mpango uliotambuliwa "
+"tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:550
+msgid ""
+"This driver requires a Secure Boot flow that is not supported by this "
+"version."
+msgstr ""
+"Kiendeshi hiki kinahitaji mtiririko wa Secure Boot usiotumika katika toleo "
+"hili."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:552
+msgid "PackageKit could not safely simulate all planned changes."
+msgstr "PackageKit haikuweza kuiga kwa usalama mabadiliko yote yaliyopangwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:554
+msgid "The removal simulation requires unexpected package installations."
+msgstr "Uigaji wa uondoaji unahitaji usakinishaji wa vifurushi usiotarajiwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:562
+msgid ""
+"Installation dependencies changed after removal. No further change was "
+"applied."
+msgstr ""
+"Vitegemezi vya usakinishaji vilibadilika baada ya uondoaji. Hakuna badiliko "
+"zaidi lililotumika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:617
+msgid "The package operation was interrupted after changes started."
+msgstr "Operesheni ya vifurushi ilikatizwa baada ya mabadiliko kuanza."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:624
+msgid ""
+"PackageKit reported an unexpected removal. No further transaction was "
+"started."
+msgstr ""
+"PackageKit iliripoti uondoaji usiotarajiwa. Hakuna muamala zaidi "
+"ulioanzishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:646
+msgid "The operation was cancelled."
+msgstr "Operesheni imeghairiwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:58
+msgid "Waiting..."
+msgstr "Inasubiri..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:59
+msgid "Preparing..."
+msgstr "Inaandaa..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:60
+msgid "Resolving dependencies..."
+msgstr "Inatatua vitegemezi..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:61
+msgid "Downloading..."
+msgstr "Inapakua..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:62
+msgid "Installing..."
+msgstr "Inasakinisha..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:63
+msgid "Removing..."
+msgstr "Inaondoa..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:64
+msgid "Finalizing..."
+msgstr "Inakamilisha..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:65
+msgid "Cancelling..."
+msgstr "Inaghairi..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:66
+msgid "Finished."
+msgstr "Imemaliza."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:67
+msgid "Transaction failed."
+msgstr "Muamala umeshindwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:68
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:249
+msgid "Transaction cancelled."
+msgstr "Muamala umeghairiwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:69
+msgid "The driver change was not completed."
+msgstr "Badiliko la kiendeshi halikukamilika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:87
+msgid "The system bus is unavailable."
+msgstr "Basi la mfumo (system bus) halipatikani."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:213
+msgid "Driver changes are not enabled in this interface."
+msgstr "Mabadiliko ya viendeshi hayajawezeshwa katika kiolesura hiki."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:286
+msgid "PackageKit returned an invalid transaction path"
+msgstr "PackageKit ilirudisha njia ya muamala isiyo sahihi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:289
+msgid "Cannot subscribe to PackageKit signals"
+msgstr "Haiwezi kujisajili kwa ishara za PackageKit"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:322
+msgid "Waiting for the PackageKit result. The operation may still be running."
+msgstr "Inasubiri matokeo ya PackageKit. Huenda operesheni bado inaendelea."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:367
+msgid "The planned package version is no longer available."
+msgstr "Toleo la kifurushi lililopangwa halipatikani tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:370
+msgid "A package selected for removal is no longer installed."
+msgstr "Kifurushi kilichochaguliwa kuondolewa hakijasakinishwa tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:375
+msgid "PackageKit did not complete the transaction."
+msgstr "PackageKit haikukamilisha muamala."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:379
+msgid "PackageKit destroyed the transaction before Finished"
+msgstr "PackageKit iliharibu muamala kabla ya Finished"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:160
+msgid "A driver transaction plan is required"
+msgstr "Mpango wa muamala wa viendeshi unahitajika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:164
+msgid "Invalid driver selections"
+msgstr "Uteuzi wa viendeshi si sahihi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:167
+msgid "Plan does not match the backend snapshot"
+msgstr "Mpango haulingani na picha-hali ya mfumo wa nyuma"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:170
+msgid "Preview or unavailable packages cannot be executed"
+msgstr "Vifurushi vya hakiki au visivyopatikana haviwezi kutekelezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:179
+msgid "The selected device is no longer available"
+msgstr "Kifaa kilichochaguliwa hakipatikani tena"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:184
+msgid "The selected driver is no longer available"
+msgstr "Kiendeshi kilichochaguliwa hakipatikani tena"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/safety.py:31
+msgid ""
+"This driver requires a Secure Boot flow that is not supported by this "
+"version. No firmware or MOK settings will be changed."
+msgstr ""
+"Kiendeshi hiki kinahitaji mtiririko wa Secure Boot usiotumika katika toleo "
+"hili. Hakuna mipangilio ya programu dhibiti (firmware) wala MOK "
+"itakayobadilishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/application.py:42
+msgid "Show detailed diagnostic logs"
+msgstr "Onyesha kumbukumbu za kina za uchunguzi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:82
+msgid ""
+"The driver detection backend is unavailable. Check the application "
+"dependencies and try again."
+msgstr ""
+"Mfumo wa nyuma wa kutambua viendeshi haupatikani. Kagua vitegemezi vya "
+"programu kisha ujaribu tena."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:83
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:478
+msgid "Driver detection failed. Consult the application log for details."
+msgstr ""
+"Utambuzi wa viendeshi umeshindwa. Angalia kumbukumbu ya programu kwa maelezo."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:114
+#, python-format
+msgid "%s - Qt test mode"
+msgstr "%s - hali ya majaribio ya Qt"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:118
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:247
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:248
+msgid "Refresh"
+msgstr "Onyesha upya"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:121
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
+msgid "Close"
+msgstr "Funga"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:124
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
+msgid "Preview changes"
+msgstr "Hakiki mabadiliko"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:128
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
+msgid "Apply changes"
+msgstr "Tumia mabadiliko"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:156
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:552
+msgid "Test mode - no changes will be applied to the system"
+msgstr "Hali ya majaribio - hakuna mabadiliko yatakayotumika kwenye mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:162
+msgid "Test scenario"
+msgstr "Hali ya jaribio"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:190
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:633
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:634
+msgid "Cancel"
+msgstr "Ghairi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
+msgid "Review and confirm the selected driver changes"
+msgstr "Kagua na uthibitishe mabadiliko ya viendeshi yaliyochaguliwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
+msgid "Detect drivers again"
+msgstr "Tambua viendeshi tena"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
+msgid "View planned packages without changing the system"
+msgstr "Tazama vifurushi vilivyopangwa bila kubadilisha mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
+msgid "Close the driver manager"
+msgstr "Funga kidhibiti cha viendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
+msgid "Request cancellation when PackageKit permits it"
+msgstr "Omba kughairi PackageKit inaporuhusu"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
+msgid "Driver operation progress"
+msgstr "Maendeleo ya operesheni ya viendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
+msgid "Progress reported by PackageKit"
+msgstr "Maendeleo yaliyoripotiwa na PackageKit"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
+msgid "Current detection result"
+msgstr "Matokeo ya sasa ya utambuzi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
+msgid "Driver detection status"
+msgstr "Hali ya utambuzi wa viendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
+msgid "Driver operation result"
+msgstr "Matokeo ya operesheni ya viendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
+msgid "Result and activation information"
+msgstr "Taarifa za matokeo na uwashaji"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:213
+msgid "System availability"
+msgstr "Upatikanaji wa mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:214
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:568
+msgid "System verification"
+msgstr "Uthibitishaji wa mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:218
+msgid "Help"
+msgstr "Usaidizi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:219
+msgid "Copy diagnostic information"
+msgstr "Nakili taarifa za uchunguzi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:220
+msgid "Copy local diagnostics to the clipboard; nothing is uploaded"
+msgstr ""
+"Nakili taarifa za uchunguzi za ndani kwenye ubao wa kunakili; hakuna "
+"kinachopakiwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:223
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
+msgid "About"
+msgstr "Kuhusu"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:256
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:258
+msgid "Searching for available drivers..."
+msgstr "Inatafuta viendeshi vinavyopatikana..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:289
+msgid "No additional drivers are necessary."
+msgstr "Hakuna viendeshi vya ziada vinavyohitajika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:291
+msgid ""
+"Your system is using the appropriate drivers.\n"
+"\n"
+"No additional drivers are available or necessary."
+msgstr ""
+"Mfumo wako unatumia viendeshi vinavyofaa.\n"
+"\n"
+"Hakuna viendeshi vya ziada vinavyopatikana wala kuhitajika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:303
+#, python-format
+msgid "%(count)d device was found."
+msgid_plural "%(count)d devices were found."
+msgstr[0] "Kifaa %(count)d kimepatikana."
+msgstr[1] "Vifaa %(count)d vimepatikana."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
+#, python-format
+msgid ""
+"%(name)s %(version)s\n"
+"Mainuan\n"
+"\n"
+"Originally derived from Linux Mint Driver Manager.\n"
+"GPL-2.0-or-later; Clement Lefebvre and contributors."
+msgstr ""
+"%(name)s %(version)s\n"
+"Mainuan\n"
+"\n"
+"Asili yake ni Linux Mint Driver Manager.\n"
+"GPL-2.0-or-later; Clement Lefebvre na wachangiaji."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:337
+msgid "Cannot plan this change"
+msgstr "Haiwezi kupanga badiliko hili"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:338
+msgid ""
+"The driver selection is inconsistent or cannot be changed automatically."
+msgstr "Uteuzi wa viendeshi haulingani au hauwezi kubadilishwa kiotomatiki."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:374
+msgid ""
+"Changes cannot be applied because PackageKit is unavailable. Driver "
+"detection remains available."
+msgstr ""
+"Mabadiliko hayawezi kutumika kwa sababu PackageKit haipatikani. Utambuzi wa "
+"viendeshi bado unapatikana."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:468
+msgid "Package operations finished. Checking driver activation..."
+msgstr ""
+"Operesheni za vifurushi zimekamilika. Inakagua uwashaji wa viendeshi..."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:487
+msgid "Driver detection failed."
+msgstr "Utambuzi wa viendeshi umeshindwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:490
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:491
+msgid "Try again"
+msgstr "Jaribu tena"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:512
+msgid "Driver changes are in progress"
+msgstr "Mabadiliko ya viendeshi yanaendelea"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:513
+msgid "Wait for the operation to finish before closing this window."
+msgstr "Subiri operesheni ikamilike kabla ya kufunga dirisha hili."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:514
+msgid "Choose Cancel to request transaction cancellation."
+msgstr "Chagua Ghairi ili kuomba kughairiwa kwa muamala."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:539
+msgid "Planned changes"
+msgstr "Mabadiliko yaliyopangwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:544
+msgid "Changes that will be applied"
+msgstr "Mabadiliko yatakayotumika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:548
+msgid ""
+"The system or package plan changed. Review the updated changes before "
+"applying."
+msgstr ""
+"Mfumo au mpango wa vifurushi umebadilika. Kagua mabadiliko yaliyosasishwa "
+"kabla ya kutumia."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:556
+msgid "Preview only. These changes will not be executed."
+msgstr "Hakiki tu. Mabadiliko haya hayatatekelezwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:563
+#, python-format
+msgid "Third-party repository: %s"
+msgstr "Hazina ya mhusika mwingine: %s"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:573
+msgid "Secure Boot: enabled"
+msgstr "Secure Boot: imewashwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:574
+msgid "Secure Boot: disabled"
+msgstr "Secure Boot: imezimwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:575
+msgid "Secure Boot: unsupported"
+msgstr "Secure Boot: haitumiki"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:576
+msgid "Secure Boot: unknown"
+msgstr "Secure Boot: haijulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:577
+msgid "Module: no DKMS required"
+msgstr "Moduli: DKMS haihitajiki"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:578
+msgid "Module: DKMS required"
+msgstr "Moduli: DKMS inahitajika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:579
+msgid "Module: prebuilt/DKMS alternatives"
+msgstr "Moduli: mbadala za iliyojengwa awali/DKMS"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:580
+msgid "Module requirements: unknown"
+msgstr "Mahitaji ya moduli: hayajulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:584
+msgid "MOK: signing certificate enrolled"
+msgstr "MOK: cheti cha kutia sahihi kimesajiliwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:585
+msgid "MOK: not enrolled"
+msgstr "MOK: haijasajiliwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:586
+msgid "MOK: enrollment pending"
+msgstr "MOK: usajili unasubiri"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:587
+msgid "MOK: unknown"
+msgstr "MOK: haijulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:589
+msgid "DKMS signing: configured"
+msgstr "Utiaji sahihi wa DKMS: umesanidiwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:590
+msgid "Kernel headers: present"
+msgstr "Vichwa vya kerneli: vipo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:591
+msgid "Kernel headers: missing"
+msgstr "Vichwa vya kerneli: havipo"
+
+# reviewed: noun-class agreement: vichwa (vi-) needs 'havijulikani'
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:592
+msgid "Kernel headers: unknown"
+msgstr "Vichwa vya kerneli: havijulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:593
+msgid "Kernel headers: not required"
+msgstr "Vichwa vya kerneli: havihitajiki"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:597
+msgid "Restart: required to complete activation"
+msgstr "Kuanzisha upya: kunahitajika ili kukamilisha uwashaji"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
+msgid "Blocked: "
+msgstr "Imezuiwa: "
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
+msgid "Warning: "
+msgstr "Onyo: "
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
+msgid "Install:"
+msgstr "Sakinisha:"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
+msgid "Remove:"
+msgstr "Ondoa:"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:612
+msgid "None"
+msgstr "Hakuna"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:619
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:678
+msgid "A restart may be required."
+msgstr "Huenda kuanzisha upya kukahitajika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:628
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:629
+msgid "Apply"
+msgstr "Tumia"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:630
+msgid "Apply only the changes listed in this confirmation"
+msgstr "Tumia mabadiliko yaliyoorodheshwa katika uthibitisho huu pekee"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:644
+msgid ""
+"The driver change was not completed. Some changes may already have been "
+"applied. The actual system state is being detected again. No automatic "
+"restoration was attempted."
+msgstr ""
+"Badiliko la kiendeshi halikukamilika. Huenda baadhi ya mabadiliko tayari "
+"yametumika. Hali halisi ya mfumo inatambuliwa upya. Hakuna urejeshaji wa "
+"kiotomatiki uliojaribiwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:647
+#, python-format
+msgid "Completed stages: %s"
+msgstr "Hatua zilizokamilika: %s"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
+msgid "Installation"
+msgstr "Usakinishaji"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
+msgid "Removal"
+msgstr "Uondoaji"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:650
+msgid ""
+"The changes were not applied because authorization was cancelled or denied."
+msgstr "Mabadiliko hayakutumika kwa sababu idhini ilighairiwa au kukataliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:652
+msgid ""
+"The operation was cancelled. The actual system state is being detected again."
+msgstr "Operesheni imeghairiwa. Hali halisi ya mfumo inatambuliwa upya."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:654
+msgid "Simulation completed. No system changes were made."
+msgstr "Uigaji umekamilika. Hakuna mabadiliko yaliyofanywa kwenye mfumo."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:655
+msgid "The changes were applied successfully."
+msgstr "Mabadiliko yametumika kwa mafanikio."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:656
+msgid "No driver changes were necessary."
+msgstr "Hakuna mabadiliko ya viendeshi yaliyohitajika."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:658
+msgid "Package changes completed. Driver activation checked separately."
+msgstr ""
+"Mabadiliko ya vifurushi yamekamilika. Uwashaji wa viendeshi umekaguliwa "
+"kando."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:660
+msgid ""
+"The package download failed. Check the connection and review the detected "
+"driver state."
+msgstr ""
+"Upakuaji wa vifurushi umeshindwa. Kagua muunganisho na hali ya viendeshi "
+"iliyotambuliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:662
+msgid ""
+"Package dependencies prevented this change. No more aggressive removal was "
+"attempted."
+msgstr ""
+"Vitegemezi vya vifurushi vilizuia badiliko hili. Hakuna uondoaji mkali zaidi "
+"uliojaribiwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:664
+msgid ""
+"The driver operation failed. The actual system state is being detected again."
+msgstr ""
+"Operesheni ya kiendeshi imeshindwa. Hali halisi ya mfumo inatambuliwa upya."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:672
+msgid "A system restart is required to complete driver activation."
+msgstr ""
+"Kuanzisha upya mfumo kunahitajika ili kukamilisha uwashaji wa kiendeshi."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:674
+msgid "Restart your session to complete the changes."
+msgstr "Anzisha upya kipindi chako ili kukamilisha mabadiliko."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:676
+msgid "Restart the affected applications to complete the changes."
+msgstr "Anzisha upya programu zilizoathiriwa ili kukamilisha mabadiliko."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
+msgid "Processor microcode"
+msgstr "Mikrokodi ya prosesa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:49
+msgid "The recommended driver package is selected."
+msgstr "Kifurushi cha kiendeshi kinachopendekezwa kimechaguliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:50
+msgid "An alternative driver package is selected."
+msgstr "Kifurushi mbadala cha kiendeshi kimechaguliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:51
+msgid "A manually installed driver was detected."
+msgstr "Kiendeshi kilichosakinishwa kwa mkono kimetambuliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:52
+msgid "No additional driver is selected."
+msgstr "Hakuna kiendeshi cha ziada kilichochaguliwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:59
+msgid "Current"
+msgstr "Cha sasa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:61
+msgid "Recommended"
+msgstr "Kinapendekezwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
+msgid "Integrated into the system"
+msgstr "Kimejumuishwa kwenye mfumo"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
+msgid "Open-source"
+msgstr "Programu huria"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
+msgid "Proprietary"
+msgstr "Cha umiliki"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:67
+msgid "Installed"
+msgstr "Kimesakinishwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:69
+msgid "Source: third-party repository"
+msgstr "Chanzo: hazina ya mhusika mwingine"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:71
+msgid "Requires an Internet connection"
+msgstr "Kinahitaji muunganisho wa Intaneti"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:75
+msgid "Continue using a manually installed driver"
+msgstr "Endelea kutumia kiendeshi kilichosakinishwa kwa mkono"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:82
+msgid "Do not use the device"
+msgstr "Usitumie kifaa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:90
+#, python-format
+msgid "Version: %s"
+msgstr "Toleo: %s"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:94
+msgid "Driver package"
+msgstr "Kifurushi cha kiendeshi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:122
+msgid "Driver active"
+msgstr "Kiendeshi kinafanya kazi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:123
+msgid "Installed; restart to activate"
+msgstr "Kimesakinishwa; anzisha upya ili kuwasha"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:124
+msgid "Installed; MOK enrollment required"
+msgstr "Kimesakinishwa; usajili wa MOK unahitajika"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:125
+msgid "Installed; activation could not be confirmed"
+msgstr "Kimesakinishwa; uwashaji haukuweza kuthibitishwa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:126
+msgid "Installed; driver is not confirmed active"
+msgstr "Kimesakinishwa; haijathibitishwa kuwa kiendeshi kinafanya kazi"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:127
+msgid "The requested driver package is not installed."
+msgstr "Kifurushi cha kiendeshi kilichoombwa hakijasakinishwa."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:128
+msgid "The current driver activation state is unknown."
+msgstr "Hali ya sasa ya uwashaji wa kiendeshi haijulikani."
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:167
+#, python-format
+msgid ""
+"Bound driver: %(driver)s\n"
+"Module: %(module)s\n"
+"Signer: %(signer)s"
+msgstr ""
+"Kiendeshi kilichofungamanishwa: %(driver)s\n"
+"Moduli: %(module)s\n"
+"Mtia sahihi: %(signer)s"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:168
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:169
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:262
+msgid "Unknown"
+msgstr "Haijulikani"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
+msgid "Available option"
+msgstr "Chaguo linalopatikana"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
+msgid "Current selection"
+msgstr "Uteuzi wa sasa"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
+#, python-format
+msgid "APT candidate: %s"
+msgstr "Toleo pendekezwa la APT: %s"
+
+#: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:264
+msgid "Processor"
+msgstr "Prosesa"

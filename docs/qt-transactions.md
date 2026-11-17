@@ -136,3 +136,49 @@ References: distribution `/usr/share/dbus-1/interfaces/` XMLs,
 [efivarfs format](https://www.kernel.org/doc/html/latest/filesystems/efivarfs.html).
 Identity/domain remain `org.mainuan.GestaoDrivers`/`mainuan-gestao-drivers`.
 GPL-2.0-or-later and Linux Mint copyrights/credits are preserved.
+
+## Garantias da versão 1.0
+
+Texto mantido do README anterior, que agora traz só o resumo.
+
+O código fica em `usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/`.
+O frontend GTK, seu helper Broadcom e o sudoers legado foram removidos no beta
+0.5. Não há fallback GTK, action PolicyKit própria nem helper privilegiado.
+A autorização pertence ao PackageKit e ao agente PolicyKit da sessão. O
+aplicativo não pede senha e não executa APT nem dpkg diretamente.
+
+```text
+hardware → APT + repositórios configurados/PPAs → ubuntu-drivers-common
+         → backend Mainuan → preflight → Qt6 → PackageKit → PolicyKit
+```
+
+- A origem do pacote não substitui a recomendação do `ubuntu-drivers-common`
+  nem o candidato/pinning do APT. Não há gerenciamento próprio de Mesa ou PPAs.
+- Na Live Session, detecção e prévia funcionam, mas alterações são bloqueadas;
+  sessão desconhecida também é bloqueada, por precaução.
+- O upgrade retira o conffile sudoers obsoleto pelo mecanismo Debian
+  apropriado; modificações locais são preservadas como backup inativo até o
+  purge.
+- Trocas com remoção e instalação não são atômicas; em caso de falha parcial,
+  o aplicativo detecta novamente o estado real, sem restaurar drivers
+  automaticamente. Autoremove e remoção indiscriminada de dependências não são
+  permitidos.
+- O preflight verifica requisitos de módulo, kernel/headers, Secure Boot e MOK
+  somente para leitura. DKMS com Secure Boot ativo pode prosseguir quando o
+  certificado realmente usado pelo DKMS é identificado e sua inscrição MOK é
+  confirmada. Uma MOK diferente não basta. Estado desconhecido ou inscrição
+  pendente continuam bloqueados; não há geração de chave nem enrollment
+  próprio. Módulos pré-compilados compatíveis não recebem o bloqueio DKMS.
+- A interface não descarrega nem carrega módulos Broadcom: orienta reiniciar.
+- Pacote instalado não significa driver ativo; o resultado é reavaliado após a
+  transação.
+- Não há scripts para remover dependências, alterar repositórios, módulos ou
+  Secure Boot durante a instalação ou remoção do aplicativo.
+- A cobertura automatizada é ampla e PackageKit/PolicyKit têm testes
+  separados. Hardware real adicional ainda tem cobertura limitada pela
+  disponibilidade de equipamentos. Cenários fictícios do modo `test` não
+  substituem validação com hardware compatível. Não force um driver
+  incompatível na VM.
+
+O contato de empacotamento é `Mainuan Packaging <openwebosbr@gmail.com>`, já
+registrado no changelog das revisões Mainuan anteriores.

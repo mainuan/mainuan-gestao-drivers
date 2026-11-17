@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Mainuan
-# This file is distributed under the same license as the Mainuan Gestão de Drivers package.
+# This file is distributed under the same license as the mainuan-gestao-drivers package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Mainuan Gestão de Drivers 1.0\n"
+"Project-Id-Version: mainuan-gestao-drivers 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/mainuan/mainuan-gestao-drivers/"
 "issues\n"
-"POT-Creation-Date: 2026-11-16 11:17-0300\n"
+"POT-Creation-Date: 2026-11-17 00:56-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

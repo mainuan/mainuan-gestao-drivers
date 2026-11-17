@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2026-01-08 15:38+0000\n"
 "X-Generator: Launchpad (build 99c00f518760bdd50fc6e353e7736d2fff8fba4a)\n"
+"X-Launchpad-Export-Date: 2026-01-08 15:38+0000\n"
 
 #. Translators: application name shown in the window title and menus.
 #: data/org.mainuan.GestaoDrivers.desktop.in:3
@@ -29,48 +29,57 @@ msgstr "Administrator drivere"
 
 #: data/org.mainuan.GestaoDrivers.desktop.in:4
 msgid "Manage the system's hardware drivers"
-msgstr ""
+msgstr "Administrați driverele hardware ale sistemului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:328
 msgid ""
 "The prebuilt module's package trust or running-kernel compatibility could "
 "not be verified."
 msgstr ""
+"Încrederea în pachetul modulului precompilat sau compatibilitatea cu "
+"kernelul în execuție nu au putut fi verificate."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:330
 msgid ""
 "The prebuilt module's Secure Boot signature trust could not be verified. "
 "Repository trust alone does not establish module trust."
 msgstr ""
+"Încrederea în semnătura Secure Boot a modulului precompilat nu a putut fi "
+"verificată. Încrederea în depozit nu este suficientă pentru a stabili "
+"încrederea în modul."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:332
 msgid ""
 "The running kernel is outside the standard prebuilt module update path. "
 "Verify module compatibility."
 msgstr ""
+"Kernelul în execuție nu se află pe calea standard de actualizare a modulelor "
+"precompilate. Verificați compatibilitatea modulului."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:334
 msgid ""
 "A kernel update is pending. Review system updates before changing drivers."
 msgstr ""
+"O actualizare de kernel este în așteptare. Verificați actualizările de "
+"sistem înainte de a modifica driverele."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:336
 msgid "The kernel update state could not be verified."
-msgstr ""
+msgstr "Starea actualizării kernelului nu a putut fi verificată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:338
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:670
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart the computer and complete key enrollment in MokManager."
 msgstr ""
-"Trebuie sa reporniți calculatorul pentru a finaliza modificările driverului."
+"Reporniți calculatorul și finalizați înregistrarea cheii în MokManager."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:342
 msgid ""
 "PackageKit must resolve the prebuilt/DKMS module alternatives before "
 "confirmation."
 msgstr ""
+"PackageKit trebuie să rezolve alternativele de modul precompilat/DKMS "
+"înainte de confirmare."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:347
 msgid ""
@@ -78,273 +87,287 @@ msgid ""
 "actual DKMS signing certificate must be identified and enrolled before "
 "changes can be applied."
 msgstr ""
+"Acest driver poate necesita un modul DKMS cu Secure Boot activ sau "
+"necunoscut. Certificatul real de semnare DKMS trebuie identificat și "
+"înregistrat înainte de a putea aplica modificările."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:351
 msgid ""
 "Headers for the running kernel are missing or unverified. Install matching "
 "headers through system updates before retrying."
 msgstr ""
+"Antetele pentru kernelul în execuție lipsesc sau nu sunt verificate. "
+"Instalați antetele corespunzătoare prin actualizările de sistem înainte de a "
+"reîncerca."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/preflight.py:353
 msgid "The module build requirements could not be fully verified."
-msgstr ""
+msgstr "Cerințele de compilare a modulului nu au putut fi verificate complet."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:19
 msgid ""
 "Driver changes are unavailable in the Live Session. Install Mainuan to "
 "manage this computer's drivers."
 msgstr ""
+"Modificarea driverelor nu este disponibilă în sesiunea Live. Instalați "
+"Mainuan pentru a administra driverele acestui calculator."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/session.py:21
 msgid ""
 "The system session could not be verified. Driver changes are blocked; "
 "viewing remains available."
 msgstr ""
+"Sesiunea de sistem nu a putut fi verificată. Modificarea driverelor este "
+"blocată; vizualizarea rămâne disponibilă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:13
 msgid "General devices"
-msgstr ""
+msgstr "Dispozitive generale"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:14
 msgid "Secure Boot + prebuilt module"
-msgstr ""
+msgstr "Secure Boot + modul precompilat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:15
 msgid "Secure Boot + DKMS + enrolled MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + MOK înregistrat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:16
 msgid "Secure Boot + DKMS + missing MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + MOK lipsă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:17
 msgid "Secure Boot disabled + DKMS"
-msgstr ""
+msgstr "Secure Boot dezactivat + DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:18
 msgid "Secure Boot unknown + DKMS"
-msgstr ""
+msgstr "Secure Boot necunoscut + DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:19
 msgid "Broadcom DKMS"
-msgstr ""
+msgstr "Broadcom DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:20
 msgid "NVIDIA custom closed pin"
-msgstr ""
+msgstr "NVIDIA proprietar fixat personalizat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:21
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA open recommended"
-msgstr "recomandat"
+msgstr "NVIDIA deschis recomandat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:22
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA closed recommended"
-msgstr "recomandat"
+msgstr "NVIDIA proprietar recomandat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:23
-#, fuzzy
-#| msgid "recommended"
 msgid "NVIDIA server recommended"
-msgstr "recomandat"
+msgstr "NVIDIA server recomandat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:24
 msgid "Kernel update pending"
-msgstr ""
+msgstr "Actualizare de kernel în așteptare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:25
 msgid "Kernel headers missing"
-msgstr ""
+msgstr "Antete de kernel lipsă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:26
 msgid "MOK enrollment pending"
-msgstr ""
+msgstr "Înregistrare MOK în așteptare"
 
+# reviewed: 'neînrudit' (parentesco) inadequado para chave MOK não relacionada
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:27
 msgid "Secure Boot + DKMS + unrelated MOK"
-msgstr ""
+msgstr "Secure Boot + DKMS + MOK fără legătură"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:28
 msgid "Secure Boot + DKMS + matching enrollment pending"
-msgstr ""
+msgstr "Secure Boot + DKMS + înregistrare corespunzătoare în așteptare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:29
 msgid "Secure Boot + DKMS + signing unknown"
-msgstr ""
+msgstr "Secure Boot + DKMS + semnare necunoscută"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:30
-#, fuzzy
-#| msgid "Installing drivers..."
 msgid "Installed + driver active"
-msgstr "Se instalează drivere..."
+msgstr "Instalat + driver activ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:31
 msgid "Installed + restart required"
-msgstr ""
+msgstr "Instalat + repornire necesară"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:32
 msgid "Installed + MOK enrollment required"
-msgstr ""
+msgstr "Instalat + înregistrare MOK necesară"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:33
 msgid "Installed + activation unverified"
-msgstr ""
+msgstr "Instalat + activare neverificată"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:34
 msgid "Installed + previous driver bound"
-msgstr ""
+msgstr "Instalat + driverul anterior legat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:35
-#, fuzzy
-#| msgid "This device is using the recommended driver."
 msgid "Third-party recommended driver"
-msgstr "Acest dispozitiv folosește driverul recomandat."
+msgstr "Driver terț recomandat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:36
 msgid "Third-party DKMS driver"
-msgstr ""
+msgstr "Driver DKMS terț"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:37
 msgid "Live Session; changes blocked"
-msgstr ""
+msgstr "Sesiune Live; modificări blocate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:38
 msgid "PackageKit unavailable"
-msgstr ""
+msgstr "PackageKit indisponibil"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:39
 msgid "Driver detection error"
-msgstr ""
+msgstr "Eroare la detectarea driverelor"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/test_scenarios.py:40
-#, fuzzy
 msgid "No additional drivers"
-msgstr "Nu este utilizat niciun driver proprietar."
+msgstr "Niciun driver suplimentar"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:214
 msgid "Driver detection failed. No new transaction was started."
 msgstr ""
+"Detectarea driverelor a eșuat. Nu a fost pornită nicio tranzacție nouă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:240
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:393
 msgid "PackageKit is unavailable. Driver detection is still available."
 msgstr ""
+"PackageKit nu este disponibil. Detectarea driverelor rămâne disponibilă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:249
 msgid "This PackageKit version is not supported for applying driver changes."
 msgstr ""
+"Această versiune de PackageKit nu este acceptată pentru aplicarea "
+"modificărilor de drivere."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:251
 msgid "PackageKit is busy. Wait for the other package operation to finish."
 msgstr ""
+"PackageKit este ocupat. Așteptați terminarea celeilalte operații cu pachete."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:273
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:433
 msgid "The PackageKit service disconnected."
-msgstr ""
+msgstr "Serviciul PackageKit s-a deconectat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:414
-#, fuzzy
-#| msgid "Removing drivers..."
 msgid "Preparing driver changes..."
-msgstr "Se șterg drivere..."
+msgstr "Se pregătesc modificările de drivere..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:531
 msgid ""
 "PackageKit proposed a package downgrade. This version cannot apply this plan "
 "safely."
 msgstr ""
+"PackageKit a propus retrogradarea unui pachet. Această versiune nu poate "
+"aplica acest plan în siguranță."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:533
 msgid ""
 "PackageKit reported an untrusted package. No further transaction was started."
 msgstr ""
+"PackageKit a raportat un pachet care nu este de încredere. Nu a mai fost "
+"pornită nicio tranzacție."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:539
 msgid ""
 "PackageKit proposed additional removals outside the confirmed driver plan."
 msgstr ""
+"PackageKit a propus eliminări suplimentare în afara planului de drivere "
+"confirmat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:541
 msgid "A package selected for removal changed version. Review the plan again."
 msgstr ""
+"Un pachet selectat pentru eliminare și-a schimbat versiunea. Revizuiți din "
+"nou planul."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:547
 msgid ""
 "A target package changed version or architecture. Review the detected plan "
 "again."
 msgstr ""
+"Un pachet țintă și-a schimbat versiunea sau arhitectura. Revizuiți din nou "
+"planul detectat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:550
 msgid ""
 "This driver requires a Secure Boot flow that is not supported by this "
 "version."
 msgstr ""
+"Acest driver necesită un flux Secure Boot care nu este acceptat de această "
+"versiune."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:552
 msgid "PackageKit could not safely simulate all planned changes."
 msgstr ""
+"PackageKit nu a putut simula în siguranță toate modificările planificate."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:554
 msgid "The removal simulation requires unexpected package installations."
-msgstr ""
+msgstr "Simularea eliminării necesită instalări neașteptate de pachete."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:562
 msgid ""
 "Installation dependencies changed after removal. No further change was "
 "applied."
 msgstr ""
+"Dependențele de instalare s-au modificat după eliminare. Nu a mai fost "
+"aplicată nicio modificare."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:617
 msgid "The package operation was interrupted after changes started."
-msgstr ""
+msgstr "Operația cu pachete a fost întreruptă după începerea modificărilor."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:624
 msgid ""
 "PackageKit reported an unexpected removal. No further transaction was "
 "started."
 msgstr ""
+"PackageKit a raportat o eliminare neașteptată. Nu a mai fost pornită nicio "
+"tranzacție."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/execution.py:646
 msgid "The operation was cancelled."
-msgstr ""
+msgstr "Operația a fost anulată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:58
-#, fuzzy
 msgid "Waiting..."
-msgstr "Se renunță..."
+msgstr "Se așteaptă..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:59
 msgid "Preparing..."
-msgstr ""
+msgstr "Se pregătește..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:60
-#, fuzzy
 msgid "Resolving dependencies..."
-msgstr "Se șterg drivere..."
+msgstr "Se rezolvă dependențele..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:61
-#, fuzzy
 msgid "Downloading..."
-msgstr "Se descarcă drivere..."
+msgstr "Se descarcă..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:62
-#, fuzzy
 msgid "Installing..."
-msgstr "Se instalează drivere..."
+msgstr "Se instalează..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:63
-#, fuzzy
 msgid "Removing..."
-msgstr "Se șterg drivere..."
+msgstr "Se elimină..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:64
-#, fuzzy
 msgid "Finalizing..."
-msgstr "Se renunță..."
+msgstr "Se finalizează..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:65
 msgid "Cancelling..."
@@ -352,230 +375,235 @@ msgstr "Se renunță..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:66
 msgid "Finished."
-msgstr ""
+msgstr "Terminat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:67
 msgid "Transaction failed."
-msgstr ""
+msgstr "Tranzacția a eșuat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:68
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:249
 msgid "Transaction cancelled."
-msgstr ""
+msgstr "Tranzacție anulată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:69
 msgid "The driver change was not completed."
-msgstr ""
+msgstr "Modificarea driverului nu a fost finalizată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:87
 msgid "The system bus is unavailable."
-msgstr ""
+msgstr "Magistrala de sistem nu este disponibilă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:213
 msgid "Driver changes are not enabled in this interface."
-msgstr ""
+msgstr "Modificarea driverelor nu este activată în această interfață."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:286
 msgid "PackageKit returned an invalid transaction path"
-msgstr ""
+msgstr "PackageKit a returnat o cale de tranzacție nevalidă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:289
 msgid "Cannot subscribe to PackageKit signals"
-msgstr ""
+msgstr "Nu se poate abona la semnalele PackageKit"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:322
 msgid "Waiting for the PackageKit result. The operation may still be running."
 msgstr ""
+"Se așteaptă rezultatul PackageKit. Operația poate fi încă în desfășurare."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:367
 msgid "The planned package version is no longer available."
-msgstr ""
+msgstr "Versiunea de pachet planificată nu mai este disponibilă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:370
 msgid "A package selected for removal is no longer installed."
-msgstr ""
+msgstr "Un pachet selectat pentru eliminare nu mai este instalat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:375
 msgid "PackageKit did not complete the transaction."
-msgstr ""
+msgstr "PackageKit nu a finalizat tranzacția."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/packagekit.py:379
 msgid "PackageKit destroyed the transaction before Finished"
-msgstr ""
+msgstr "PackageKit a distrus tranzacția înainte de Finished"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:160
 msgid "A driver transaction plan is required"
-msgstr ""
+msgstr "Este necesar un plan de tranzacție pentru drivere"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:164
 msgid "Invalid driver selections"
-msgstr ""
+msgstr "Selecții de drivere nevalide"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:167
 msgid "Plan does not match the backend snapshot"
-msgstr ""
+msgstr "Planul nu corespunde instantaneului backend-ului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:170
 msgid "Preview or unavailable packages cannot be executed"
-msgstr ""
+msgstr "Pachetele de previzualizare sau indisponibile nu pot fi executate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:179
 msgid "The selected device is no longer available"
-msgstr ""
+msgstr "Dispozitivul selectat nu mai este disponibil"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/planner.py:184
 msgid "The selected driver is no longer available"
-msgstr ""
+msgstr "Driverul selectat nu mai este disponibil"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/backend/transactions/safety.py:31
 msgid ""
 "This driver requires a Secure Boot flow that is not supported by this "
 "version. No firmware or MOK settings will be changed."
 msgstr ""
+"Acest driver necesită un flux Secure Boot care nu este acceptat de această "
+"versiune. Nu se vor modifica setările de firmware sau MOK."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/application.py:42
 msgid "Show detailed diagnostic logs"
-msgstr ""
+msgstr "Afișează jurnalele de diagnostic detaliate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:82
 msgid ""
 "The driver detection backend is unavailable. Check the application "
 "dependencies and try again."
 msgstr ""
+"Backend-ul de detectare a driverelor nu este disponibil. Verificați "
+"dependențele aplicației și încercați din nou."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:83
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:478
 msgid "Driver detection failed. Consult the application log for details."
 msgstr ""
+"Detectarea driverelor a eșuat. Consultați jurnalul aplicației pentru detalii."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:114
 #, python-format
 msgid "%s - Qt test mode"
-msgstr ""
+msgstr "%s - mod de test Qt"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:118
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:247
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:248
 msgid "Refresh"
-msgstr ""
+msgstr "Reîmprospătează"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:121
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
 msgid "Close"
-msgstr ""
+msgstr "Închide"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:124
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
 msgid "Preview changes"
-msgstr ""
+msgstr "Previzualizează modificările"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:128
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
-#, fuzzy
-#| msgid "_Apply Changes"
 msgid "Apply changes"
-msgstr "_Aplică modificările"
+msgstr "Aplică modificările"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:156
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:552
 msgid "Test mode - no changes will be applied to the system"
-msgstr ""
+msgstr "Mod de test - nu se va aplica nicio modificare sistemului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:162
 msgid "Test scenario"
-msgstr ""
+msgstr "Scenariu de test"
 
+# from mainuan-grub-editor
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:190
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:633
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:634
-#, fuzzy
-#| msgid "_Cancel"
 msgid "Cancel"
-msgstr "_Renunță"
+msgstr "Anulează"
 
+# reviewed: dicas do mesmo grupo (main_window 201-205) misturavam imperativo
+# formal e 3ª pessoa; unificado na forma descritiva
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:201
 msgid "Review and confirm the selected driver changes"
-msgstr ""
+msgstr "Revizuiește și confirmă modificările de drivere selectate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:202
 msgid "Detect drivers again"
-msgstr ""
+msgstr "Detectează din nou driverele"
 
+# reviewed: consistência das dicas de ferramenta com
+# 'Detectează'/'Închide'/'Solicită'
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:203
 msgid "View planned packages without changing the system"
-msgstr ""
+msgstr "Vizualizează pachetele planificate fără a modifica sistemul"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:204
-#, fuzzy
-#| msgid "Driver Manager"
 msgid "Close the driver manager"
-msgstr "Administrator drivere"
+msgstr "Închide administratorul de drivere"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:205
 msgid "Request cancellation when PackageKit permits it"
-msgstr ""
+msgstr "Solicită anularea atunci când PackageKit o permite"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
 msgid "Driver operation progress"
-msgstr ""
+msgstr "Progresul operației cu drivere"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:206
 msgid "Progress reported by PackageKit"
-msgstr ""
+msgstr "Progres raportat de PackageKit"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
 msgid "Current detection result"
-msgstr ""
+msgstr "Rezultatul detectării curente"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:207
 msgid "Driver detection status"
-msgstr ""
+msgstr "Starea detectării driverelor"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
 msgid "Driver operation result"
-msgstr ""
+msgstr "Rezultatul operației cu drivere"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:208
 msgid "Result and activation information"
-msgstr ""
+msgstr "Informații despre rezultat și activare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:213
 msgid "System availability"
-msgstr ""
+msgstr "Disponibilitatea sistemului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:214
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:568
 msgid "System verification"
-msgstr ""
+msgstr "Verificarea sistemului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:218
 msgid "Help"
-msgstr ""
+msgstr "Ajutor"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:219
 msgid "Copy diagnostic information"
-msgstr ""
+msgstr "Copiază informațiile de diagnosticare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:220
 msgid "Copy local diagnostics to the clipboard; nothing is uploaded"
-msgstr ""
+msgstr "Copiază diagnosticarea locală în clipboard; nu se trimite nimic"
 
+# from mainuan-grub-editor
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:223
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
 msgid "About"
-msgstr ""
+msgstr "Despre"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:256
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:258
 msgid "Searching for available drivers..."
-msgstr ""
+msgstr "Se caută drivere disponibile..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:289
-#, fuzzy
 msgid "No additional drivers are necessary."
-msgstr "Nu este utilizat niciun driver proprietar."
+msgstr "Nu sunt necesare drivere suplimentare."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:291
 msgid ""
@@ -583,14 +611,17 @@ msgid ""
 "\n"
 "No additional drivers are available or necessary."
 msgstr ""
+"Sistemul dumneavoastră folosește driverele potrivite.\n"
+"\n"
+"Nu sunt disponibile sau necesare drivere suplimentare."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:303
 #, python-format
 msgid "%(count)d device was found."
 msgid_plural "%(count)d devices were found."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "A fost găsit %(count)d dispozitiv."
+msgstr[1] "Au fost găsite %(count)d dispozitive."
+msgstr[2] "Au fost găsite %(count)d de dispozitive."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:325
 #, python-format
@@ -601,177 +632,190 @@ msgid ""
 "Originally derived from Linux Mint Driver Manager.\n"
 "GPL-2.0-or-later; Clement Lefebvre and contributors."
 msgstr ""
+"%(name)s %(version)s\n"
+"Mainuan\n"
+"\n"
+"Derivat inițial din Linux Mint Driver Manager.\n"
+"GPL-2.0-or-later; Clement Lefebvre și contribuitorii."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:337
 msgid "Cannot plan this change"
-msgstr ""
+msgstr "Această modificare nu poate fi planificată"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:338
 msgid ""
 "The driver selection is inconsistent or cannot be changed automatically."
 msgstr ""
+"Selecția de drivere este inconsecventă sau nu poate fi modificată automat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:374
 msgid ""
 "Changes cannot be applied because PackageKit is unavailable. Driver "
 "detection remains available."
 msgstr ""
+"Modificările nu pot fi aplicate deoarece PackageKit nu este disponibil. "
+"Detectarea driverelor rămâne disponibilă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:468
 msgid "Package operations finished. Checking driver activation..."
 msgstr ""
+"Operațiile cu pachete s-au încheiat. Se verifică activarea driverului..."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:487
 msgid "Driver detection failed."
-msgstr ""
+msgstr "Detectarea driverelor a eșuat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:490
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:491
 msgid "Try again"
-msgstr ""
+msgstr "Încearcă din nou"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:512
 msgid "Driver changes are in progress"
-msgstr ""
+msgstr "Modificările de drivere sunt în desfășurare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:513
 msgid "Wait for the operation to finish before closing this window."
-msgstr ""
+msgstr "Așteptați terminarea operației înainte de a închide această fereastră."
 
+# reviewed: nome do botão entre aspas romenas para não ser lido como verbo
+# solto
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:514
 msgid "Choose Cancel to request transaction cancellation."
-msgstr ""
+msgstr "Alegeți „Renunță” pentru a solicita anularea tranzacției."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:539
 msgid "Planned changes"
-msgstr ""
+msgstr "Modificări planificate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:544
 msgid "Changes that will be applied"
-msgstr ""
+msgstr "Modificări care vor fi aplicate"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:548
 msgid ""
 "The system or package plan changed. Review the updated changes before "
 "applying."
 msgstr ""
+"Sistemul sau planul de pachete s-a modificat. Revizuiți modificările "
+"actualizate înainte de a le aplica."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:556
 msgid "Preview only. These changes will not be executed."
-msgstr ""
+msgstr "Doar previzualizare. Aceste modificări nu vor fi executate."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:563
 #, python-format
 msgid "Third-party repository: %s"
-msgstr ""
+msgstr "Depozit terț: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:573
 msgid "Secure Boot: enabled"
-msgstr ""
+msgstr "Secure Boot: activat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:574
 msgid "Secure Boot: disabled"
-msgstr ""
+msgstr "Secure Boot: dezactivat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:575
 msgid "Secure Boot: unsupported"
-msgstr ""
+msgstr "Secure Boot: neacceptat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:576
 msgid "Secure Boot: unknown"
-msgstr ""
+msgstr "Secure Boot: necunoscut"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:577
 msgid "Module: no DKMS required"
-msgstr ""
+msgstr "Modul: nu necesită DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:578
 msgid "Module: DKMS required"
-msgstr ""
+msgstr "Modul: necesită DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:579
 msgid "Module: prebuilt/DKMS alternatives"
-msgstr ""
+msgstr "Modul: alternative precompilat/DKMS"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:580
 msgid "Module requirements: unknown"
-msgstr ""
+msgstr "Cerințele modulului: necunoscute"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:584
 msgid "MOK: signing certificate enrolled"
-msgstr ""
+msgstr "MOK: certificat de semnare înregistrat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:585
 msgid "MOK: not enrolled"
-msgstr ""
+msgstr "MOK: neînregistrat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:586
 msgid "MOK: enrollment pending"
-msgstr ""
+msgstr "MOK: înregistrare în așteptare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:587
-#, fuzzy
-#| msgid "Unknown"
 msgid "MOK: unknown"
-msgstr "Necunoscut"
+msgstr "MOK: necunoscut"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:589
 msgid "DKMS signing: configured"
-msgstr ""
+msgstr "Semnare DKMS: configurată"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:590
 msgid "Kernel headers: present"
-msgstr ""
+msgstr "Antete de kernel: prezente"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:591
 msgid "Kernel headers: missing"
-msgstr ""
+msgstr "Antete de kernel: lipsă"
 
+# reviewed: concordância: 'antete' é plural (como 'prezente'/'lipsă')
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:592
 msgid "Kernel headers: unknown"
-msgstr ""
+msgstr "Antete de kernel: necunoscute"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:593
 msgid "Kernel headers: not required"
-msgstr ""
+msgstr "Antete de kernel: nu sunt necesare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:597
 msgid "Restart: required to complete activation"
-msgstr ""
+msgstr "Repornire: necesară pentru finalizarea activării"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
 msgid "Blocked: "
-msgstr ""
+msgstr "Blocat: "
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:599
 msgid "Warning: "
-msgstr ""
+msgstr "Avertisment: "
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Install:"
-msgstr ""
+msgstr "Instalare:"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:603
 msgid "Remove:"
-msgstr ""
+msgstr "Eliminare:"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:612
 msgid "None"
-msgstr ""
+msgstr "Niciuna"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:619
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:678
 msgid "A restart may be required."
-msgstr ""
+msgstr "Poate fi necesară o repornire."
 
+# from mainuan-grub-editor
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:628
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:629
 msgid "Apply"
-msgstr ""
+msgstr "Aplică"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:630
 msgid "Apply only the changes listed in this confirmation"
-msgstr ""
+msgstr "Aplică doar modificările enumerate în această confirmare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:644
 msgid ""
@@ -779,85 +823,89 @@ msgid ""
 "applied. The actual system state is being detected again. No automatic "
 "restoration was attempted."
 msgstr ""
+"Modificarea driverului nu a fost finalizată. Unele modificări pot fi deja "
+"aplicate. Starea reală a sistemului este detectată din nou. Nu s-a încercat "
+"nicio restaurare automată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:647
 #, python-format
 msgid "Completed stages: %s"
-msgstr ""
+msgstr "Etape finalizate: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
-#, fuzzy
 msgid "Installation"
-msgstr "Se instalează drivere..."
+msgstr "Instalare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:648
 msgid "Removal"
-msgstr ""
+msgstr "Eliminare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:650
 msgid ""
 "The changes were not applied because authorization was cancelled or denied."
 msgstr ""
+"Modificările nu au fost aplicate deoarece autorizarea a fost anulată sau "
+"refuzată."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:652
 msgid ""
 "The operation was cancelled. The actual system state is being detected again."
 msgstr ""
+"Operația a fost anulată. Starea reală a sistemului este detectată din nou."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:654
 msgid "Simulation completed. No system changes were made."
-msgstr ""
+msgstr "Simulare finalizată. Nu s-a făcut nicio modificare în sistem."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:655
 msgid "The changes were applied successfully."
-msgstr ""
+msgstr "Modificările au fost aplicate cu succes."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:656
-#, fuzzy
 msgid "No driver changes were necessary."
-msgstr "Nu este utilizat niciun driver proprietar."
+msgstr "Nu a fost necesară nicio modificare de drivere."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:658
 msgid "Package changes completed. Driver activation checked separately."
 msgstr ""
+"Modificările de pachete s-au încheiat. Activarea driverului este verificată "
+"separat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:660
 msgid ""
 "The package download failed. Check the connection and review the detected "
 "driver state."
 msgstr ""
+"Descărcarea pachetelor a eșuat. Verificați conexiunea și revizuiți starea "
+"detectată a driverelor."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:662
 msgid ""
 "Package dependencies prevented this change. No more aggressive removal was "
 "attempted."
 msgstr ""
+"Dependențele pachetelor au împiedicat această modificare. Nu s-a încercat o "
+"eliminare mai agresivă."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:664
 msgid ""
 "The driver operation failed. The actual system state is being detected again."
 msgstr ""
+"Operația cu drivere a eșuat. Starea reală a sistemului este detectată din "
+"nou."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:672
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "A system restart is required to complete driver activation."
 msgstr ""
-"Trebuie sa reporniți calculatorul pentru a finaliza modificările driverului."
+"Este necesară repornirea sistemului pentru finalizarea activării driverului."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:674
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart your session to complete the changes."
-msgstr ""
-"Trebuie sa reporniți calculatorul pentru a finaliza modificările driverului."
+msgstr "Reporniți sesiunea pentru a finaliza modificările."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/main_window.py:676
-#, fuzzy
-#| msgid "You need to restart the computer to complete the driver changes."
 msgid "Restart the affected applications to complete the changes."
-msgstr ""
-"Trebuie sa reporniți calculatorul pentru a finaliza modificările driverului."
+msgstr "Reporniți aplicațiile afectate pentru a finaliza modificările."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:47
 msgid "Processor microcode"
@@ -865,56 +913,51 @@ msgstr "Microcodul procesorului"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:49
 msgid "The recommended driver package is selected."
-msgstr ""
+msgstr "Este selectat pachetul de driver recomandat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:50
 msgid "An alternative driver package is selected."
-msgstr ""
+msgstr "Este selectat un pachet de driver alternativ."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:51
-#, fuzzy
-#| msgid "Continue using a manually installed driver"
 msgid "A manually installed driver was detected."
-msgstr "Continuă utilizând un driver instalat manual"
+msgstr "A fost detectat un driver instalat manual."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:52
-#, fuzzy
 msgid "No additional driver is selected."
-msgstr "Nu este utilizat niciun driver proprietar."
+msgstr "Nu este selectat niciun driver suplimentar."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:59
 msgid "Current"
-msgstr ""
+msgstr "Curent"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:61
-#, fuzzy
 msgid "Recommended"
-msgstr "recomandat"
+msgstr "Recomandat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:63
 msgid "Integrated into the system"
-msgstr ""
+msgstr "Integrat în sistem"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
-#, fuzzy
 msgid "Open-source"
-msgstr "open-source"
+msgstr "Cu sursă deschisă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:65
 msgid "Proprietary"
-msgstr ""
+msgstr "Proprietar"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:67
 msgid "Installed"
-msgstr ""
+msgstr "Instalat"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:69
 msgid "Source: third-party repository"
-msgstr ""
+msgstr "Sursă: depozit terț"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:71
 msgid "Requires an Internet connection"
-msgstr ""
+msgstr "Necesită o conexiune la Internet"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:75
 msgid "Continue using a manually installed driver"
@@ -925,43 +968,41 @@ msgid "Do not use the device"
 msgstr "Nu utiliza dispozitivul"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Version: %s"
-msgstr "Versiune"
+msgstr "Versiune: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:94
-#, fuzzy
 msgid "Driver package"
-msgstr "Administrator drivere"
+msgstr "Pachet de driver"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:122
-#, fuzzy
 msgid "Driver active"
-msgstr "Administrator drivere"
+msgstr "Driver activ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:123
 msgid "Installed; restart to activate"
-msgstr ""
+msgstr "Instalat; reporniți pentru activare"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:124
 msgid "Installed; MOK enrollment required"
-msgstr ""
+msgstr "Instalat; înregistrare MOK necesară"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:125
 msgid "Installed; activation could not be confirmed"
-msgstr ""
+msgstr "Instalat; activarea nu a putut fi confirmată"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:126
 msgid "Installed; driver is not confirmed active"
-msgstr ""
+msgstr "Instalat; driverul nu este confirmat ca activ"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:127
 msgid "The requested driver package is not installed."
-msgstr ""
+msgstr "Pachetul de driver solicitat nu este instalat."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:128
 msgid "The current driver activation state is unknown."
-msgstr ""
+msgstr "Starea curentă de activare a driverului este necunoscută."
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:167
 #, python-format
@@ -970,6 +1011,9 @@ msgid ""
 "Module: %(module)s\n"
 "Signer: %(signer)s"
 msgstr ""
+"Driver legat: %(driver)s\n"
+"Modul: %(module)s\n"
+"Semnatar: %(signer)s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:168
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:169
@@ -980,16 +1024,16 @@ msgstr "Necunoscut"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
 msgid "Available option"
-msgstr ""
+msgstr "Opțiune disponibilă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:215
 msgid "Current selection"
-msgstr ""
+msgstr "Selecția curentă"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:222
 #, python-format
 msgid "APT candidate: %s"
-msgstr ""
+msgstr "Candidat APT: %s"
 
 #: usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers/qt/widgets.py:264
 msgid "Processor"

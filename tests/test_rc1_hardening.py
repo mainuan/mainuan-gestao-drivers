@@ -29,12 +29,12 @@ MODULES = ROOT / "usr/lib/mainuan/mainuan-gestao-drivers/mainuan_drivers"
 
 class ReleaseCandidateTests(unittest.TestCase):
     def test_version_alias_changelog_and_manpage(self):
-        self.assertEqual(__version__, "1.0")
+        self.assertEqual(__version__, "1.1")
         self.assertEqual(VERSION, __version__)
         version = subprocess.run(["dpkg-parsechangelog", "-SVersion"], cwd=ROOT,
                                  check=True, text=True, capture_output=True).stdout.strip()
         self.assertEqual(version, __version__)
-        self.assertIn('"Mainuan 1.0"', (ROOT / "usr/share/man/man1/mainuan-gestao-drivers.1").read_text())
+        self.assertIn('"Mainuan 1.1"', (ROOT / "usr/share/man/man1/mainuan-gestao-drivers.1").read_text())
 
     def test_debian_ordering_preserves_upgrade_and_final_release(self):
         for previous in ("0.4", "0.5", "0.6", "1.0~rc1"):
@@ -73,13 +73,13 @@ class ReleaseCandidateTests(unittest.TestCase):
 
     def test_stable_workflow_and_gettext_version_match(self):
         workflow = (ROOT / ".github/workflows/build-mainuan-deb.yml").read_text()
-        self.assertIn('test "$(dpkg-parsechangelog -SVersion)" = "1.0"', workflow)
-        self.assertIn("mainuan-gestao-drivers_1.0_all.deb", workflow)
-        self.assertIn("mainuan-gestao-drivers-1.0-${{ github.sha }}", workflow)
+        self.assertIn('test "$(dpkg-parsechangelog -SVersion)" = "1.1"', workflow)
+        self.assertIn("mainuan-gestao-drivers_1.1_all.deb", workflow)
+        self.assertIn("mainuan-gestao-drivers-1.1-${{ github.sha }}", workflow)
         self.assertNotIn("1.0~rc1", workflow)
-        self.assertIn("PACKAGE_VERSION=1.0", (ROOT / "po/i18n.conf").read_text())
-        self.assertIn('Gestão de Drivers 1.0\\n', (ROOT / "mainuan-gestao-drivers.pot").read_text())
-        self.assertIn('mainuan-gestao-drivers 1.0\\n', (ROOT / "po/mainuan-gestao-drivers-pt_BR.po").read_text())
+        self.assertIn("PACKAGE_VERSION=1.1", (ROOT / "po/i18n.conf").read_text())
+        self.assertIn('Gestão de Drivers 1.1\\n', (ROOT / "mainuan-gestao-drivers.pot").read_text())
+        self.assertIn('mainuan-gestao-drivers 1.1\\n', (ROOT / "po/mainuan-gestao-drivers-pt_BR.po").read_text())
 
     def test_stable_runtime_has_no_current_prerelease_labels(self):
         for path in MODULES.rglob("*.py"):

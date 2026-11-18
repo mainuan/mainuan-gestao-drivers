@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mainuan-gestao-drivers 1.0\n"
+"Project-Id-Version: mainuan-gestao-drivers 1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/mainuan/mainuan-gestao-drivers/"
 "issues\n"
 "POT-Creation-Date: 2026-11-16 11:17-0300\n"

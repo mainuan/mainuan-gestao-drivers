@@ -9,7 +9,7 @@ APP_ID = "org.mainuan.GestaoDrivers"
 # display_name(), whose Brazilian Portuguese translation is DISPLAY_NAME.
 DISPLAY_NAME = "Gestão de Drivers"
 ORGANIZATION = "Mainuan"
-__version__ = "1.0"
+__version__ = "1.1"
 VERSION = __version__
 
 SHARE_DIR = Path(__file__).resolve().parents[4] / "share"

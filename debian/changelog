@@ -1,3 +1,12 @@
+mainuan-gestao-drivers (1.1) resolute; urgency=medium
+
+  * Interface traduzida: textos de origem em inglês e catálogos em 33 idiomas;
+    o título da janela segue o idioma (na 1.0 ficava sempre "Gestão de
+    Drivers").
+  * Teste de instalação limpa no CI e release somente por tag.
+
+ -- ruscher <rruscher@gmail.com>  Wed, 18 Nov 2026 09:55:15 -0300
+
 mainuan-gestao-drivers (1.0) resolute; urgency=medium
 
   * Release the first stable Mainuan/Kubuntu 26.04 driver manager with Qt6.
